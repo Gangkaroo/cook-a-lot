@@ -1,0 +1,19 @@
+/* Customize bulma colors */
+$yellow: #ffdb4d;
+$yellow-invert: #494949;
+
+$primary: $yellow;
+$primary-invert: $yellow-invert;
+
+$link-invert: $yellow-invert;
+$menu-item-active-background-color: $yellow;
+// Increase image size to show a large cook-a-lot logo
+$navbar-item-img-max-height: 3rem;
+// Reduce radius
+$box-radius: 3px;
+$box-padding: 10px;
+$navbar-dropdown-boxed-radius: $box-radius;
+
+.navbar-item img {
+  margin-right: 10px;
+}
