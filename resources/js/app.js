@@ -17,12 +17,14 @@ import './bootstrap';
 import router from './routes';
 
 import LanguageSelect from './views/LanguageSelect.vue';
+import Modal from './components/Modal.vue';
 
 new Vue({
     el: '#app',
 
     components: {
-        LanguageSelect
+        LanguageSelect,
+        Modal
     },
 
     i18n,

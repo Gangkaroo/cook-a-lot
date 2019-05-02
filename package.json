@@ -13,19 +13,19 @@
         "axios": "^0.18",
         "cross-env": "^5.1",
         "laravel-mix": "^4.0.15",
-        "popper.js": "^1.14.7",
+        "popper.js": "^1.15.0",
         "resolve-url-loader": "^2.3.2",
-        "sass": "^1.17.3",
+        "sass": "^1.19.0",
         "sass-loader": "^7.1.0",
         "vue": "^2.6.10"
     },
     "dependencies": {
         "bulma": "^0.7.4",
         "flag-icon-css": "^3.3.0",
-        "material-icons": "^0.3.0",
+        "material-icons": "^0.3.1",
         "moment": "^2.23.0",
-        "vue-i18n": "^8.9.0",
-        "vue-router": "^3.0.2",
+        "vue-i18n": "^8.11.2",
+        "vue-router": "^3.0.6",
         "vue-template-compiler": "^2.6.10"
     }
 }
