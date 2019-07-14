@@ -1,4 +1,4 @@
-import Errors from 'errors'
+import Errors from './Errors'
 
 class Form {
     constructor(data) {
@@ -67,8 +67,8 @@ class Form {
                     resolve(response.data);
                 })
                 .catch(error => {
-                    this.onFail(error.response.data);
-                    reject(error.response.data);
+                    this.onFail(error.response.data.errors);
+                    reject(error.response.data.errors);
                 });
         });
     }

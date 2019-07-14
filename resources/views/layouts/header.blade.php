@@ -18,9 +18,7 @@
                 <a class="button is-primary">
                     <strong>@{{$t('sign_up')}}</strong>
                 </a>
-                <a class="button is-light">
-                    @{{$t('log_in')}}
-                </a>
+                <login></login>
             </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">

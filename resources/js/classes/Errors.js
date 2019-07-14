@@ -5,7 +5,7 @@ class Errors {
 
     // Check if there are any errors. If so, disable the submit button
     any() {
-        return Objects.keys(this.errors).length > 0;
+        return Object.keys(this.errors).length > 0;
     }
 
     // Clear a single field or the whole errors object if no field is given

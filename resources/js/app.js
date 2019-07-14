@@ -18,13 +18,14 @@ import router from './routes';
 
 import LanguageSelect from './views/LanguageSelect.vue';
 import Modal from './components/Modal.vue';
+import Login from './views/authentication/Login.vue';
 
 new Vue({
     el: '#app',
 
     components: {
         LanguageSelect,
-        Modal
+        Login
     },
 
     i18n,
