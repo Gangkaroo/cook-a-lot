@@ -1,11 +1,16 @@
 <template>
     <div>
-        <a class="button is-light" @click="showModal()">
+        <a class="button is-light" @click="showLoginModal()">
             {{$t('log_in')}}
         </a>
 
-        <modal>
+        <modal v-if="modalIsActive" @close="hideLoginModal()" name="login-modal">
+            <div slot="header">{{$t('log_in')}}</div>
             <p>Here is the modal content</p>
+            <div slot="footer">
+                <a class="button is-primary" @click="login()">OK</a>
+                <a class="button is-light" @click="hideLoginModal()">{{$t('cancel')}}</a>
+            </div>
         </modal>
     </div>
 </template>
@@ -20,17 +25,15 @@
             }
         },
         methods: {
-            setLanguage: function(locale) {
-                if (locale !== "de" && locale !== "en") {
-                    console.error("This locale is not supported");
-                    return;
-                }
-
-                this.isDE = locale === "de";
-                this.isEN = locale === "en";
-                this.$i18n.locale = locale;
+            hideLoginModal: function() {
+                this.modalIsActive = false;
+            },
+            login: function() {
+                this.hideLoginModal();
+            },
+            showLoginModal: function() {
+                this.modalIsActive = true;
             }
-
         }
     }
 </script>

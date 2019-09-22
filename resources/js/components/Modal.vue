@@ -1,6 +1,6 @@
 <template>
-    <div class="modal is-active">
-        <div class="modal-background"></div>
+    <div :id="name" class="modal is-active">
+        <div class="modal-background" @click="close()"></div>
         <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">
@@ -25,8 +25,15 @@
     export default {
         methods: {
             close: function () {
-                $emit('close');
+                this.$emit('close');
             }
-        }
+        },
+        props: ["name"]
     }
 </script>
+
+<style>
+    .modal:target {
+        visibility: visible;
+    }
+</style>

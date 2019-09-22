@@ -1,13 +1,14 @@
 {
-    "site_title": "For the avid cook",
-    "sign_up": "Sign up",
-    "log_in": "Log in",
+    "by": "by",
+    "cancel": "cancel",
     "dashboard": "Dashboard",
-    "recipes": "Recipes",
-    "shopping_lists": "Shopping lists",
-    "pantry": "Pantry",
+    "groups": "Groups",
+    "log_in": "Log in",
     "menus": "Menus",
     "notebook": "Notebook",
-    "groups": "Groups",
-    "by": "by"
+    "pantry": "Pantry",
+    "recipes": "Recipes",
+    "shopping_lists": "Shopping lists",
+    "sign_up": "Sign up",
+    "site_title": "For the avid cook"
 }

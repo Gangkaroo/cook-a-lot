@@ -20,6 +20,8 @@ import LanguageSelect from './views/LanguageSelect.vue';
 import Modal from './components/Modal.vue';
 import Login from './views/authentication/Login.vue';
 
+Vue.component("modal", Modal);
+
 new Vue({
     el: '#app',
 
