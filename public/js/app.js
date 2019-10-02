@@ -1866,6 +1866,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _classes_Form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../classes/Form */ "./resources/js/classes/Form.js");
 //
 //
 //
@@ -1883,12 +1884,46 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Login.vue",
   data: function data() {
     return {
       loggedIn: false,
-      modalIsActive: false
+      modalIsActive: false,
+      form: new _classes_Form__WEBPACK_IMPORTED_MODULE_0__["default"]({
+        username: '',
+        password: ''
+      })
     };
   },
   methods: {
@@ -1897,9 +1932,16 @@ __webpack_require__.r(__webpack_exports__);
     },
     login: function login() {
       this.hideLoginModal();
+      this.form.post('/login');
     },
     showLoginModal: function showLoginModal() {
-      this.modalIsActive = true;
+      var _this = this;
+
+      this.modalIsActive = true; // Set focus after the DOM has been updated
+
+      this.$nextTick(function () {
+        return _this.$refs.usernameInput.focus();
+      });
     }
   }
 });
@@ -7962,14 +8004,14 @@ var render = function() {
       _c(
         "a",
         {
-          staticClass: "button is-light",
+          staticClass: "button is-primary",
           on: {
             click: function($event) {
               return _vm.showLoginModal()
             }
           }
         },
-        [_vm._v("\n        " + _vm._s(_vm.$t("log_in")) + "\n    ")]
+        [_c("strong", [_vm._v(_vm._s(_vm.$t("log_in")))])]
       ),
       _vm._v(" "),
       _vm.modalIsActive
@@ -7988,7 +8030,114 @@ var render = function() {
                 _vm._v(_vm._s(_vm.$t("log_in")))
               ]),
               _vm._v(" "),
-              _c("p", [_vm._v("Here is the modal content")]),
+              _c("form", [
+                _c("div", { staticClass: "field" }, [
+                  _c(
+                    "label",
+                    { staticClass: "label", attrs: { for: "username" } },
+                    [_vm._v(_vm._s(_vm.$t("username")))]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "control has-icons-left" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.username,
+                          expression: "form.username"
+                        }
+                      ],
+                      ref: "usernameInput",
+                      staticClass: "input",
+                      attrs: {
+                        type: "text",
+                        id: "username",
+                        placeholder: _vm.$t("username_placeholder")
+                      },
+                      domProps: { value: _vm.form.username },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "username", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "icon is-small is-left" }, [
+                      _c("i", { staticClass: "material-icons md-18" }, [
+                        _vm._v(
+                          "\n                            person\n                        "
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _vm.form.errors.has("username")
+                      ? _c("span", {
+                          staticClass: "help is-danger",
+                          domProps: {
+                            textContent: _vm._s(_vm.form.errors.get("username"))
+                          }
+                        })
+                      : _vm._e()
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "field" }, [
+                  _c(
+                    "label",
+                    { staticClass: "label", attrs: { for: "password" } },
+                    [_vm._v(_vm._s(_vm.$t("password")))]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "control has-icons-left" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.password,
+                          expression: "form.password"
+                        }
+                      ],
+                      staticClass: "input",
+                      attrs: {
+                        type: "password",
+                        id: "password",
+                        placeholder: _vm.$t("password_placeholder")
+                      },
+                      domProps: { value: _vm.form.password },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "password", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "icon is-small is-left" }, [
+                      _c("i", { staticClass: "material-icons md-18" }, [
+                        _vm._v(
+                          "\n                            lock\n                        "
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _vm.form.errors.has("password")
+                      ? _c("span", {
+                          staticClass: "help is-danger",
+                          domProps: {
+                            textContent: _vm._s(_vm.form.errors.get("password"))
+                          }
+                        })
+                      : _vm._e()
+                  ])
+                ])
+              ]),
               _vm._v(" "),
               _c("div", { attrs: { slot: "footer" }, slot: "footer" }, [
                 _c(
@@ -23149,6 +23298,191 @@ if (token) {
 
 /***/ }),
 
+/***/ "./resources/js/classes/Errors.js":
+/*!****************************************!*\
+  !*** ./resources/js/classes/Errors.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Errors; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Errors =
+/*#__PURE__*/
+function () {
+  function Errors() {
+    _classCallCheck(this, Errors);
+
+    this.errors = {};
+  } // Check if there are any errors. If so, disable the submit button
+
+
+  _createClass(Errors, [{
+    key: "any",
+    value: function any() {
+      return Object.keys(this.errors).length > 0;
+    } // Clear a single field or the whole errors object if no field is given
+
+  }, {
+    key: "clear",
+    value: function clear(field) {
+      if (field) {
+        delete this.errors[field];
+      } else {
+        this.errors = {};
+      }
+    } // Check if the field exists in the laravel errors object
+
+  }, {
+    key: "get",
+    value: function get(field) {
+      if (this.errors[field]) {
+        return this.errors[field][0];
+      }
+    } // Only show error box if an error exists
+
+  }, {
+    key: "has",
+    value: function has(field) {
+      return this.errors.hasOwnProperty(field);
+    } // Record new errors as received from the server
+
+  }, {
+    key: "record",
+    value: function record(errors) {
+      this.errors = errors;
+    }
+  }]);
+
+  return Errors;
+}();
+
+
+
+/***/ }),
+
+/***/ "./resources/js/classes/Form.js":
+/*!**************************************!*\
+  !*** ./resources/js/classes/Form.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Form; });
+/* harmony import */ var _Errors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Errors */ "./resources/js/classes/Errors.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var Form =
+/*#__PURE__*/
+function () {
+  function Form(data) {
+    _classCallCheck(this, Form);
+
+    this.originalData = data;
+    this.errors = new _Errors__WEBPACK_IMPORTED_MODULE_0__["default"](); // Attach properties of data to the object
+
+    for (var field in data) {
+      this[field] = data[field];
+    }
+  }
+
+  _createClass(Form, [{
+    key: "data",
+    value: function data() {
+      var data = {};
+
+      for (var property in this.originalData) {
+        data[property] = this[property];
+      }
+
+      return data;
+    }
+  }, {
+    key: "onFail",
+    value: function onFail(errors) {
+      this.errors.record(errors);
+    }
+  }, {
+    key: "onSuccess",
+    value: function onSuccess(data) {
+      alert(data.message);
+      this.reset();
+    }
+  }, {
+    key: "reset",
+    value: function reset() {
+      for (var field in this.originalData) {
+        this[field] = '';
+      }
+
+      this.errors.clear();
+    }
+  }, {
+    key: "get",
+    value: function get(url) {
+      return this.submit('get', url);
+    }
+  }, {
+    key: "post",
+    value: function post(url) {
+      return this.submit('post', url);
+    }
+  }, {
+    key: "put",
+    value: function put(url) {
+      return this.submit('put', url);
+    }
+  }, {
+    key: "patch",
+    value: function patch(url) {
+      return this.submit('patch', url);
+    }
+  }, {
+    key: "delete",
+    value: function _delete(url) {
+      return this.submit('delete', url);
+    }
+  }, {
+    key: "submit",
+    value: function submit(requestType, url) {
+      var _this = this;
+
+      return new Promise(function (resolve, reject) {
+        axios[requestType](url, _this.data()).then(function (response) {
+          _this.onSuccess(response.data);
+
+          resolve(response.data);
+        })["catch"](function (error) {
+          _this.onFail(error.response.data.errors);
+
+          reject(error.response.data.errors);
+        });
+      });
+    }
+  }]);
+
+  return Form;
+}();
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Modal.vue":
 /*!*******************************************!*\
   !*** ./resources/js/components/Modal.vue ***!
@@ -23556,10 +23890,10 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************!*\
   !*** ./resources/lang/de.json ***!
   \********************************/
-/*! exports provided: by, cancel, dashboard, groups, log_in, menus, notebook, pantry, recipes, shopping_lists, sign_up, site_title, default */
+/*! exports provided: by, cancel, dashboard, groups, log_in, menus, notebook, pantry, password, password_placeholder, recipes, shopping_lists, sign_up, site_title, username, username_placeholder, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"by\":\"von\",\"cancel\":\"abbrechen\",\"dashboard\":\"Übersicht\",\"groups\":\"Gruppen\",\"log_in\":\"Einloggen\",\"menus\":\"Menüs\",\"notebook\":\"Notizbuch\",\"pantry\":\"Vorratskammer\",\"recipes\":\"Rezepte\",\"shopping_lists\":\"Einkaufslisten\",\"sign_up\":\"Anmelden\",\"site_title\":\"Für begeistertes kochen\"}");
+module.exports = JSON.parse("{\"by\":\"von\",\"cancel\":\"abbrechen\",\"dashboard\":\"Übersicht\",\"groups\":\"Gruppen\",\"log_in\":\"Anmelden\",\"menus\":\"Menüs\",\"notebook\":\"Notizbuch\",\"pantry\":\"Vorratskammer\",\"password\":\"Passwort\",\"password_placeholder\":\"Ihr Password\",\"recipes\":\"Rezepte\",\"shopping_lists\":\"Einkaufslisten\",\"sign_up\":\"Registrieren\",\"site_title\":\"Für begeistertes kochen\",\"username\":\"Benutername\",\"username_placeholder\":\"Ihr Benutername\"}");
 
 /***/ }),
 
@@ -23567,10 +23901,10 @@ module.exports = JSON.parse("{\"by\":\"von\",\"cancel\":\"abbrechen\",\"dashboar
 /*!********************************!*\
   !*** ./resources/lang/en.json ***!
   \********************************/
-/*! exports provided: by, cancel, dashboard, groups, log_in, menus, notebook, pantry, recipes, shopping_lists, sign_up, site_title, default */
+/*! exports provided: by, cancel, dashboard, groups, log_in, menus, notebook, pantry, password, password_placeholder, recipes, shopping_lists, sign_up, site_title, username, username_placeholder, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"by\":\"by\",\"cancel\":\"cancel\",\"dashboard\":\"Dashboard\",\"groups\":\"Groups\",\"log_in\":\"Log in\",\"menus\":\"Menus\",\"notebook\":\"Notebook\",\"pantry\":\"Pantry\",\"recipes\":\"Recipes\",\"shopping_lists\":\"Shopping lists\",\"sign_up\":\"Sign up\",\"site_title\":\"For the avid cook\"}");
+module.exports = JSON.parse("{\"by\":\"by\",\"cancel\":\"cancel\",\"dashboard\":\"Dashboard\",\"groups\":\"Groups\",\"log_in\":\"Log in\",\"menus\":\"Menus\",\"notebook\":\"Notebook\",\"pantry\":\"Pantry\",\"password\":\"Password\",\"password_placeholder\":\"Your password\",\"recipes\":\"Recipes\",\"shopping_lists\":\"Shopping lists\",\"sign_up\":\"Sign up\",\"site_title\":\"For the avid cook\",\"username\":\"Username\",\"username_placeholder\":\"Your username\"}");
 
 /***/ }),
 

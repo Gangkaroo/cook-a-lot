@@ -15,10 +15,10 @@
     <div class="navbar-end">
         <div class="navbar-item">
             <div class="buttons">
-                <a class="button is-primary">
-                    <strong>@{{$t('sign_up')}}</strong>
-                </a>
                 <login></login>
+                <a class="button is-light">
+                    @{{$t('sign_up')}}
+                </a>
             </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">

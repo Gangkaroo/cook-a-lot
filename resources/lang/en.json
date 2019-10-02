@@ -7,8 +7,12 @@
     "menus": "Menus",
     "notebook": "Notebook",
     "pantry": "Pantry",
+    "password": "Password",
+    "password_placeholder": "Your password",
     "recipes": "Recipes",
     "shopping_lists": "Shopping lists",
     "sign_up": "Sign up",
-    "site_title": "For the avid cook"
+    "site_title": "For the avid cook",
+    "username": "Username",
+    "username_placeholder": "Your username"
 }

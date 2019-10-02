@@ -3,12 +3,16 @@
     "cancel": "abbrechen",
     "dashboard": "Übersicht",
     "groups": "Gruppen",
-    "log_in": "Einloggen",
+    "log_in": "Anmelden",
     "menus": "Menüs",
     "notebook": "Notizbuch",
     "pantry": "Vorratskammer",
+    "password": "Passwort",
+    "password_placeholder": "Ihr Password",
     "recipes": "Rezepte",
     "shopping_lists": "Einkaufslisten",
-    "sign_up": "Anmelden",
-    "site_title": "Für begeistertes kochen"
+    "sign_up": "Registrieren",
+    "site_title": "Für begeistertes kochen",
+    "username": "Benutername",
+    "username_placeholder": "Ihr Benutername"
 }

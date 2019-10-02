@@ -1,6 +1,6 @@
 import Errors from './Errors'
 
-class Form {
+export default class Form {
     constructor(data) {
         this.originalData = data;
         this.errors = new Errors();
