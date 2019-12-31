@@ -2,54 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2fb2260-a307-4677-9693-ae13969d8a7b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/es-ca.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/es-ca.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/SPA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SPA.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/at.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/at.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/bo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/bo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ca.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ca.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ai.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ai.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/aq.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/aq.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/au.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/au.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ck.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ck.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/es.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/es.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/fj.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/fj.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ge.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ge.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/gr.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/gr.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/gt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/gt.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/nc.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/nc.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ni.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ni.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/np.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/np.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/nz.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/nz.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/pf.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/pf.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/si.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/si.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/sv.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/sv.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/tt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/tt.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/vg.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/vg.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/at.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/at.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/bo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/bo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ca.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ca.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/fk.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/fk.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/gb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/gb.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/tv.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/tv.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ai.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ai.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/aq.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/aq.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/au.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/au.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ck.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ck.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/es.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/es.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/fj.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/fj.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ge.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ge.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/gr.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/gr.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/gt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/gt.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/nc.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/nc.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ni.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ni.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/nz.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/nz.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/si.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/si.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/sv.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/sv.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/vg.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/vg.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/fk.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/fk.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/tv.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/tv.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/classes/Errors.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/classes/Errors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/classes/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/classes/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/authentication/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/authentication/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/de.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,6 +91,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Tom Goeckel &lt;norak2@yahoo.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -191,15 +181,21 @@
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
     </include_path>
   </component>
   <component name="ProjectId" id="1RBg1KZl79WmiyideIA8qRZCuSy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LaravelTest" />
+    <property name="last_opened_file_path" value="L:/Guestoffice" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -209,18 +205,6 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="L:\Cook-a-lot\SPA\resources\lang" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="PHPUnit.phpunit.xml">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -245,23 +229,15 @@
     </recent_temporary>
   </component>
   <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bab67986" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bab67986" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@2ba27102" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
-          <select />
-        </treeState>
-      </serviceView>
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -315,7 +291,13 @@
       <workItem from="1569308996975" duration="6024000" />
       <workItem from="1569684103295" duration="35000" />
       <workItem from="1569684179784" duration="2446000" />
-      <workItem from="1569936399332" duration="6941000" />
+      <workItem from="1569936399332" duration="7496000" />
+      <workItem from="1575526544635" duration="31000" />
+      <workItem from="1575526644959" duration="52000" />
+      <workItem from="1575526986733" duration="956000" />
+      <workItem from="1575964249285" duration="23000" />
+      <workItem from="1577641918029" duration="2087000" />
+      <workItem from="1577783136911" duration="5045000" />
     </task>
     <task id="LOCAL-00001" summary="Added new form handling classes">
       <created>1556775731900</created>
@@ -359,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569171822893</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Improve login modal">
+      <created>1569995117058</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1569995117058</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,6 +375,17 @@
     <MESSAGE value="Update components to fix security issues" />
     <MESSAGE value="Updated yarn file" />
     <MESSAGE value="Improved modal component and added simple login modal that needs completion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved modal component and added simple login modal that needs completion" />
+    <MESSAGE value="Improve login modal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve login modal" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2660" y="277" key="FileChooserDialogImpl" timestamp="1575964269505">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2660" y="277" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1575964269505" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1577800041722">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1577800041722" />
   </component>
 </project>

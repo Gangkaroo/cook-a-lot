@@ -19,6 +19,7 @@ import router from './routes';
 import LanguageSelect from './views/LanguageSelect.vue';
 import Modal from './components/Modal.vue';
 import Login from './views/authentication/Login.vue';
+import Registration from './views/authentication/Registration.vue';
 
 Vue.component("modal", Modal);
 
@@ -27,7 +28,8 @@ new Vue({
 
     components: {
         LanguageSelect,
-        Login
+        Login,
+        Registration
     },
 
     i18n,

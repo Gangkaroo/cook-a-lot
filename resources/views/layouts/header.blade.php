@@ -16,9 +16,7 @@
         <div class="navbar-item">
             <div class="buttons">
                 <login></login>
-                <a class="button is-light">
-                    @{{$t('sign_up')}}
-                </a>
+                <registration></registration>
             </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
