@@ -18,10 +18,16 @@ import router from './routes';
 
 import LanguageSelect from './views/LanguageSelect.vue';
 import Modal from './components/Modal.vue';
+import BaseForm from './components/form/BaseForm.vue';
+import InputRow from './components/form/InputRow.vue';
+import InputField from './components/form/InputField.vue';
 import Login from './views/authentication/Login.vue';
 import Registration from './views/authentication/Registration.vue';
 
 Vue.component("modal", Modal);
+Vue.component("input-field", InputField);
+Vue.component("input-row", InputRow);
+Vue.component("base-form", BaseForm);
 
 new Vue({
     el: '#app',

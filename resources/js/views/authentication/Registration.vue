@@ -49,7 +49,7 @@
                 </div>
             </form>
             <div slot="footer">
-                <a class="button is-primary" @click="login()">OK</a>
+                <a class="button is-primary" @click="register()">OK</a>
                 <a class="button is-light" @click="hideRegistrationModal()">{{$t('cancel')}}</a>
             </div>
         </modal>

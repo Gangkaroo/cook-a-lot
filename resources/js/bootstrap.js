@@ -3,11 +3,13 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import axios from 'axios';
 import VueI18n from 'vue-i18n';
+import Vuelidate from 'vuelidate';
 import de from '../lang/de.json'
 import en from '../lang/en.json'
 
 window.Vue = Vue;
 Vue.use(VueRouter);
+Vue.use(Vuelidate);
 window.axios = axios;
 window.i18n = new VueI18n({
     locale: 'de',

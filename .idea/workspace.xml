@@ -2,38 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2fb2260-a307-4677-9693-ae13969d8a7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/es-ca.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/es-ca.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/form/BaseForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/SPA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SPA.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ai.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ai.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/aq.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/aq.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/au.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/au.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ck.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ck.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/es.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/es.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/fj.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/fj.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/fk.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/fk.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/gb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/gb.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/tv.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/tv.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ai.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ai.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/aq.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/aq.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/au.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/au.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ck.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ck.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/es.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/es.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/fj.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/fj.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/fk.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/fk.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/tv.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/tv.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/InputField.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/authentication/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/authentication/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/authentication/Registration.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/authentication/Registration.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/de.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +80,7 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -111,7 +95,6 @@
       <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
-      <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/vendor/league/flysystem" />
       <path value="$PROJECT_DIR$/vendor/filp/whoops" />
@@ -182,6 +165,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
       <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/vendor/league/commonmark-ext-table" />
     </include_path>
   </component>
   <component name="ProjectId" id="1RBg1KZl79WmiyideIA8qRZCuSy" />
@@ -203,6 +188,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="L:\Cook-a-lot\SPA\resources\js\components\form" />
       <recent name="L:\Cook-a-lot\SPA\resources\lang" />
     </key>
   </component>
@@ -297,7 +283,11 @@
       <workItem from="1575526986733" duration="956000" />
       <workItem from="1575964249285" duration="23000" />
       <workItem from="1577641918029" duration="2087000" />
-      <workItem from="1577783136911" duration="5045000" />
+      <workItem from="1577783136911" duration="6393000" />
+      <workItem from="1577888479369" duration="2383000" />
+      <workItem from="1578248129873" duration="2116000" />
+      <workItem from="1578418796802" duration="605000" />
+      <workItem from="1579365917935" duration="21236000" />
     </task>
     <task id="LOCAL-00001" summary="Added new form handling classes">
       <created>1556775731900</created>
@@ -348,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569995117058</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add first draft of registration modal&#10;Updates">
+      <created>1577802796281</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1577802796281</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,16 +373,37 @@
     <MESSAGE value="Updated yarn file" />
     <MESSAGE value="Improved modal component and added simple login modal that needs completion" />
     <MESSAGE value="Improve login modal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve login modal" />
+    <MESSAGE value="Add first draft of registration modal&#10;Updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add first draft of registration modal&#10;Updates" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2518" y="119" key="CommitChangelistDialog2" timestamp="1577802792492">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2518" y="119" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1577802792492" />
     <state x="2660" y="277" key="FileChooserDialogImpl" timestamp="1575964269505">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2660" y="277" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1575964269505" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1577800041722">
+    <state x="2592" y="238" key="MultipleFileMergeDialog" timestamp="1577802840600">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1577800041722" />
+    <state x="2592" y="238" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1577802840600" />
+    <state x="2472" y="257" key="Vcs.Push.Dialog.v2" timestamp="1579462871854">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2472" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579462871854" />
+    <state x="2691" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577802884770">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2691" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1577802884770" />
+    <state x="2587" y="276" width="586" height="488" key="find.popup" timestamp="1579456216632">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2587" y="276" width="586" height="488" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579456216632" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578248306060">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1578248306060" />
   </component>
 </project>
