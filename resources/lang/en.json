@@ -2,7 +2,10 @@
     "by": "by",
     "cancel": "cancel",
     "dashboard": "Dashboard",
+    "default_input_error": "Incomplete input",
     "email": "E-mail",
+    "email_format_error": "Please enter a correct e-mail address",
+    "email_required": "Please enter your e-mail address",
     "email_placeholder": "Your e-mail",
     "groups": "Groups",
     "log_in": "Log in",
@@ -16,5 +19,8 @@
     "sign_up": "Sign up",
     "site_title": "For the avid cook",
     "username": "Username",
-    "username_placeholder": "Your username"
+    "username_format_error": "Only alphabetical and numerical characters are allowed",
+    "username_placeholder": "Your username",
+    "username_required": "Please enter a username",
+    "username_too_short": "Your username is too short (at least 3 characters)"
 }

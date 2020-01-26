@@ -8,7 +8,8 @@ import de from '../lang/de.json'
 import en from '../lang/en.json'
 
 window.Vue = Vue;
-Vue.use(VueRouter);
+Vue.use(VueRouter)
+
 Vue.use(Vuelidate);
 window.axios = axios;
 window.i18n = new VueI18n({

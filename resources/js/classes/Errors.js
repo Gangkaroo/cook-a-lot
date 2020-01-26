@@ -31,6 +31,18 @@ export default class Errors {
 
     // Record new errors as received from the server
     record(errors) {
-        this.errors = errors;
+        if (typeof errors === 'object') {
+            this.errors = errors;
+        } else {
+            this.errors = {};
+        }
+    }
+
+    // Set a single error
+    set(field, message) {
+        if (!Array.isArray(this.errors[field])) {
+            this.errors[field] = [];
+        }
+        this.errors[field].push(message);
     }
 }

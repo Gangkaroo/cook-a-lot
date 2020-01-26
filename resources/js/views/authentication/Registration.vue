@@ -4,50 +4,8 @@
 
         <modal v-if="modalIsActive" @close="hideRegistrationModal()" name="registration-modal">
             <div slot="header">{{$t('sign_up')}}</div>
-            <form>
-                <div class="field">
-                    <label class="label" for="username">{{$t('username')}}</label>
-                    <div class="control has-icons-left">
-                        <input type="text" ref="usernameInput" id="username" class="input"
-                               :placeholder="$t('username_placeholder')" v-model="form.username">
-                        <span class="icon is-small is-left">
-                            <i class="material-icons md-18">
-                                person
-                            </i>
-                        </span>
-                        <span class="help is-danger" v-if="form.errors.has('username')"
-                              v-text="form.errors.get('username')"></span>
-                    </div>
-                </div>
-                <div class="field">
-                    <label class="label" for="email">{{$t('email')}}</label>
-                    <div class="control has-icons-left">
-                        <input type="text" ref="emailInput" id="email" class="input"
-                               :placeholder="$t('email_placeholder')" v-model="form.email">
-                        <span class="icon is-small is-left">
-                            <i class="material-icons md-18">
-                                email
-                            </i>
-                        </span>
-                        <span class="help is-danger" v-if="form.errors.has('email')"
-                              v-text="form.errors.get('email')"></span>
-                    </div>
-                </div>
-                <div class="field">
-                    <label class="label" for="password">{{$t('password')}}</label>
-                    <div class="control has-icons-left">
-                        <input type="password" id="password" class="input" :placeholder="$t('password_placeholder')"
-                               v-model="form.password">
-                        <span class="icon is-small is-left">
-                            <i class="material-icons md-18">
-                                lock
-                            </i>
-                        </span>
-                        <span class="help is-danger" v-if="form.errors.has('password')"
-                              v-text="form.errors.get('password')"></span>
-                    </div>
-                </div>
-            </form>
+            <base-form :fields="fields" :url="url" :event-bus="eventBus">
+            </base-form>
             <div slot="footer">
                 <a class="button is-primary" @click="register()">OK</a>
                 <a class="button is-light" @click="hideRegistrationModal()">{{$t('cancel')}}</a>
@@ -57,18 +15,74 @@
 </template>
 
 <script>
-    import Form from '../../classes/Form';
+    import { required, alphaNum, minLength, email, sameAs } from 'vuelidate/lib/validators';
 
     export default {
         name: "Registration.vue",
         data: function() {
             return {
                 modalIsActive: false,
-                form: new Form({
-                    username: '',
-                    email: '',
-                    password: ''
-                })
+                eventBus: new Vue(),
+                fields: [
+                    {
+                        name: 'username',
+                        label: this.$t('username'),
+                        placeholder: this.$t('username_placeholder'),
+                        value: '',
+                        type: 'input',
+                        icon: 'person',
+                        validation: {
+                            required,
+                            alphaNum,
+                            minLength: minLength(3)
+                        },
+                        errorMessages: {
+                            required: this.$t('username_required'),
+                            alphaNum: this.$t('username_format_error'),
+                            minLength: this.$t('username_too_short')
+                        }
+                    },
+                    {
+                        name: 'email',
+                        label: this.$t('email'),
+                        placeholder: this.$t('email_placeholder'),
+                        value: '',
+                        type: 'input',
+                        icon: 'email',
+                        validation: {
+                            required,
+                            email
+                        },
+                        errorMessages: {
+                            required: this.$t('email_required'),
+                            email: this.$t('email_format_error')
+                        }
+                    },
+                    {
+                        name: 'password',
+                        label: this.$t('password'),
+                        placeholder: this.$t('password_placeholder'),
+                        value: '',
+                        type: 'password',
+                        icon: 'lock',
+                        validation: {
+                            required,
+                            minLength: minLength(8)
+                        }
+                    },
+                    {
+                        name: 'password_repeat',
+                        label: this.$t('password_repeat'),
+                        placeholder: this.$t('password_repeat'),
+                        value: '',
+                        type: 'password',
+                        icon: 'lock',
+                        validation: {
+                            sameAsPassword: sameAs('password')
+                        }
+                    }
+                ],
+                url: '/register'
             }
         },
         methods: {
@@ -76,14 +90,14 @@
                 this.modalIsActive = false;
             },
             register: function() {
-                this.hideRegistrationModal();
-                this.form.post('/register');
+                this.eventBus.$emit('submitForm');
             },
             showRegistrationModal: function() {
                 this.modalIsActive = true;
-                // Set focus after the DOM has been updated
-                this.$nextTick(() => this.$refs.usernameInput.focus())
             }
+        },
+        mounted() {
+            this.eventBus.$on('submitSuccess', this.hideRegistrationModal);
         }
     }
 </script>

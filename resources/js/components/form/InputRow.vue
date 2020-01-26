@@ -1,7 +1,7 @@
 <template>
     <div class="field">
         <label class="label" :for="field.name">{{field.label}}</label>
-        <div class="control has-icons-left">
+        <div class="control has-icons-left has-icons-right">
             <input-field v-if="isInput" :name="field.name" :placeholder="field.placeholder" :type="field.type"
                          :icon-name="field.icon" :eventBus="eventBus">
 
@@ -25,7 +25,7 @@
                 required: true
             }
         },
-        data: function() {
+        data: () => {
             return {
                 hasError: false,
                 errorMessage: ''
@@ -46,18 +46,23 @@
             }
         },
         methods: {
+            checkIfHide: function(name) {
+                if (name === this.field.name) {
+                    this.hideError();
+                }
+            },
             hideError: function() {
                 this.hasError = false;
                 this.errorMessage = '';
             },
             // Mark form input as erronous
-            showError: function () {
+            showError: function(message) {
                 this.hasError = true;
-                this.errorMessage = 'an error occurred'
+                this.errorMessage = message
             }
         },
         mounted() {
-            console.log(this.field.name + 'Error');
+            this.eventBus.$on('fieldBlurred', this.checkIfHide);
             this.eventBus.$on(this.field.name + 'Error', this.showError)
         }
     }

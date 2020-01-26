@@ -2,7 +2,10 @@
     "by": "von",
     "cancel": "abbrechen",
     "dashboard": "Übersicht",
+    "default_input_error": "Unvollständige Eingabe",
     "email": "E-Mail",
+    "email_format_error": "Bitte geben Sie eine korrekte E-Mail Adresse ein",
+    "email_required": "Bitte geben Sie Ihre E-Mail Adresse ein",
     "email_placeholder": "Ihre E-Mail Adresse",
     "groups": "Gruppen",
     "log_in": "Anmelden",
@@ -11,10 +14,14 @@
     "pantry": "Vorratskammer",
     "password": "Passwort",
     "password_placeholder": "Ihr Password",
+    "password_repeat": "Passwort wiederholen",
     "recipes": "Rezepte",
     "shopping_lists": "Einkaufslisten",
     "sign_up": "Registrieren",
     "site_title": "Für begeistertes kochen",
     "username": "Benutzername",
-    "username_placeholder": "Ihr Benutzername"
+    "username_format_error": "Beim Benutzernamen sind nur Buchstaben und Zahlen erlaubt",
+    "username_placeholder": "Ihr Benutzername",
+    "username_required": "Bitte geben Sie einen Benutzernamen an",
+    "username_too_short": "Ihr Benutzername ist zu kurz (Mindestens 3 Zeichen)"
 }

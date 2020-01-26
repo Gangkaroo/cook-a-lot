@@ -17,6 +17,8 @@
 </template>
 
 <script>
+    import { required, minLength, email } from 'vuelidate/lib/validators'
+
     export default {
         name: "Login.vue",
         data: function() {
@@ -31,7 +33,15 @@
                         placeholder: this.$t('username_placeholder'),
                         value: '',
                         type: 'input',
-                        icon: 'person'
+                        icon: 'person',
+                        validation: {
+                            required,
+                            email
+                        },
+                        errorMessages: {
+                            required: this.$t('email_required'),
+                            email: this.$t('email_format_error')
+                        }
                     },
                     {
                         name: 'password',
@@ -39,7 +49,11 @@
                         placeholder: this.$t('password_placeholder'),
                         value: '',
                         type: 'password',
-                        icon: 'lock'
+                        icon: 'lock',
+                        validation: {
+                            required,
+                            minLength: minLength(8)
+                        }
                     }
                 ],
                 url: '/login'

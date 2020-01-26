@@ -16,7 +16,7 @@
             fields: {
                 type: Array,
                 required: true,
-                validator: function(fields) {
+                validator: (fields) => {
                     return fields.length;
                 }
             },
@@ -25,7 +25,7 @@
                 required: true
             }
         },
-        data: function() {
+        data: () => {
             return {
                 form: null
             }
@@ -45,13 +45,35 @@
             }
         },
         methods: {
+            // Return the validation criteria and messages of a field if they exist
+            getValidation: function(name) {
+                let hasError = false;
+                let validation = [{}, {}];
+                this.$props.fields.forEach(function(field) {
+                    if (hasError) {
+                        return;
+                    }
+                    if (field.name === name && typeof field.validation === 'object') {
+                        let messages = {};
+                        if (typeof field.errorMessages === 'object' && Object.keys(field.errorMessages).length) {
+                            messages = field.errorMessages;
+                        }
+                        validation = [field.validation, messages];
+                        hasError = true;
+                    }
+                });
+                return validation;
+            },
             // Submit form
             submit: function() {
+                if (!this.validateForm()) {
+                    return;
+                }
                 this.form.post(this.url)
-                    .then(function(response) {
+                    .then(function() {
                         this.eventBus.$emit('submitSuccess');
                     }.bind(this))
-                    .catch(function(errors) {
+                    .catch(function() {
                         if (this.form.errors.any()) {
                             for (let errorName in this.form.errors.errors) {
                                 this.eventBus.$emit(errorName + 'Error');
@@ -63,6 +85,43 @@
             // Update the model in the form
             updateModel: function(field) {
                 this.form[field.name] = field.value;
+            },
+            // Check if all input fields are valid
+            validateForm: function() {
+                if (this.$v.$invalid) {
+                    this.$props.fields.forEach(function(field) {
+                        if (!this.validateInput(field.name)) {
+                            return false;
+                        }
+                    }.bind(this));
+                    return false;
+                }
+
+                return true;
+            },
+            // Validate a single input after blurring
+            validateInput: function(name) {
+                if (this.$v.form[name].$invalid) {
+                    this.form.errors[name] = [];
+                    const [validations, messages] = this.getValidation(name);
+                    let message = '';
+                    Object.keys(validations).forEach(function (validation) {
+                        if (this.$v.form[name][validation] === false) {
+                            if (typeof messages[validation] === 'string') {
+                                message = messages[validation]
+                            } else {
+                                message = this.$t('default_input_error');
+                            }
+                        }
+                    }.bind(this));
+                    this.form.errors.set(name, message);
+                    console.log(name + "Error");
+                    this.eventBus.$emit(name + 'Error', message);
+
+                    return false;
+                }
+
+                return true;
             }
         },
         // Focus first field in the form after mounting
@@ -70,7 +129,17 @@
             this.form = new Form(this.formData);
             this.eventBus.$on('submitForm', this.submit);
             this.eventBus.$on('inputUpdate', this.updateModel);
-            //this.$nextTick(() => this.$refs[this.firstFieldName + 'Input'].focus());
+            this.eventBus.$on('fieldBlurred', this.validateInput);
+        },
+        // Dynamically initialize the validations based on validation objects of the input
+        validations() {
+            let validations = {form: {}};
+            this.$props.fields.forEach(field => {
+                if (typeof field.validation === 'object' && Object.keys(field.validation)) {
+                    validations.form[field.name] = field.validation;
+                }
+            });
+            return validations;
         }
     }
 </script>

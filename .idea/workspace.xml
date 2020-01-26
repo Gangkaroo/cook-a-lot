@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2fb2260-a307-4677-9693-ae13969d8a7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/components/form/BaseForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SPA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SPA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="e2fb2260-a307-4677-9693-ae13969d8a7b" name="Default Changelist" comment="Recompile hardcoded form into various form components">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/InputField.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/classes/Errors.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/classes/Errors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/form/InputField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/InputField.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/form/InputRow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/InputRow.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/views/authentication/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/authentication/Login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/views/authentication/Registration.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/authentication/Registration.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/de.json" afterDir="false" />
@@ -287,7 +286,9 @@
       <workItem from="1577888479369" duration="2383000" />
       <workItem from="1578248129873" duration="2116000" />
       <workItem from="1578418796802" duration="605000" />
-      <workItem from="1579365917935" duration="21236000" />
+      <workItem from="1579365917935" duration="22155000" />
+      <workItem from="1579621958865" duration="1773000" />
+      <workItem from="1579963597122" duration="27759000" />
     </task>
     <task id="LOCAL-00001" summary="Added new form handling classes">
       <created>1556775731900</created>
@@ -345,7 +346,21 @@
       <option name="project" value="LOCAL" />
       <updated>1577802796281</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Recompile hardcoded form into various form components">
+      <created>1579462945029</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1579462945029</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Recompile hardcoded form into various form components">
+      <created>1579462956514</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1579462956514</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,13 +389,14 @@
     <MESSAGE value="Improved modal component and added simple login modal that needs completion" />
     <MESSAGE value="Improve login modal" />
     <MESSAGE value="Add first draft of registration modal&#10;Updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add first draft of registration modal&#10;Updates" />
+    <MESSAGE value="Recompile hardcoded form into various form components" />
+    <option name="LAST_COMMIT_MESSAGE" value="Recompile hardcoded form into various form components" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2518" y="119" key="CommitChangelistDialog2" timestamp="1577802792492">
+    <state x="2518" y="119" key="CommitChangelistDialog2" timestamp="1579462991491">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2518" y="119" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1577802792492" />
+    <state x="2518" y="119" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579462991491" />
     <state x="2660" y="277" key="FileChooserDialogImpl" timestamp="1575964269505">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -389,10 +405,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2592" y="238" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1577802840600" />
-    <state x="2472" y="257" key="Vcs.Push.Dialog.v2" timestamp="1579462871854">
+    <state x="2472" y="257" key="Vcs.Push.Dialog.v2" timestamp="1579463043435">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579462871854" />
+    <state x="2472" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579463043435" />
     <state x="2691" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577802884770">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -401,9 +417,9 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2587" y="276" width="586" height="488" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579456216632" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578248306060">
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1580065768833">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1578248306060" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580065768833" />
   </component>
 </project>
