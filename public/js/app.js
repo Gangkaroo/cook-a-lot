@@ -1995,7 +1995,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     // An error has been recorded
     setError: function setError() {
-      console.log(this.name + 'Error fired!');
       this.hasError = true;
     },
     // Submit the form
@@ -2261,8 +2260,10 @@ __webpack_require__.r(__webpack_exports__);
         type: 'password',
         icon: 'lock',
         validation: {
-          required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
-          minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["minLength"])(8)
+          required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"]
+        },
+        errorMessages: {
+          required: this.$t('password_required')
         }
       }],
       url: '/login'
@@ -2324,7 +2325,7 @@ __webpack_require__.r(__webpack_exports__);
       modalIsActive: false,
       eventBus: new Vue(),
       fields: [{
-        name: 'username',
+        name: 'name',
         label: this.$t('username'),
         placeholder: this.$t('username_placeholder'),
         value: '',
@@ -2365,16 +2366,25 @@ __webpack_require__.r(__webpack_exports__);
         validation: {
           required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
           minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["minLength"])(8)
+        },
+        errorMessages: {
+          required: this.$t('password_required'),
+          minLength: this.$t('password_format_error')
         }
       }, {
-        name: 'password_repeat',
+        name: 'password_confirmation',
         label: this.$t('password_repeat'),
         placeholder: this.$t('password_repeat'),
         value: '',
         type: 'password',
         icon: 'lock',
         validation: {
+          required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
           sameAsPassword: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["sameAs"])('password')
+        },
+        errorMessages: {
+          required: this.$t('password_repeat_required'),
+          sameAsPassword: this.$t('password_not_matching')
         }
       }],
       url: '/register'
@@ -26917,10 +26927,10 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************!*\
   !*** ./resources/lang/de.json ***!
   \********************************/
-/*! exports provided: by, cancel, dashboard, default_input_error, email, email_format_error, email_required, email_placeholder, groups, log_in, menus, notebook, pantry, password, password_placeholder, password_repeat, recipes, shopping_lists, sign_up, site_title, username, username_format_error, username_placeholder, username_required, username_too_short, default */
+/*! exports provided: by, cancel, dashboard, default_input_error, email, email_format_error, email_required, email_placeholder, groups, log_in, menus, notebook, pantry, password, password_format_error, password_not_matching, password_placeholder, password_repeat, password_repeat_required, password_required, recipes, shopping_lists, sign_up, site_title, username, username_format_error, username_placeholder, username_required, username_too_short, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"by\":\"von\",\"cancel\":\"abbrechen\",\"dashboard\":\"Übersicht\",\"default_input_error\":\"Unvollständige Eingabe\",\"email\":\"E-Mail\",\"email_format_error\":\"Bitte geben Sie eine korrekte E-Mail Adresse ein\",\"email_required\":\"Bitte geben Sie Ihre E-Mail Adresse ein\",\"email_placeholder\":\"Ihre E-Mail Adresse\",\"groups\":\"Gruppen\",\"log_in\":\"Anmelden\",\"menus\":\"Menüs\",\"notebook\":\"Notizbuch\",\"pantry\":\"Vorratskammer\",\"password\":\"Passwort\",\"password_placeholder\":\"Ihr Password\",\"password_repeat\":\"Passwort wiederholen\",\"recipes\":\"Rezepte\",\"shopping_lists\":\"Einkaufslisten\",\"sign_up\":\"Registrieren\",\"site_title\":\"Für begeistertes kochen\",\"username\":\"Benutzername\",\"username_format_error\":\"Beim Benutzernamen sind nur Buchstaben und Zahlen erlaubt\",\"username_placeholder\":\"Ihr Benutzername\",\"username_required\":\"Bitte geben Sie einen Benutzernamen an\",\"username_too_short\":\"Ihr Benutzername ist zu kurz (Mindestens 3 Zeichen)\"}");
+module.exports = JSON.parse("{\"by\":\"von\",\"cancel\":\"Abbrechen\",\"dashboard\":\"Übersicht\",\"default_input_error\":\"Unvollständige Eingabe\",\"email\":\"E-Mail\",\"email_format_error\":\"Bitte geben Sie eine korrekte E-Mail Adresse ein\",\"email_required\":\"Bitte geben Sie eine gültige E-Mail Adresse ein\",\"email_placeholder\":\"Ihre E-Mail Adresse\",\"groups\":\"Gruppen\",\"log_in\":\"Anmelden\",\"menus\":\"Menüs\",\"notebook\":\"Notizbuch\",\"pantry\":\"Vorratskammer\",\"password\":\"Passwort\",\"password_format_error\":\"Ihr Passwort ist zu kurz (mindestens 8 Zeichen)\",\"password_not_matching\":\"Die Passwörter sind verschieden\",\"password_placeholder\":\"Ihr Passwort\",\"password_repeat\":\"Passwort wiederholen\",\"password_repeat_required\":\"Bitte wiederholen Sie Ihr Passwort\",\"password_required\":\"Bitte geben Sie ein Passwort ein\",\"recipes\":\"Rezepte\",\"shopping_lists\":\"Einkaufslisten\",\"sign_up\":\"Registrieren\",\"site_title\":\"Für begeistertes kochen\",\"username\":\"Benutzername\",\"username_format_error\":\"Beim Benutzernamen sind nur Buchstaben und Zahlen erlaubt\",\"username_placeholder\":\"Ihr Benutzername\",\"username_required\":\"Bitte geben Sie einen Benutzernamen an\",\"username_too_short\":\"Ihr Benutzername ist zu kurz (Mindestens 3 Zeichen)\"}");
 
 /***/ }),
 
@@ -26928,10 +26938,10 @@ module.exports = JSON.parse("{\"by\":\"von\",\"cancel\":\"abbrechen\",\"dashboar
 /*!********************************!*\
   !*** ./resources/lang/en.json ***!
   \********************************/
-/*! exports provided: by, cancel, dashboard, default_input_error, email, email_format_error, email_required, email_placeholder, groups, log_in, menus, notebook, pantry, password, password_placeholder, recipes, shopping_lists, sign_up, site_title, username, username_format_error, username_placeholder, username_required, username_too_short, default */
+/*! exports provided: by, cancel, dashboard, default_input_error, email, email_format_error, email_required, email_placeholder, groups, log_in, menus, notebook, pantry, password, password_format_error, password_not_matching, password_placeholder, password_repeat, password_repeat_required, password_required, recipes, shopping_lists, sign_up, site_title, username, username_format_error, username_placeholder, username_required, username_too_short, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"by\":\"by\",\"cancel\":\"cancel\",\"dashboard\":\"Dashboard\",\"default_input_error\":\"Incomplete input\",\"email\":\"E-mail\",\"email_format_error\":\"Please enter a correct e-mail address\",\"email_required\":\"Please enter your e-mail address\",\"email_placeholder\":\"Your e-mail\",\"groups\":\"Groups\",\"log_in\":\"Log in\",\"menus\":\"Menus\",\"notebook\":\"Notebook\",\"pantry\":\"Pantry\",\"password\":\"Password\",\"password_placeholder\":\"Your password\",\"recipes\":\"Recipes\",\"shopping_lists\":\"Shopping lists\",\"sign_up\":\"Sign up\",\"site_title\":\"For the avid cook\",\"username\":\"Username\",\"username_format_error\":\"Only alphabetical and numerical characters are allowed\",\"username_placeholder\":\"Your username\",\"username_required\":\"Please enter a username\",\"username_too_short\":\"Your username is too short (at least 3 characters)\"}");
+module.exports = JSON.parse("{\"by\":\"by\",\"cancel\":\"cancel\",\"dashboard\":\"Dashboard\",\"default_input_error\":\"Incomplete input\",\"email\":\"E-mail\",\"email_format_error\":\"Please enter a correct e-mail address\",\"email_required\":\"Please enter a valid e-mail address\",\"email_placeholder\":\"Your e-mail\",\"groups\":\"Groups\",\"log_in\":\"Log in\",\"menus\":\"Menus\",\"notebook\":\"Notebook\",\"pantry\":\"Pantry\",\"password\":\"Password\",\"password_format_error\":\"Your password is too short (at least 8 characters)\",\"password_not_matching\":\"Passwords are not matching\",\"password_placeholder\":\"Your password\",\"password_repeat\":\"Repeat password\",\"password_repeat_required\":\"Please repeat your password\",\"password_required\":\"Please enter a password\",\"recipes\":\"Recipes\",\"shopping_lists\":\"Shopping lists\",\"sign_up\":\"Sign up\",\"site_title\":\"For the avid cook\",\"username\":\"Username\",\"username_format_error\":\"Only alphabetical and numerical characters are allowed\",\"username_placeholder\":\"Your username\",\"username_required\":\"Please enter a username\",\"username_too_short\":\"Your username is too short (at least 3 characters)\"}");
 
 /***/ }),
 

@@ -58,7 +58,6 @@
             },
             // An error has been recorded
             setError: function() {
-                console.log(this.name + 'Error fired!');
                 this.hasError = true;
             },
             // Submit the form

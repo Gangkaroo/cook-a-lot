@@ -25,7 +25,7 @@
                 eventBus: new Vue(),
                 fields: [
                     {
-                        name: 'username',
+                        name: 'name',
                         label: this.$t('username'),
                         placeholder: this.$t('username_placeholder'),
                         value: '',
@@ -68,17 +68,26 @@
                         validation: {
                             required,
                             minLength: minLength(8)
+                        },
+                        errorMessages: {
+                            required: this.$t('password_required'),
+                            minLength: this.$t('password_format_error')
                         }
                     },
                     {
-                        name: 'password_repeat',
+                        name: 'password_confirmation',
                         label: this.$t('password_repeat'),
                         placeholder: this.$t('password_repeat'),
                         value: '',
                         type: 'password',
                         icon: 'lock',
                         validation: {
+                            required,
                             sameAsPassword: sameAs('password')
+                        },
+                        errorMessages: {
+                            required: this.$t('password_repeat_required'),
+                            sameAsPassword: this.$t('password_not_matching')
                         }
                     }
                 ],

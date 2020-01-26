@@ -51,8 +51,10 @@
                         type: 'password',
                         icon: 'lock',
                         validation: {
-                            required,
-                            minLength: minLength(8)
+                            required
+                        },
+                        errorMessages: {
+                            required: this.$t('password_required')
                         }
                     }
                 ],
