@@ -3030,7 +3030,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
       if (this.submitHandler) {
         this.submitHandler(this.form.data());
-        this.form.reset();
         return;
       } // Use the default submit method
 
@@ -3421,15 +3420,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Login.vue",
   data: function data() {
     return {
-      requesting: false,
+      eventBus: new Vue(),
+      hasError: false,
       loggedIn: false,
       modalIsActive: false,
-      eventBus: new Vue(),
+      requesting: false,
       fields: [{
         name: 'email',
         label: this.$t('username'),
@@ -3467,21 +3468,21 @@ __webpack_require__.r(__webpack_exports__);
       this.modalIsActive = false;
     },
     // Called after successfully logging in
-    loginSuccess: function loginSuccess(response) {
+    loginSuccess: function loginSuccess() {
       this.requesting = false;
       this.loggedIn = true;
       this.hideLoginModal();
-      console.log(response, this.$auth.check());
     },
     // Submit the form
     login: function login() {
       this.eventBus.$emit('submitForm');
     },
-    // Submit the form
-    loginError: function loginError(response) {
+    // Show the error message
+    loginError: function loginError() {
+      this.hasError = true;
       this.requesting = false;
-      console.log(response);
     },
+    // Log out the current user
     logout: function logout() {
       this.$auth.logout({
         makeRequest: true
@@ -3494,6 +3495,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     // Use the auth function to submit the login data
     submitLogin: function submitLogin(loginData) {
+      this.hasError = false;
       this.requesting = true;
       this.$auth.login({
         params: {
@@ -3541,13 +3543,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Registration.vue",
   data: function data() {
     return {
-      modalIsActive: false,
       eventBus: new Vue(),
+      hasError: false,
+      modalIsActive: false,
+      requesting: false,
       fields: [{
         name: 'name',
         label: this.$t('username'),
@@ -3620,8 +3625,35 @@ __webpack_require__.r(__webpack_exports__);
     register: function register() {
       this.eventBus.$emit('submitForm');
     },
+    // Show the error message
+    registrationError: function registrationError() {
+      this.hasError = true;
+      this.requesting = false;
+    },
+    // Called after successfully logging in
+    registrationSuccess: function registrationSuccess() {
+      this.requesting = false;
+      this.loggedIn = true;
+      this.hideRegistrationModal();
+    },
     showRegistrationModal: function showRegistrationModal() {
       this.modalIsActive = true;
+    },
+    submitRegistration: function submitRegistration(registrationData) {
+      this.hasError = false;
+      this.requesting = true;
+      this.$auth.register({
+        params: {
+          email: registrationData.email,
+          name: registrationData.name,
+          password: registrationData.password,
+          password_confirmation: registrationData.password_confirmation
+        },
+        success: this.registrationSuccess.bind(this),
+        error: this.registrationError.bind(this),
+        autoLogin: true,
+        rememberMe: true
+      });
     }
   },
   mounted: function mounted() {
@@ -9982,7 +10014,7 @@ var render = function() {
                 }
               }
             },
-            [_c("strong", [_vm._v(_vm._s(_vm.$t("log_in")))])]
+            [_c("strong", [_vm._v(_vm._s(_vm.$t("login")))])]
           )
         : _vm._e(),
       _vm._v(" "),
@@ -9997,7 +10029,7 @@ var render = function() {
                 }
               }
             },
-            [_c("strong", [_vm._v(_vm._s(_vm.$t("log_out")))])]
+            [_c("strong", [_vm._v(_vm._s(_vm.$t("logout")))])]
           )
         : _vm._e(),
       _vm._v(" "),
@@ -10014,7 +10046,7 @@ var render = function() {
             },
             [
               _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                _vm._v(_vm._s(_vm.$t("log_in")))
+                _vm._v(_vm._s(_vm.$t("login")))
               ]),
               _vm._v(" "),
               _c("base-form", {
@@ -10024,6 +10056,22 @@ var render = function() {
                   submitHandler: this.submitLogin.bind(this)
                 }
               }),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.hasError,
+                      expression: "hasError"
+                    }
+                  ],
+                  staticClass: "help is-danger"
+                },
+                [_vm._v(_vm._s(_vm.$t("login_error")))]
+              ),
               _vm._v(" "),
               _c("div", { attrs: { slot: "footer" }, slot: "footer" }, [
                 _c(
@@ -10119,16 +10167,33 @@ var render = function() {
                   _c("base-form", {
                     attrs: {
                       fields: _vm.fields,
-                      url: _vm.url,
-                      "event-bus": _vm.eventBus
+                      "event-bus": _vm.eventBus,
+                      submitHandler: this.submitRegistration.bind(this)
                     }
                   }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.hasError,
+                          expression: "hasError"
+                        }
+                      ],
+                      staticClass: "help is-danger"
+                    },
+                    [_vm._v(_vm._s(_vm.$t("registration_error")))]
+                  ),
                   _vm._v(" "),
                   _c("div", { attrs: { slot: "footer" }, slot: "footer" }, [
                     _c(
                       "a",
                       {
                         staticClass: "button is-primary",
+                        class: { "is-loading": _vm.requesting },
                         on: {
                           click: function($event) {
                             return _vm.register()
@@ -28193,10 +28258,10 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************!*\
   !*** ./resources/lang/de.json ***!
   \********************************/
-/*! exports provided: by, cancel, dashboard, default_input_error, email, email_format_error, email_required, email_placeholder, groups, log_in, log_out, menus, notebook, pantry, password, password_format_error, password_not_matching, password_placeholder, password_repeat, password_repeat_required, password_required, recipes, shopping_lists, sign_up, site_title, username, username_format_error, username_placeholder, username_required, username_too_short, default */
+/*! exports provided: by, cancel, dashboard, default_input_error, email, email_format_error, email_required, email_placeholder, groups, login, login_error, logout, menus, notebook, pantry, password, password_format_error, password_not_matching, password_placeholder, password_repeat, password_repeat_required, password_required, recipes, registration_error, shopping_lists, sign_up, site_title, username, username_format_error, username_placeholder, username_required, username_too_short, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"by\":\"von\",\"cancel\":\"Abbrechen\",\"dashboard\":\"Übersicht\",\"default_input_error\":\"Unvollständige Eingabe\",\"email\":\"E-Mail\",\"email_format_error\":\"Bitte geben Sie eine korrekte E-Mail Adresse ein\",\"email_required\":\"Bitte geben Sie eine gültige E-Mail Adresse ein\",\"email_placeholder\":\"Ihre E-Mail Adresse\",\"groups\":\"Gruppen\",\"log_in\":\"Anmelden\",\"log_out\":\"Abmelden\",\"menus\":\"Menüs\",\"notebook\":\"Notizbuch\",\"pantry\":\"Vorratskammer\",\"password\":\"Passwort\",\"password_format_error\":\"Ihr Passwort ist zu kurz (mindestens 8 Zeichen)\",\"password_not_matching\":\"Die Passwörter sind verschieden\",\"password_placeholder\":\"Ihr Passwort\",\"password_repeat\":\"Passwort wiederholen\",\"password_repeat_required\":\"Bitte wiederholen Sie Ihr Passwort\",\"password_required\":\"Bitte geben Sie ein Passwort ein\",\"recipes\":\"Rezepte\",\"shopping_lists\":\"Einkaufslisten\",\"sign_up\":\"Registrieren\",\"site_title\":\"Für begeistertes kochen\",\"username\":\"Benutzername\",\"username_format_error\":\"Beim Benutzernamen sind nur Buchstaben und Zahlen erlaubt\",\"username_placeholder\":\"Ihr Benutzername\",\"username_required\":\"Bitte geben Sie einen Benutzernamen an\",\"username_too_short\":\"Ihr Benutzername ist zu kurz (Mindestens 3 Zeichen)\"}");
+module.exports = JSON.parse("{\"by\":\"von\",\"cancel\":\"Abbrechen\",\"dashboard\":\"Übersicht\",\"default_input_error\":\"Unvollständige Eingabe\",\"email\":\"E-Mail\",\"email_format_error\":\"Bitte geben Sie eine korrekte E-Mail Adresse ein\",\"email_required\":\"Bitte geben Sie eine gültige E-Mail Adresse ein\",\"email_placeholder\":\"Ihre E-Mail Adresse\",\"groups\":\"Gruppen\",\"login\":\"Anmelden\",\"login_error\":\"Anmelden fehlgeschlagen, bitte versuchen Sie es erneut\",\"logout\":\"Abmelden\",\"menus\":\"Menüs\",\"notebook\":\"Notizbuch\",\"pantry\":\"Vorratskammer\",\"password\":\"Passwort\",\"password_format_error\":\"Ihr Passwort ist zu kurz (mindestens 8 Zeichen)\",\"password_not_matching\":\"Die Passwörter sind verschieden\",\"password_placeholder\":\"Ihr Passwort\",\"password_repeat\":\"Passwort wiederholen\",\"password_repeat_required\":\"Bitte wiederholen Sie Ihr Passwort\",\"password_required\":\"Bitte geben Sie ein Passwort ein\",\"recipes\":\"Rezepte\",\"registration_error\":\"Beim Speichern der Benutzerdaten ist ein Fehler aufgetreten\",\"shopping_lists\":\"Einkaufslisten\",\"sign_up\":\"Registrieren\",\"site_title\":\"Für begeistertes kochen\",\"username\":\"Benutzername\",\"username_format_error\":\"Beim Benutzernamen sind nur Buchstaben und Zahlen erlaubt\",\"username_placeholder\":\"Ihr Benutzername\",\"username_required\":\"Bitte geben Sie einen Benutzernamen an\",\"username_too_short\":\"Ihr Benutzername ist zu kurz (Mindestens 3 Zeichen)\"}");
 
 /***/ }),
 
@@ -28204,10 +28269,10 @@ module.exports = JSON.parse("{\"by\":\"von\",\"cancel\":\"Abbrechen\",\"dashboar
 /*!********************************!*\
   !*** ./resources/lang/en.json ***!
   \********************************/
-/*! exports provided: by, cancel, dashboard, default_input_error, email, email_format_error, email_required, email_placeholder, groups, log_in, log_out, menus, notebook, pantry, password, password_format_error, password_not_matching, password_placeholder, password_repeat, password_repeat_required, password_required, recipes, shopping_lists, sign_up, site_title, username, username_format_error, username_placeholder, username_required, username_too_short, default */
+/*! exports provided: by, cancel, dashboard, default_input_error, email, email_format_error, email_required, email_placeholder, groups, login, login_error, logout, menus, notebook, pantry, password, password_format_error, password_not_matching, password_placeholder, password_repeat, password_repeat_required, password_required, recipes, registration_error, shopping_lists, sign_up, site_title, username, username_format_error, username_placeholder, username_required, username_too_short, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"by\":\"by\",\"cancel\":\"cancel\",\"dashboard\":\"Dashboard\",\"default_input_error\":\"Incomplete input\",\"email\":\"E-mail\",\"email_format_error\":\"Please enter a correct e-mail address\",\"email_required\":\"Please enter a valid e-mail address\",\"email_placeholder\":\"Your e-mail\",\"groups\":\"Groups\",\"log_in\":\"Log in\",\"log_out\":\"Log out\",\"menus\":\"Menus\",\"notebook\":\"Notebook\",\"pantry\":\"Pantry\",\"password\":\"Password\",\"password_format_error\":\"Your password is too short (at least 8 characters)\",\"password_not_matching\":\"Passwords are not matching\",\"password_placeholder\":\"Your password\",\"password_repeat\":\"Repeat password\",\"password_repeat_required\":\"Please repeat your password\",\"password_required\":\"Please enter a password\",\"recipes\":\"Recipes\",\"shopping_lists\":\"Shopping lists\",\"sign_up\":\"Sign up\",\"site_title\":\"For the avid cook\",\"username\":\"Username\",\"username_format_error\":\"Only alphabetical and numerical characters are allowed\",\"username_placeholder\":\"Your username\",\"username_required\":\"Please enter a username\",\"username_too_short\":\"Your username is too short (at least 3 characters)\"}");
+module.exports = JSON.parse("{\"by\":\"by\",\"cancel\":\"cancel\",\"dashboard\":\"Dashboard\",\"default_input_error\":\"Incomplete input\",\"email\":\"E-mail\",\"email_format_error\":\"Please enter a correct e-mail address\",\"email_required\":\"Please enter a valid e-mail address\",\"email_placeholder\":\"Your e-mail\",\"groups\":\"Groups\",\"login\":\"Log in\",\"login_error\":\"Log in failed, please try again\",\"logout\":\"Log out\",\"menus\":\"Menus\",\"notebook\":\"Notebook\",\"pantry\":\"Pantry\",\"password\":\"Password\",\"password_format_error\":\"Your password is too short (at least 8 characters)\",\"password_not_matching\":\"Passwords are not matching\",\"password_placeholder\":\"Your password\",\"password_repeat\":\"Repeat password\",\"password_repeat_required\":\"Please repeat your password\",\"password_required\":\"Please enter a password\",\"recipes\":\"Recipes\",\"registration_error\":\"An error occurred while registering your account\",\"shopping_lists\":\"Shopping lists\",\"sign_up\":\"Sign up\",\"site_title\":\"For the avid cook\",\"username\":\"Username\",\"username_format_error\":\"Only alphabetical and numerical characters are allowed\",\"username_placeholder\":\"Your username\",\"username_required\":\"Please enter a username\",\"username_too_short\":\"Your username is too short (at least 3 characters)\"}");
 
 /***/ }),
 

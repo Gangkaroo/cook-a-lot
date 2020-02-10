@@ -1,16 +1,17 @@
 <template>
     <div>
         <a class="button is-primary" @click="showLoginModal()" v-if="!loggedIn">
-            <strong>{{$t('log_in')}}</strong>
+            <strong>{{$t('login')}}</strong>
         </a>
         <a class="button is-light" @click="logout()" v-if="loggedIn">
-            <strong>{{$t('log_out')}}</strong>
+            <strong>{{$t('logout')}}</strong>
         </a>
 
         <modal v-if="modalIsActive" @close="hideLoginModal()" name="login-modal">
-            <div slot="header">{{$t('log_in')}}</div>
+            <div slot="header">{{$t('login')}}</div>
             <base-form :fields="fields" :event-bus="eventBus" :submitHandler="this.submitLogin.bind(this)">
             </base-form>
+            <div v-show="hasError" class="help is-danger">{{$t('login_error')}}</div>
             <div slot="footer">
                 <a class="button is-primary" @click="login()" :class="{ 'is-loading': requesting }">OK</a>
                 <a class="button is-light" @click="hideLoginModal()">{{$t('cancel')}}</a>
@@ -26,10 +27,11 @@
         name: "Login.vue",
         data: function() {
             return {
-                requesting: false,
+                eventBus: new Vue(),
+                hasError: false,
                 loggedIn: false,
                 modalIsActive: false,
-                eventBus: new Vue(),
+                requesting: false,
                 fields: [
                     {
                         name: 'email',
@@ -70,21 +72,21 @@
                 this.modalIsActive = false;
             },
             // Called after successfully logging in
-            loginSuccess: function(response) {
+            loginSuccess: function() {
                 this.requesting = false;
                 this.loggedIn = true;
                 this.hideLoginModal();
-                console.log(response, this.$auth.check());
             },
             // Submit the form
             login: function() {
                 this.eventBus.$emit('submitForm');
             },
-            // Submit the form
-            loginError: function(response) {
+            // Show the error message
+            loginError: function() {
+                this.hasError = true;
                 this.requesting = false;
-                console.log(response);
             },
+            // Log out the current user
             logout: function() {
                 this.$auth.logout({
                     makeRequest: true
@@ -97,6 +99,7 @@
             },
             // Use the auth function to submit the login data
             submitLogin: function(loginData) {
+                this.hasError = false;
                 this.requesting = true;
                 this.$auth.login({
                     params: {

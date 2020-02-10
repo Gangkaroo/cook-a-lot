@@ -74,7 +74,6 @@
                 // Check if there is a custom submit method
                 if (this.submitHandler) {
                     this.submitHandler(this.form.data());
-                    this.form.reset();
                     return;
                 }
 

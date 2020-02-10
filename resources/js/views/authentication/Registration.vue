@@ -4,10 +4,11 @@
 
         <modal v-if="modalIsActive" @close="hideRegistrationModal()" name="registration-modal">
             <div slot="header">{{$t('sign_up')}}</div>
-            <base-form :fields="fields" :url="url" :event-bus="eventBus">
+            <base-form :fields="fields" :event-bus="eventBus" :submitHandler="this.submitRegistration.bind(this)">
             </base-form>
+            <div v-show="hasError" class="help is-danger">{{$t('registration_error')}}</div>
             <div slot="footer">
-                <a class="button is-primary" @click="register()">OK</a>
+                <a class="button is-primary" @click="register()" :class="{ 'is-loading': requesting }">OK</a>
                 <a class="button is-light" @click="hideRegistrationModal()">{{$t('cancel')}}</a>
             </div>
         </modal>
@@ -21,8 +22,10 @@
         name: "Registration.vue",
         data: function() {
             return {
-                modalIsActive: false,
                 eventBus: new Vue(),
+                hasError: false,
+                modalIsActive: false,
+                requesting: false,
                 fields: [
                     {
                         name: 'name',
@@ -100,8 +103,35 @@
             register: function() {
                 this.eventBus.$emit('submitForm');
             },
+            // Show the error message
+            registrationError: function() {
+                this.hasError = true;
+                this.requesting = false;
+            },
+            // Called after successfully logging in
+            registrationSuccess: function() {
+                this.requesting = false;
+                this.loggedIn = true;
+                this.hideRegistrationModal();
+            },
             showRegistrationModal: function() {
                 this.modalIsActive = true;
+            },
+            submitRegistration: function(registrationData) {
+                this.hasError = false;
+                this.requesting = true;
+                this.$auth.register({
+                    params: {
+                        email: registrationData.email,
+                        name: registrationData.name,
+                        password: registrationData.password,
+                        password_confirmation: registrationData.password_confirmation
+                    },
+                    success: this.registrationSuccess.bind(this),
+                    error: this.registrationError.bind(this),
+                    autoLogin: true,
+                    rememberMe: true
+                });
             }
         },
         mounted() {
