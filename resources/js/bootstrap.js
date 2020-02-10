@@ -2,15 +2,27 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import axios from 'axios';
+import VueAxios from 'vue-axios';
 import VueI18n from 'vue-i18n';
 import Vuelidate from 'vuelidate';
 import de from '../lang/de.json'
 import en from '../lang/en.json'
+import router from "./routes";
 
 window.Vue = Vue;
-Vue.use(VueRouter)
-
+Vue.use(VueRouter);
+Vue.use(VueAxios, axios);
 Vue.use(Vuelidate);
+
+window.router = Vue.router = router;
+router.push('/');
+
+Vue.use(require('@websanova/vue-auth'), {
+    auth: require('@websanova/vue-auth/drivers/auth/bearer.js'),
+    http: require('@websanova/vue-auth/drivers/http/axios.1.x.js'),
+    router: require('@websanova/vue-auth/drivers/router/vue-router.2.x.js'),}
+);
+
 window.axios = axios;
 window.i18n = new VueI18n({
     locale: 'de',

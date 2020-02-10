@@ -54,6 +54,7 @@
                 // First set the error to false. If validation fails it will be set to true shortly after
                 this.hasError = false;
                 this.touched = true;
+                this.valueUpdated();
                 this.eventBus.$emit('fieldBlurred', this.name);
             },
             // An error has been recorded

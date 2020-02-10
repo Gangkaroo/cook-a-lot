@@ -14,8 +14,6 @@ import './bootstrap';
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import router from './routes';
-
 import LanguageSelect from './views/LanguageSelect.vue';
 import Modal from './components/Modal.vue';
 import BaseForm from './components/form/BaseForm.vue';
@@ -37,10 +35,6 @@ new Vue({
         Login,
         Registration
     },
-
     i18n,
-
     router
 });
-
-router.push('/');

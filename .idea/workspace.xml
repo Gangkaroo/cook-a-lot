@@ -2,13 +2,145 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2fb2260-a307-4677-9693-ae13969d8a7b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/SPA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SPA.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/aq.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/aq.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/bh.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/bh.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/bo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/bo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/fk.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/fk.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/gb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/gb.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ge.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ge.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/gt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/gt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ms.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ms.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/nc.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/nc.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ni.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/ni.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/np.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/np.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/nz.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/nz.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/pf.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/pf.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/sv.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/sv.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/tt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/tt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/vg.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/vg.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ag.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ag.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ai.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ai.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/aq.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/aq.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/as.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/as.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/aw.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/aw.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ax.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ax.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ba.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ba.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/bh.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/bh.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/bi.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/bi.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/bj.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/bj.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/bo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/bo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/bs.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/bs.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/bv.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/bv.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/by.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/by.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/cf.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/cf.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/cg.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/cg.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/cl.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/cl.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/cu.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/cu.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/cv.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/cv.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/cw.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/cw.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/cz.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/cz.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/dj.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/dj.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/dm.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/dm.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/do.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/do.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/eh.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/eh.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/et.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/et.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/fk.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/fk.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/fm.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/fm.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/fo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/fo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ge.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ge.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/gm.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/gm.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/gt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/gt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/hk.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/hk.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/il.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/il.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/im.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/im.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/io.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/io.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ir.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ir.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/is.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/is.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/je.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/je.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/jo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/jo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/jp.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/jp.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/kg.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/kg.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ki.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ki.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/km.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/km.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/kn.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/kn.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/kp.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/kp.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/kr.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/kr.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/kw.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/kw.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/la.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/la.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/lb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/lb.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/lr.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/lr.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ly.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ly.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/mp.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/mp.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ms.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ms.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/mz.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/mz.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/na.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/na.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/nc.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/nc.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ni.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ni.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/np.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/np.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/nr.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/nr.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/nu.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/nu.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/nz.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/nz.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/om.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/om.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/pa.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/pa.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/pf.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/pf.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/pk.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/pk.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/pn.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/pn.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/pr.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/pr.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ps.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ps.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/pw.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/pw.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/rs.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/rs.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/sa.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/sa.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/sb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/sb.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/sc.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/sc.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/sd.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/sd.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/se.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/se.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/sg.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/sg.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/si.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/si.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/so.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/so.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/sv.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/sv.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/sx.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/sx.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/sz.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/sz.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/tg.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/tg.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/tl.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/tl.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/tm.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/tm.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/tn.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/tn.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/tv.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/tv.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/tw.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/tw.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/tz.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/tz.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ug.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/ug.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/um.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/um.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/vg.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/vg.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/vn.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/vn.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/vu.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/vu.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/za.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/za.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/zm.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/zm.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/zw.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/zw.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/classes/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/classes/Form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/form/InputField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/InputField.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/views/authentication/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/authentication/Login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/views/authentication/Registration.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/authentication/Registration.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/de.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +150,7 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <executable />
+      <executable path="composer" />
     </execution>
   </component>
   <component name="DatabaseView">
@@ -152,6 +284,11 @@
       <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
       <path value="$PROJECT_DIR$/vendor/league/commonmark" />
       <path value="$PROJECT_DIR$/vendor/league/commonmark-ext-table" />
+      <path value="$PROJECT_DIR$/vendor/tymon/jwt-auth" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
     </include_path>
   </component>
   <component name="ProjectId" id="1RBg1KZl79WmiyideIA8qRZCuSy" />
@@ -162,6 +299,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -169,7 +307,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -274,7 +412,10 @@
       <workItem from="1578418796802" duration="605000" />
       <workItem from="1579365917935" duration="22155000" />
       <workItem from="1579621958865" duration="1773000" />
-      <workItem from="1579963597122" duration="29272000" />
+      <workItem from="1579963597122" duration="30533000" />
+      <workItem from="1580537542692" duration="5197000" />
+      <workItem from="1580714439431" duration="818000" />
+      <workItem from="1581251251496" duration="13401000" />
     </task>
     <task id="LOCAL-00001" summary="Added new form handling classes">
       <created>1556775731900</created>
@@ -353,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580068874926</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Small bugfixes, added additional error messages">
+      <created>1580070299381</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1580070299381</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,13 +532,18 @@
     <MESSAGE value="Add first draft of registration modal&#10;Updates" />
     <MESSAGE value="Recompile hardcoded form into various form components" />
     <MESSAGE value="Added general input validation functionality to form components" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added general input validation functionality to form components" />
+    <MESSAGE value="Small bugfixes, added additional error messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small bugfixes, added additional error messages" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2" timestamp="1580068872210">
+    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2" timestamp="1580070298092">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580068872210" />
+    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580070298092" />
+    <state x="2664" y="440" key="ComposerInitDialogKey" timestamp="1581256974618">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2664" y="440" key="ComposerInitDialogKey/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581256974618" />
     <state x="2660" y="277" key="FileChooserDialogImpl" timestamp="1575964269505">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -399,6 +552,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2592" y="238" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1577802840600" />
+    <state x="2383" y="166" key="SettingsEditor" timestamp="1581252437863">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2383" y="166" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581252437863" />
     <state x="2472" y="257" key="Vcs.Push.Dialog.v2" timestamp="1579463043435">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -407,13 +564,13 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2691" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1577802884770" />
-    <state x="2587" y="276" width="586" height="488" key="find.popup" timestamp="1579456216632">
+    <state x="2587" y="276" width="586" height="488" key="find.popup" timestamp="1581269273093">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2587" y="276" width="586" height="488" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579456216632" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1580065768833">
+    <state x="2587" y="276" width="586" height="488" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581269273093" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1581269267807">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580065768833" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581269267807" />
   </component>
 </project>

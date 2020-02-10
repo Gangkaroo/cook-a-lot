@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="!$auth.check()">
         <a class="button is-light" @click="showRegistrationModal()">{{$t('sign_up')}}</a>
 
         <modal v-if="modalIsActive" @close="hideRegistrationModal()" name="registration-modal">
@@ -90,8 +90,7 @@
                             sameAsPassword: this.$t('password_not_matching')
                         }
                     }
-                ],
-                url: '/register'
+                ]
             }
         },
         methods: {

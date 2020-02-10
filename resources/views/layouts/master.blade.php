@@ -15,7 +15,7 @@
 
     <div class="section">
         <div class="columns">
-            <div class="column is-narrow">
+            <div class="column is-narrow" v-if="$auth.check()">
                 @include('layouts.menu')
             </div>
             <div class="column">

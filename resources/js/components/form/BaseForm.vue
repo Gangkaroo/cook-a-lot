@@ -20,9 +20,11 @@
                     return fields.length;
                 }
             },
+            submitHandler: {
+                type: Function
+            },
             url: {
-                type: String,
-                required: true
+                type: String
             }
         },
         data: () => {
@@ -64,11 +66,19 @@
                 });
                 return validation;
             },
-            // Submit form
+            // Validate and submit the form
             submit: function() {
                 if (!this.validateForm()) {
                     return;
                 }
+                // Check if there is a custom submit method
+                if (this.submitHandler) {
+                    this.submitHandler(this.form.data());
+                    this.form.reset();
+                    return;
+                }
+
+                // Use the default submit method
                 this.form.post(this.url)
                     .then(function() {
                         this.eventBus.$emit('submitSuccess');
@@ -115,7 +125,6 @@
                         }
                     }.bind(this));
                     this.form.errors.set(name, message);
-                    console.log(name + "Error");
                     this.eventBus.$emit(name + 'Error', message);
 
                     return false;

@@ -60,7 +60,7 @@ export default class Form {
     }
 
     submit(requestType, url) {
-        return new Promise((resolve, reject) => {
+        return new Promise(function(resolve, reject) {
             axios[requestType](url, this.data())
                 .then(response => {
                     this.onSuccess(response.data);
@@ -70,6 +70,6 @@ export default class Form {
                     this.onFail(error.response.data.errors);
                     reject(error.response.data.errors);
                 });
-        });
+        }.bind(this));
     }
 }

@@ -21,14 +21,16 @@
         "vue": "^2.6.11"
     },
     "dependencies": {
+        "@websanova/vue-auth": "^2.21.15-beta",
         "bootstrap": "^4.4.1",
         "bulma": "^0.7.5",
-        "flag-icon-css": "^3.4.5",
+        "flag-icon-css": "^3.4.6",
         "jquery": "^3.4.1",
         "js-yaml": "^3.13.1",
         "lodash": "^4.17.15",
         "material-icons": "^0.3.1",
         "moment": "^2.23.0",
+        "vue-axios": "^2.1.5",
         "vue-i18n": "^8.15.3",
         "vue-router": "^3.1.5",
         "vue-template-compiler": "^2.6.11",
