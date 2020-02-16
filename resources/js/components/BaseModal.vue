@@ -23,12 +23,18 @@
 
 <script>
     export default {
+        name: 'Modal',
         methods: {
             close: function () {
                 this.$emit('close');
             }
         },
-        props: ["name"]
+        props: {
+            "name": {
+                type: String,
+                required: true
+            }
+        }
     }
 </script>
 

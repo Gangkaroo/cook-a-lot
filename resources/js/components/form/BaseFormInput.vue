@@ -1,8 +1,17 @@
 <template>
     <span>
-        <input :type="inputType" :ref="relName" :id="name" class="input" v-bind:class="{'is-danger': hasError}"
-               :placeholder="placeholder" v-model="value" @keyup="valueUpdated"
-               @keyup.enter="submitValue" @blur="fieldBlurred">
+        <input
+            :type="inputType"
+            :ref="name"
+            :id="name"
+            class="input"
+            v-bind:class="{'is-danger': hasError}"
+            :placeholder="placeholder"
+            :tabindex="index"
+            v-model="value"
+            @keyup="valueUpdated"
+            @keyup.enter="submitValue"
+            @blur="fieldBlurred">
         <span class="icon is-small is-left">
             <i class="material-icons md-18">
                 {{iconName}}
@@ -18,8 +27,12 @@
 
 <script>
     export default {
-        name: "InputField.vue",
+        name: "BaseFormInput",
         props: {
+            index: {
+                type: Number,
+                required: true
+            },
             name: {
                 type: String,
                 required: true
@@ -44,9 +57,6 @@
             },
             inputType: function() {
                 return this.type === 'password' ? 'password': 'text';
-            },
-            relName: function() {
-                return this.name + "Input";
             }
         },
         methods: {
@@ -56,6 +66,10 @@
                 this.touched = true;
                 this.valueUpdated();
                 this.eventBus.$emit('fieldBlurred', this.name);
+            },
+            // Focus the first input
+            focusInput() {
+                this.$refs[this.name].focus();
             },
             // An error has been recorded
             setError: function() {
@@ -73,6 +87,13 @@
         mounted() {
             // Listen for server or validation errors
             this.eventBus.$on(this.name + 'Error', this.setError);
+
+            // Focus input if it is the first input
+            if (this.index === 1) {
+                this.$nextTick(() => {
+                    this.focusInput();
+                });
+            }
         }
     }
 </script>

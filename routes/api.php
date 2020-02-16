@@ -14,10 +14,10 @@ use Illuminate\Http\Request;
 */
 
 /* Login and registration routes */
-Route::prefix('auth')->group(function() {
-    Route::post('register', 'AuthController@register');
+Route::middleware('api')->prefix('auth')->group(function() {
     Route::post('login', 'AuthController@login');
     Route::post('logout', 'AuthController@logout');
     Route::get('user', 'AuthController@user');
-    Route::post('refresh', 'AuthController@refresh');
+    Route::get('refresh', 'AuthController@refresh');
+    Route::post('register', 'AuthController@register');
 });

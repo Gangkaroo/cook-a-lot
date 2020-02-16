@@ -1,8 +1,12 @@
 <template>
     <form @submitForm="submit">
-        <input-row v-for="field in fields" :key="field.name" :field="field" :eventBus="eventBus">
-
-        </input-row>
+        <base-form-row
+            v-for="(field, index) in fields"
+            :key="field.name"
+            :field="field"
+            :eventBus="eventBus"
+            :index="++index">
+        </base-form-row>
     </form>
 </template>
 
@@ -12,7 +16,10 @@
     export default {
         name: "BaseForm.vue",
         props: {
-            eventBus: Object,
+            eventBus: {
+                type: Object,
+                required: true
+            },
             fields: {
                 type: Array,
                 required: true,

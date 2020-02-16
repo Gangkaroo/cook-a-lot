@@ -20,7 +20,6 @@
             </div>
             <div class="column">
                 <div class="container">
-                    Content goes here
                     <router-view></router-view>
                 </div>
             </div>

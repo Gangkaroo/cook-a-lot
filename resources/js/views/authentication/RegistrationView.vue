@@ -2,7 +2,7 @@
     <div v-if="!$auth.check()">
         <a class="button is-light" @click="showRegistrationModal()">{{$t('sign_up')}}</a>
 
-        <modal v-if="modalIsActive" @close="hideRegistrationModal()" name="registration-modal">
+        <base-modal v-if="modalIsActive" @close="hideRegistrationModal()" name="registration-modal">
             <div slot="header">{{$t('sign_up')}}</div>
             <base-form :fields="fields" :event-bus="eventBus" :submitHandler="this.submitRegistration.bind(this)">
             </base-form>
@@ -11,7 +11,7 @@
                 <a class="button is-primary" @click="register()" :class="{ 'is-loading': requesting }">OK</a>
                 <a class="button is-light" @click="hideRegistrationModal()">{{$t('cancel')}}</a>
             </div>
-        </modal>
+        </base-modal>
     </div>
 </template>
 
@@ -19,13 +19,15 @@
     import { required, alphaNum, minLength, email, sameAs } from 'vuelidate/lib/validators';
 
     export default {
-        name: "Registration.vue",
+        name: "RegistrationView",
+
         data: function() {
             return {
                 eventBus: new Vue(),
                 hasError: false,
                 modalIsActive: false,
                 requesting: false,
+
                 fields: [
                     {
                         name: 'name',
@@ -96,27 +98,33 @@
                 ]
             }
         },
+
         methods: {
             hideRegistrationModal: function() {
                 this.modalIsActive = false;
             },
+
             register: function() {
                 this.eventBus.$emit('submitForm');
             },
+
             // Show the error message
             registrationError: function() {
                 this.hasError = true;
                 this.requesting = false;
             },
+
             // Called after successfully logging in
             registrationSuccess: function() {
                 this.requesting = false;
                 this.loggedIn = true;
                 this.hideRegistrationModal();
             },
+
             showRegistrationModal: function() {
                 this.modalIsActive = true;
             },
+
             submitRegistration: function(registrationData) {
                 this.hasError = false;
                 this.requesting = true;
@@ -134,6 +142,7 @@
                 });
             }
         },
+
         mounted() {
             this.eventBus.$on('submitSuccess', this.hideRegistrationModal);
         }

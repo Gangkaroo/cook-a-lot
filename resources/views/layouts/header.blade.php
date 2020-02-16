@@ -15,8 +15,8 @@
     <div class="navbar-end">
         <div class="navbar-item">
             <div class="buttons">
-                <login></login>
-                <registration></registration>
+                <login-view></login-view>
+                <registration-view></registration-view>
             </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">

@@ -1,13 +1,15 @@
 <template>
     <div>
-        <a class="button is-primary" @click="showLoginModal()" v-if="!loggedIn">
+        <user-info-view :event-bus="eventBus"></user-info-view>
+
+        <a class="button is-primary" @click="showLoginModal()" v-if="!$auth.check()">
             <strong>{{$t('login')}}</strong>
         </a>
-        <a class="button is-light" @click="logout()" v-if="loggedIn">
+        <a class="button is-light" @click="logout()" v-if="$auth.check()">
             <strong>{{$t('logout')}}</strong>
         </a>
 
-        <modal v-if="modalIsActive" @close="hideLoginModal()" name="login-modal">
+        <base-modal v-if="modalIsActive" @close="hideLoginModal()" name="login-modal">
             <div slot="header">{{$t('login')}}</div>
             <base-form :fields="fields" :event-bus="eventBus" :submitHandler="this.submitLogin.bind(this)">
             </base-form>
@@ -16,20 +18,22 @@
                 <a class="button is-primary" @click="login()" :class="{ 'is-loading': requesting }">OK</a>
                 <a class="button is-light" @click="hideLoginModal()">{{$t('cancel')}}</a>
             </div>
-        </modal>
+        </base-modal>
     </div>
 </template>
 
 <script>
+    import UserInfoView from './UserInfoView.vue';
     import { required, email } from 'vuelidate/lib/validators'
 
     export default {
-        name: "Login.vue",
+        name: "LoginView",
+        components: {UserInfoView},
+
         data: function() {
             return {
                 eventBus: new Vue(),
                 hasError: false,
-                loggedIn: false,
                 modalIsActive: false,
                 requesting: false,
                 fields: [
@@ -66,7 +70,22 @@
                 ]
             }
         },
+
         methods: {
+            // Let other components know that the user has been logged in
+            emitLoggedIn: function() {
+                this.eventBus.$emit('loggedIn');
+            },
+            // Re-fetch the user
+            fetchUserData: function() {
+                this.$auth.fetch(
+                {
+                    success: function(response) {
+                        this.emitLoggedIn();
+                        console.log(response);
+                    }
+                });
+            },
             // Close the modal
             hideLoginModal: function() {
                 this.modalIsActive = false;
@@ -74,8 +93,8 @@
             // Called after successfully logging in
             loginSuccess: function() {
                 this.requesting = false;
-                this.loggedIn = true;
                 this.hideLoginModal();
+                this.emitLoggedIn();
             },
             // Submit the form
             login: function() {
@@ -91,7 +110,15 @@
                 this.$auth.logout({
                     makeRequest: true
                 });
-                this.loggedIn = false;
+            },
+            // Check if the user is still logged in on refresh
+            refreshAuthentication: function() {
+                this.$auth.refresh({
+                    success: function() {console.log('refreshed')},
+                    error: function(response) {
+                        console.error("An error occurred while refreshing the authentication", response);
+                    }
+                });
             },
             // Show the modal
             showLoginModal: function() {
@@ -113,8 +140,14 @@
                 });
             }
         },
+
         mounted() {
-            this.eventBus.$on('submitSuccess', this.hideLoginModal);
+            this.refreshAuthentication();
+            // Try to refresh session if user was previously logged in
+            this.$auth.ready(function() {
+                console.log("ready!", this);
+                //this.fetchUserData();
+            });
         }
     }
 </script>

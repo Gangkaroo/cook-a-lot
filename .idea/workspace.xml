@@ -1,15 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2fb2260-a307-4677-9693-ae13969d8a7b" name="Default Changelist" comment="">
+    <list default="true" id="e2fb2260-a307-4677-9693-ae13969d8a7b" name="Default Changelist" comment="Improve authentication and registration">
+      <change afterPath="$PROJECT_DIR$/resources/js/views/authentication/UserInfoView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SPA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SPA.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/RegisterFormRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/RegisterFormRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Modal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/BaseModal.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/authentication/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/authentication/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/authentication/Registration.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/authentication/Registration.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/de.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/form/InputField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseFormInput.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/form/InputRow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseFormRow.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/authentication/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/authentication/LoginView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/authentication/Registration.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/authentication/RegistrationView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +73,13 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="cookalot: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="cookalot: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="users: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -152,7 +184,6 @@
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
       <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
       <path value="$PROJECT_DIR$/vendor/league/commonmark" />
-      <path value="$PROJECT_DIR$/vendor/league/commonmark-ext-table" />
       <path value="$PROJECT_DIR$/vendor/tymon/jwt-auth" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php56" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-util" />
@@ -176,10 +207,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="L:\Cook-a-lot\SPA\resources\js\components" />
       <recent name="L:\Cook-a-lot\SPA\resources\js\components\form" />
       <recent name="L:\Cook-a-lot\SPA\resources\lang" />
     </key>
@@ -286,7 +318,13 @@
       <workItem from="1580714439431" duration="818000" />
       <workItem from="1581251251496" duration="13401000" />
       <workItem from="1581316075388" duration="2280000" />
-      <workItem from="1581362360215" duration="3239000" />
+      <workItem from="1581362360215" duration="9467000" />
+      <workItem from="1581409629399" duration="137000" />
+      <workItem from="1581409774854" duration="5775000" />
+      <workItem from="1581486171811" duration="2529000" />
+      <workItem from="1581574514127" duration="3385000" />
+      <workItem from="1581663113102" duration="2280000" />
+      <workItem from="1581701513747" duration="12699000" />
     </task>
     <task id="LOCAL-00001" summary="Added new form handling classes">
       <created>1556775731900</created>
@@ -379,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581316232713</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Improve authentication and registration">
+      <created>1581365896576</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1581365896576</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,13 +457,30 @@
     <MESSAGE value="Added general input validation functionality to form components" />
     <MESSAGE value="Small bugfixes, added additional error messages" />
     <MESSAGE value="Added JWT authentication and login method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added JWT authentication and login method" />
+    <MESSAGE value="Improve authentication and registration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve authentication and registration" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2" timestamp="1581316218854">
+    <state x="2575" y="229" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog" timestamp="1581409680963">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581316218854" />
+    <state x="2575" y="229" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581409680963" />
+    <state x="2635" y="331" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581664207474">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2635" y="331" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581664207474" />
+    <state x="2560" y="260" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1581486123721">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2560" y="260" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581486123721" />
+    <state x="2610" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581367845446">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2610" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581367845446" />
+    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2" timestamp="1581368033124">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581368033124" />
     <state x="2664" y="440" key="ComposerInitDialogKey" timestamp="1581256974618">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -431,29 +493,29 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2592" y="238" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1577802840600" />
-    <state x="2383" y="166" key="SettingsEditor" timestamp="1581252437863">
+    <state x="2383" y="166" key="SettingsEditor" timestamp="1581409887428">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2383" y="166" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581252437863" />
-    <state x="2472" y="257" key="Vcs.Push.Dialog.v2" timestamp="1581316259330">
+    <state x="2383" y="166" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581409887428" />
+    <state x="2472" y="257" key="Vcs.Push.Dialog.v2" timestamp="1581365907130">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581316259330" />
+    <state x="2472" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581365907130" />
     <state x="2691" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577802884770">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2691" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1577802884770" />
-    <state x="2587" y="276" width="586" height="488" key="find.popup" timestamp="1581362684597">
+    <state x="2587" y="276" width="586" height="488" key="find.popup" timestamp="1581880578427">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2587" y="276" width="586" height="488" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581362684597" />
+    <state x="2587" y="276" width="586" height="488" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581880578427" />
     <state x="2602" y="324" key="git4idea.merge.GitPullDialog" timestamp="1581316248296">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2602" y="324" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581316248296" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1581364969241">
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1581877708843">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581364969241" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581877708843" />
   </component>
 </project>

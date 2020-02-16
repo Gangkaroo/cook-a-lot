@@ -15,25 +15,24 @@ import './bootstrap';
  */
 
 import LanguageSelect from './views/LanguageSelect.vue';
-import Modal from './components/Modal.vue';
+import BaseModal from './components/BaseModal.vue';
 import BaseForm from './components/form/BaseForm.vue';
-import InputRow from './components/form/InputRow.vue';
-import InputField from './components/form/InputField.vue';
-import Login from './views/authentication/Login.vue';
-import Registration from './views/authentication/Registration.vue';
+import BaseFormRow from './components/form/BaseFormRow.vue';
+import BaseFormInput from './components/form/BaseFormInput.vue';
+import LoginView from './views/authentication/LoginView.vue';
+import RegistrationView from './views/authentication/RegistrationView.vue';
 
-Vue.component("modal", Modal);
-Vue.component("input-field", InputField);
-Vue.component("input-row", InputRow);
+Vue.component("base-modal", BaseModal);
+Vue.component("base-form-input", BaseFormInput);
+Vue.component("base-form-row", BaseFormRow);
 Vue.component("base-form", BaseForm);
 
 new Vue({
     el: '#app',
-
     components: {
         LanguageSelect,
-        Login,
-        Registration
+        LoginView,
+        RegistrationView
     },
     i18n,
     router

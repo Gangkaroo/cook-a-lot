@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\RegisterFormRequest;
@@ -14,7 +15,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except(['login', 'register']);
+        $this->middleware('auth:api')->except(['login', 'register']);
     }
 
     /**
@@ -45,6 +46,15 @@ class AuthController extends Controller
     }
 
     /**
+     * Return the token on page reload
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function refresh()
+    {
+        return $this->respondWithToken(auth()->refresh());
+    }
+
+    /**
      * Registers a new user
      * @param RegisterFormRequest $request
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
@@ -52,23 +62,17 @@ class AuthController extends Controller
     public function register(RegisterFormRequest $request)
     {
         $validated = $request->validated();
-        dd($validated);
 
         $user = new User();
-        $user->email = $validated->email;
-        $user->name = $validated->name;
-        $user->password = Hash::make($validated->password);
+        $user->email = $validated['email'];
+        $user->name = $validated['name'];
+        $user->password = Hash::make($validated['password']);
         $user->save();
 
         return response([
             'status' => 'success',
             'data' => $user
         ], 200);
-    }
-
-    public function refresh()
-    {
-        return $this->respondWithToken(auth()->refresh());
     }
 
     /**

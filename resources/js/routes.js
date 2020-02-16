@@ -7,26 +7,44 @@ const routes = [
     },
     {
         path: '/recipes',
-        component: require('./views/About').default
+        meta: {
+            auth: true
+        },
+        component: require('./views/RecipeView').default
     },
     {
         path: '/lists',
+        meta: {
+            auth: true
+        },
         component: require('./views/About').default
     },
     {
         path: '/pantry',
+        meta: {
+            auth: true
+        },
         component: require('./views/About').default
     },
     {
         path: '/menus',
+        meta: {
+            auth: true
+        },
         component: require('./views/About').default
     },
     {
         path: '/notebook',
+        meta: {
+            auth: true
+        },
         component: require('./views/About').default
     },
     {
         path: '/groups',
+        meta: {
+            auth: true
+        },
         component: require('./views/About').default
     }
 ];
