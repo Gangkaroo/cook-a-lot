@@ -10,7 +10,7 @@ const routes = [
         meta: {
             auth: true
         },
-        component: require('./views/RecipeView').default
+        component: require('./views/recipes/RecipeView').default
     },
     {
         path: '/lists',
@@ -50,7 +50,7 @@ const routes = [
 ];
 
 export default new VueRouter({
+    mode: 'history',
     routes,
-
     linkActiveClass: 'is-active'
 });

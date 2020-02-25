@@ -9,7 +9,7 @@
             <strong>{{$t('logout')}}</strong>
         </a>
 
-        <base-modal v-if="modalIsActive" @close="hideLoginModal()" name="login-modal">
+        <base-modal :is-active="modalIsActive" @close="hideLoginModal()" name="login-modal">
             <div slot="header">{{$t('login')}}</div>
             <base-form :fields="fields" :event-bus="eventBus" :submitHandler="this.submitLogin.bind(this)">
             </base-form>
@@ -72,20 +72,6 @@
         },
 
         methods: {
-            // Let other components know that the user has been logged in
-            emitLoggedIn: function() {
-                this.eventBus.$emit('loggedIn');
-            },
-            // Re-fetch the user
-            fetchUserData: function() {
-                this.$auth.fetch(
-                {
-                    success: function(response) {
-                        this.emitLoggedIn();
-                        console.log(response);
-                    }
-                });
-            },
             // Close the modal
             hideLoginModal: function() {
                 this.modalIsActive = false;
@@ -93,8 +79,13 @@
             // Called after successfully logging in
             loginSuccess: function() {
                 this.requesting = false;
+                this.$buefy.snackbar.open({
+                    actionText: null,
+                    message: '<span class="snack-icon"><i class="material-icons success">check</i>'
+                        + this.$t('login_success') + '</span>',
+                    type: 'is-success'
+                });
                 this.hideLoginModal();
-                this.emitLoggedIn();
             },
             // Submit the form
             login: function() {
@@ -108,16 +99,16 @@
             // Log out the current user
             logout: function() {
                 this.$auth.logout({
-                    makeRequest: true
+                    makeRequest: true,
+                    success: this.logoutSuccess
                 });
             },
-            // Check if the user is still logged in on refresh
-            refreshAuthentication: function() {
-                this.$auth.refresh({
-                    success: function() {console.log('refreshed')},
-                    error: function(response) {
-                        console.error("An error occurred while refreshing the authentication", response);
-                    }
+            logoutSuccess: function() {
+                this.$buefy.snackbar.open({
+                    actionText: null,
+                    message: '<span class="snack-icon"><i class="material-icons success">check</i>'
+                        + this.$t('logout_success') + '</span>',
+                    type: 'is-success'
                 });
             },
             // Show the modal
@@ -139,15 +130,6 @@
                     fetchUser: true
                 });
             }
-        },
-
-        mounted() {
-            this.refreshAuthentication();
-            // Try to refresh session if user was previously logged in
-            this.$auth.ready(function() {
-                console.log("ready!", this);
-                //this.fetchUserData();
-            });
         }
     }
 </script>

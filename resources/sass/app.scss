@@ -1,5 +1,26 @@
 @import "custom-bulma";
 @import "fonts";
 @import "node_modules/bulma/bulma";
+@import 'node_modules/buefy/src/scss/buefy';
 @import "node_modules/flag-icon-css/sass/flag-icon";
 @import "layout";
+
+.snack-icon {
+    display: flex;
+    align-items: center;
+}
+
+.material-icons.success {
+    color: $green;
+    margin-right: 10px;
+}
+
+/* Transitions */
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.25s ease-out;
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}

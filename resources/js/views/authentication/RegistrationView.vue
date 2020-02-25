@@ -2,7 +2,7 @@
     <div v-if="!$auth.check()">
         <a class="button is-light" @click="showRegistrationModal()">{{$t('sign_up')}}</a>
 
-        <base-modal v-if="modalIsActive" @close="hideRegistrationModal()" name="registration-modal">
+        <base-modal :is-active="modalIsActive" @close="hideRegistrationModal()" name="registration-modal">
             <div slot="header">{{$t('sign_up')}}</div>
             <base-form :fields="fields" :event-bus="eventBus" :submitHandler="this.submitRegistration.bind(this)">
             </base-form>

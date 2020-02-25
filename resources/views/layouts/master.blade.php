@@ -20,7 +20,9 @@
             </div>
             <div class="column">
                 <div class="container">
-                    <router-view></router-view>
+                    <transition name="fade">
+                        <router-view></router-view>
+                    </transition>
                 </div>
             </div>
         </div>

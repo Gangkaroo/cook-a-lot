@@ -1,7 +1,7 @@
 <div class="box">
     <aside class="menu">
         <div class="menu-list">
-            <router-link to="/"class="menu-item" exact>
+            <router-link to="/" class="menu-item" exact>
                 <span class="icon is-small">
                     <i class="material-icons md-18">
                         dashboard

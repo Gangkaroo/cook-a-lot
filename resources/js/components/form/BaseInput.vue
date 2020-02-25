@@ -27,7 +27,7 @@
 
 <script>
     export default {
-        name: "BaseFormInput",
+        name: "BaseInput",
         props: {
             index: {
                 type: Number,

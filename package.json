@@ -1,4 +1,7 @@
 {
+    "name": "cook-a-lot",
+    "version": "0.0.1",
+    "description": "Organize your cooking",
     "private": true,
     "scripts": {
         "dev": "npm run development",
@@ -23,6 +26,7 @@
     "dependencies": {
         "@websanova/vue-auth": "^2.21.15-beta",
         "bootstrap": "^4.4.1",
+        "buefy": "^0.8.12",
         "bulma": "^0.7.5",
         "flag-icon-css": "^3.4.6",
         "jquery": "^3.4.1",

@@ -2,7 +2,7 @@
     <div class="field">
         <label class="label" :for="field.name">{{field.label}}</label>
         <div class="control has-icons-left has-icons-right">
-            <base-form-input
+            <base-input
                 v-if="isInput"
                 :name="field.name"
                 :placeholder="field.placeholder"
@@ -10,7 +10,7 @@
                 :icon-name="field.icon"
                 :eventBus="eventBus"
                 :index="index">
-            </base-form-input>
+            </base-input>
 <!--            <select-field v-if="isSelect" name="{{field.name}}"></select-field>-->
 <!--            <textarea-field v-if="isTextarea" name="{{field.name}}"></textarea-field>-->
 <!--            <checkable-field v-if="isCheckable" name="{{field.name}}"></checkable-field>-->

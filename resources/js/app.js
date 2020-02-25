@@ -18,12 +18,12 @@ import LanguageSelect from './views/LanguageSelect.vue';
 import BaseModal from './components/BaseModal.vue';
 import BaseForm from './components/form/BaseForm.vue';
 import BaseFormRow from './components/form/BaseFormRow.vue';
-import BaseFormInput from './components/form/BaseFormInput.vue';
+import BaseInput from './components/form/BaseInput.vue';
 import LoginView from './views/authentication/LoginView.vue';
 import RegistrationView from './views/authentication/RegistrationView.vue';
 
 Vue.component("base-modal", BaseModal);
-Vue.component("base-form-input", BaseFormInput);
+Vue.component("base-input", BaseInput);
 Vue.component("base-form-row", BaseFormRow);
 Vue.component("base-form", BaseForm);
 

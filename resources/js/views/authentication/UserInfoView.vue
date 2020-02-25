@@ -1,7 +1,7 @@
 <template>
-    <div v-if="$auth.check()">
-        <span class="has-text-weight-bold">{{username}}</span>
-    </div>
+    <a v-if="username.length" class="button is-light">
+        {{$t('hi')}} {{username}}!
+    </a>
 </template>
 
 <script>
@@ -19,13 +19,37 @@
                 username: ''
             }
         },
-        methods: {
-            updateData: function() {
-                console.log(this.$auth.user());
+        computed: {
+            // Get and set the user of the auth module directly
+            userData: {
+                get: function() {
+                    return this.$auth.user();
+                },
+                set: function (newData) {
+                    this.$auth.user(newData);
+                }
             }
         },
-        mounted: function() {
-            this.eventBus.$on('loggedIn', this.updateData);
+        methods: {
+            // Update the user data
+            updateData: function() {
+                let user = this.$auth.user();
+                if (typeof user.email !== 'undefined') {
+                    this.email = user.email;
+                    this.username = user.name;
+                } else {
+                    this.email = '';
+                    this.username = '';
+                }
+
+            }
+        },
+        watch: {
+            // Watch the user data for changes
+            userData: function(newData) {
+                this.userData = newData;
+                this.updateData();
+            }
         }
     }
 </script>
