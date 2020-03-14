@@ -5,14 +5,14 @@
             :ref="name"
             :id="name"
             class="input"
-            v-bind:class="{'is-danger': hasError}"
+            :class="{'is-danger': hasError}"
             :placeholder="placeholder"
             :tabindex="index"
             v-model="value"
             @keyup="valueUpdated"
             @keyup.enter="submitValue"
             @blur="fieldBlurred">
-        <span class="icon is-small is-left">
+        <span v-if="hasIcon" class="icon is-small is-left">
             <i class="material-icons md-18">
                 {{iconName}}
             </i>
@@ -52,6 +52,9 @@
             }
         },
         computed: {
+            hasIcon: function() {
+                return typeof this.iconName !== 'undefined' && this.iconName.length;
+            },
             isCorrect: function() {
                 return !this.hasError && this.touched;
             },

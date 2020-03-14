@@ -19,14 +19,14 @@
         "laravel-mix": "^4.1.4",
         "popper.js": "^1.16.1",
         "resolve-url-loader": "^2.3.2",
-        "sass": "^1.25.0",
+        "sass": "^1.26.3",
         "sass-loader": "^7.3.1",
         "vue": "^2.6.11"
     },
     "dependencies": {
         "@websanova/vue-auth": "^2.21.15-beta",
         "bootstrap": "^4.4.1",
-        "buefy": "^0.8.12",
+        "buefy": "^0.8.13",
         "bulma": "^0.7.5",
         "flag-icon-css": "^3.4.6",
         "jquery": "^3.4.1",
@@ -35,8 +35,8 @@
         "material-icons": "^0.3.1",
         "moment": "^2.23.0",
         "vue-axios": "^2.1.5",
-        "vue-i18n": "^8.15.3",
-        "vue-router": "^3.1.5",
+        "vue-i18n": "^8.15.5",
+        "vue-router": "^3.1.6",
         "vue-template-compiler": "^2.6.11",
         "vuelidate": "^0.7.5"
     }

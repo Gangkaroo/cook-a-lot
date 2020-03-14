@@ -1,7 +1,7 @@
 <template>
     <div class="field">
         <label class="label" :for="field.name">{{field.label}}</label>
-        <div class="control has-icons-left has-icons-right">
+        <div class="control has-icons-right" :class="{'has-icons-left': hasIcon}">
             <base-input
                 v-if="isInput"
                 :name="field.name"
@@ -44,6 +44,10 @@
         },
 
         computed: {
+            hasIcon: function() {
+                return typeof this.field.icon !== 'undefined' && this.field.icon.length;
+            },
+
             isCheckable: function() {
                 return this.field.type === 'radio' || this.field.type === 'checkbox';
             },
