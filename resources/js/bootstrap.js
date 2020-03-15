@@ -3,6 +3,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import axios from 'axios';
 import Buefy from 'buefy';
+import CKEditor from '@ckeditor/ckeditor5-vue';
 import VueAxios from 'vue-axios';
 import VueI18n from 'vue-i18n';
 import Vuelidate from 'vuelidate';
@@ -15,6 +16,7 @@ Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 Vue.use(Vuelidate);
 Vue.use(Buefy);
+Vue.use(CKEditor);
 
 window.router = Vue.router = router;
 

@@ -8,11 +8,17 @@
                 :placeholder="field.placeholder"
                 :type="field.type"
                 :icon-name="field.icon"
-                :eventBus="eventBus"
+                :event-bus="eventBus"
                 :index="index">
             </base-input>
+            <base-editor
+                v-if="isEditor"
+                :name="field.name"
+                :placeholder="field.placeholder"
+                :event-bus="eventBus"
+                :index="index">
+            </base-editor>
 <!--            <select-field v-if="isSelect" name="{{field.name}}"></select-field>-->
-<!--            <textarea-field v-if="isTextarea" name="{{field.name}}"></textarea-field>-->
 <!--            <checkable-field v-if="isCheckable" name="{{field.name}}"></checkable-field>-->
             <span class="help is-danger" v-if="hasError"
                   v-text="errorMessage"></span>
@@ -52,16 +58,16 @@
                 return this.field.type === 'radio' || this.field.type === 'checkbox';
             },
 
+            isEditor: function() {
+                return this.field.type === 'editor';
+            },
+
             isInput: function() {
                 return this.field.type === 'input' || this.field.type === 'password';
             },
 
             isSelect: function() {
                 return this.field.type === 'select';
-            },
-
-            isTextarea: function() {
-                return this.field.type === 'textarea';
             }
         },
 

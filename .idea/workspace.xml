@@ -2,21 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2fb2260-a307-4677-9693-ae13969d8a7b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/SPA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SPA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/session.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseFormRow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseFormRow.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseInput.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseInput.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/de.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -335,7 +332,7 @@
       <workItem from="1582994649818" duration="4262000" />
       <workItem from="1583226717435" duration="1476000" />
       <workItem from="1583304567888" duration="2393000" />
-      <workItem from="1584170889160" duration="3953000" />
+      <workItem from="1584170889160" duration="15711000" />
     </task>
     <task id="LOCAL-00001" summary="Added new form handling classes">
       <created>1556775731900</created>
@@ -449,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582652100136</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Update to new Laravel version&#10;Refactor input component to better format inputs without icon">
+      <created>1584177729131</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1584177729131</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -486,7 +490,8 @@
     <MESSAGE value="Improve authentication and registration" />
     <MESSAGE value="Improve authentication and registration&#10;Better refresh handling" />
     <MESSAGE value="Refactoring and improvements to the login and authentication process&#10;Added examples content to recipe view&#10;Added transitions and notifications" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring and improvements to the login and authentication process&#10;Added examples content to recipe view&#10;Added transitions and notifications" />
+    <MESSAGE value="Update to new Laravel version&#10;Refactor input component to better format inputs without icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update to new Laravel version&#10;Refactor input component to better format inputs without icon" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2575" y="229" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog" timestamp="1581409680963">
@@ -505,10 +510,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2610" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581367845446" />
-    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2" timestamp="1582652096633">
+    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2" timestamp="1584177726761">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582652096633" />
+    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584177726761" />
     <state x="2664" y="440" key="ComposerInitDialogKey" timestamp="1581256974618">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -533,25 +538,25 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2383" y="166" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581409887428" />
-    <state x="2472" y="257" key="Vcs.Push.Dialog.v2" timestamp="1582652247732">
+    <state x="2472" y="257" key="Vcs.Push.Dialog.v2" timestamp="1584177741798">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582652247732" />
+    <state x="2472" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584177741798" />
     <state x="2691" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577802884770">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2691" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1577802884770" />
-    <state x="2587" y="276" width="586" height="488" key="find.popup" timestamp="1581880578427">
+    <state x="2587" y="276" width="888" height="488" key="find.popup" timestamp="1584298889940">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2587" y="276" width="586" height="488" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581880578427" />
+    <state x="2587" y="276" width="888" height="488" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584298889940" />
     <state x="2602" y="324" key="git4idea.merge.GitPullDialog" timestamp="1581316248296">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2602" y="324" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581316248296" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583306616509">
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584298604961">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1583306616509" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584298604961" />
   </component>
 </project>

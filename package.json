@@ -24,6 +24,8 @@
         "vue": "^2.6.11"
     },
     "dependencies": {
+        "@ckeditor/ckeditor5-build-inline": "^17.0.0",
+        "@ckeditor/ckeditor5-vue": "^1.0.1",
         "@websanova/vue-auth": "^2.21.15-beta",
         "bootstrap": "^4.4.1",
         "buefy": "^0.8.13",
