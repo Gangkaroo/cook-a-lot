@@ -10,6 +10,8 @@ import Vuelidate from 'vuelidate';
 import de from '../lang/de.json'
 import en from '../lang/en.json'
 import router from "./routes";
+// Icons
+import '@mdi/font/css/materialdesignicons.css'
 
 window.Vue = Vue;
 Vue.use(VueRouter);

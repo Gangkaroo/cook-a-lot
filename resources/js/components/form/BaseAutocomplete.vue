@@ -1,19 +1,24 @@
 <template>
     <div :id="this.name">
-        <ckeditor
+        <b-autocomplete
             :tabindex="this.index"
-            :editor="editor"
-            :config="editorConfig"
+            ref="autocomplete"
+            :data="data"
+            :placeholder="placeholder"
+            :icon="iconName"
+            :typing="searchData"
+            :loading="isSearching"
             v-model="content">
-        </ckeditor>
+            <template slot="footer" v-if="footer.length">{{ footer }}</template>
+            <template slot="empty">{{$t('No results for')}} {{name}}</template>
+        </b-autocomplete>
     </div>
 </template>
 
 <script>
-    import InlineEditor from '@ckeditor/ckeditor5-build-inline';
 
     export default {
-        name: "BaseEditor",
+        name: "BaseAutocomplete",
         props: {
             index: {
                 type: Number,
@@ -23,9 +28,18 @@
                 type: String,
                 required: true
             },
+            iconName: String,
             intialContent: {
                 type: String,
                 default: ''
+            },
+            footer: {
+                type: String,
+                default: ''
+            },
+            searchHandler: {
+                type: Function,
+                required: true
             },
             placeholder: String,
             eventBus: Object
@@ -33,10 +47,8 @@
         data: function() {
             return {
                 content: this.initialContent,
-                editor: InlineEditor,
-                editorConfig: {
-                    placeholder: this.placeholder
-                }
+                data: [],
+                isSearching: false
             }
         },
         computed: {
@@ -56,13 +68,33 @@
             focusInput() {
                 this.$refs[this.name].focus();
             },
+            // Search data using the provided search handler
+            searchData: function(searchTerm) {
+                if (!this.isSearching) {
+                    return;
+                }
+
+                if (!searchTerm.length) {
+                    this.data = [];
+                    return;
+                }
+
+                this.isSearching = true;
+                this.searchHandler(searchTerm)
+                    .then(({ data }) => {
+                        this.data = data.isArray() ? data : [];
+                    })
+                    .catch((error) => {
+                        this.data = [];
+                        console.error(error);
+                    })
+                    .finally(() => {
+                        this.isSearching = false;
+                    })
+            },
             // An error has been recorded
             setError: function() {
                 this.hasError = true;
-            },
-            // Submit the form
-            submitValue: function() {
-                this.eventBus.$emit('submitForm');
             },
             // Update the model of the form
             valueUpdated: function() {

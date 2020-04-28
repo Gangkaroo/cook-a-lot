@@ -1,7 +1,8 @@
 <template>
-    <div class="field">
-        <label class="label" :for="field.name">{{field.label}}</label>
-        <div class="control has-icons-right" :class="{'has-icons-left': hasIcon}">
+    <div class="field" :class="{'has-addons': hasAddOnButton}">
+        <label v-if="field.label" class="label" :for="field.name">{{field.label}}</label>
+        <div class="control has-icons-right" :class="{'has-icons-left': hasIcon, 'is-expanded': hasAddOnButton}">
+            <!-- Input field -->
             <base-input
                 v-if="isInput"
                 :name="field.name"
@@ -11,6 +12,7 @@
                 :event-bus="eventBus"
                 :index="index">
             </base-input>
+            <!-- Inline editor -->
             <base-editor
                 v-if="isEditor"
                 :name="field.name"
@@ -18,18 +20,43 @@
                 :event-bus="eventBus"
                 :index="index">
             </base-editor>
+            <!-- Autocomplete input field -->
+            <base-autocomplete
+                v-if="isAutocomplete"
+                :name="field.name"
+                :placeholder="field.placeholder"
+                :event-bus="eventBus"
+                :index="index"
+                :icon-name="field.icon"
+                :search-handler="field.searchHandler">
+            </base-autocomplete>
+            <!-- Title or content at the top or in between form elements-->
+            <base-content
+                v-if="isContent"
+                :title="field.title"
+                :content="field.content">
+            </base-content>
 <!--            <select-field v-if="isSelect" name="{{field.name}}"></select-field>-->
 <!--            <checkable-field v-if="isCheckable" name="{{field.name}}"></checkable-field>-->
             <span class="help is-danger" v-if="hasError"
                   v-text="errorMessage"></span>
         </div>
+        <div v-if="hasAddOnButton" class="control">
+            <button class="button is-primary" @click="field.addOnButtonHandler">
+                <b-icon :icon="field.addOnButton"></b-icon>
+            </button>
+        </div>
     </div>
 </template>
 
 <script>
+    import BaseAutocomplete from "./BaseAutocomplete";
+    import BaseEditor from "./BaseEditor";
+    import BaseInput from "./BaseInput";
+    import BaseContent from "./BaseContent";
     export default {
         name: "InputRow.vue",
-
+        components: {BaseAutocomplete, BaseContent, BaseEditor, BaseInput},
         props: {
             eventBus: Object,
             field: {
@@ -50,12 +77,24 @@
         },
 
         computed: {
+            hasAddOnButton: function() {
+                return typeof this.field.addOnButton !== 'undefined' && this.field.addOnButton.length;
+            },
+
             hasIcon: function() {
                 return typeof this.field.icon !== 'undefined' && this.field.icon.length;
             },
 
+            isAutocomplete: function() {
+                return this.field.type === 'autocomplete';
+            },
+
             isCheckable: function() {
                 return this.field.type === 'radio' || this.field.type === 'checkbox';
+            },
+
+            isContent: function() {
+                return this.field.type === 'content';
             },
 
             isEditor: function() {

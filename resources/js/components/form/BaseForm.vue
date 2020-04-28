@@ -12,9 +12,11 @@
 
 <script>
     import Form from '../../classes/Form';
+    import BaseFormRow from './BaseFormRow';
 
     export default {
         name: "BaseForm.vue",
+        components: { BaseFormRow },
         props: {
             eventBus: {
                 type: Object,

@@ -19251,9 +19251,17 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
   cursor: pointer;
 }
 
+.form-content {
+  margin-top: 20px;
+}
+
 .ck.ck-editor__editable_inline {
   border: 1px solid #dbdbdb !important;
   border-radius: 4px !important;
+}
+
+.ck.ck-editor__editable > .ck-placeholder::before {
+  color: rgba(54, 54, 54, 0.3);
 }
 
 .snack-icon {

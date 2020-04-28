@@ -1,4 +1,5 @@
 {
+    "add_ingredient": "Zutat hinzufügen",
     "by": "von",
     "cancel": "Abbrechen",
     "dashboard": "Übersicht",
@@ -11,6 +12,7 @@
     "email_placeholder": "Ihre E-Mail Adresse",
     "groups": "Gruppen",
     "hi": "Hallo",
+    "ingredient_list": "Zutatenliste",
     "login": "Anmelden",
     "login_error": "Anmelden fehlgeschlagen, bitte versuchen Sie es erneut",
     "login_success": "Anmeldung erfolgreich!",
@@ -18,6 +20,7 @@
     "logout_success": "Abmeldung erfolgreich!",
     "menus": "Menüs",
     "new_recipe": "Neues Rezept",
+    "no_results_for": "Keine Ergebnisse für",
     "notebook": "Notizbuch",
     "pantry": "Vorratskammer",
     "password": "Passwort",

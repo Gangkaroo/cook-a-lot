@@ -11,8 +11,11 @@
 </template>
 
 <script>
+    import BaseInput from "../../components/form/BaseInput";
+
     export default {
         name: "RecipeSearch",
+        components: { BaseInput },
         data: function() {
             return {
                 eventBus: new Vue()

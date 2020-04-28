@@ -14,6 +14,7 @@
 
 <script>
     import {minLength, required} from "vuelidate/lib/validators";
+    import Recipe from "../../classes/Recipe";
 
     export default {
         name: "EditRecipeView",
@@ -25,11 +26,12 @@
         },
         data: function() {
             return {
+                recipe: new Recipe(),
                 fields: [
                     {
                         name: 'title',
-                        label: this.$t('title'),
                         value: '',
+                        placeholder: this.$t('title'),
                         type: 'input',
                         validation: {
                             required,
@@ -42,13 +44,36 @@
                     },
                     {
                         name: 'description',
-                        label: this.$t('description'),
                         placeholder: this.$t('description'),
                         value: '',
                         type: 'editor'
+                    },
+                    {
+                        title: this.$t('ingredient_list'),
+                        type: 'content'
+                    },
+                    {
+                        name: 'ingredients',
+                        searchHandler: this.searchIngredient,
+                        placeholder: this.$t('add_ingredient'),
+                        value: '',
+                        addOnButton: 'plus',
+                        addOnButtonHandler: this.addIngredient,
+                        type: 'autocomplete'
                     }
                 ],
                 eventBus: new Vue()
+            }
+        },
+
+        methods: {
+            addIngredient: function() {
+                if (this.recipe.isValidIngredient(this.newIngredient)) {
+                    this.recipe.addIngredient(this.newIngredient);
+                }
+            },
+            searchIngredient: function(searchTerm) {
+                console.log(searchTerm);
             }
         }
     }
