@@ -2,29 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2fb2260-a307-4677-9693-ae13969d8a7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/classes/Recipe.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/form/BaseContent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/form/BaseRating.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/form/BaseUpload.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/helpers/CookMath.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SPA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SPA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseEditor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseEditor.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseFormRow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseFormRow.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/recipes/RecipeSearch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/recipes/RecipeSearch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/classes/Recipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/classes/Recipe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/authentication/LoginView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/authentication/LoginView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/views/recipes/EditRecipeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/recipes/EditRecipeView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/recipes/RecipeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/recipes/RecipeView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/de.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,9 +78,6 @@
       </path>
     </expand>
     <select />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="SPA" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -349,7 +337,8 @@
       <workItem from="1586503247920" duration="699000" />
       <workItem from="1587029062297" duration="303000" />
       <workItem from="1587029419148" duration="688000" />
-      <workItem from="1588055000067" duration="723000" />
+      <workItem from="1588055000067" duration="2452000" />
+      <workItem from="1589027613319" duration="7602000" />
     </task>
     <task id="LOCAL-00001" summary="Added new form handling classes">
       <created>1556775731900</created>
@@ -477,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584307940525</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Add latest changes">
+      <created>1588056319341</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1588056319341</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,7 +511,8 @@
     <MESSAGE value="Refactoring and improvements to the login and authentication process&#10;Added examples content to recipe view&#10;Added transitions and notifications" />
     <MESSAGE value="Update to new Laravel version&#10;Refactor input component to better format inputs without icon" />
     <MESSAGE value="Include previously unversioned files&#10;Added ckeditor to edit html-based recipe description" />
-    <option name="LAST_COMMIT_MESSAGE" value="Include previously unversioned files&#10;Added ckeditor to edit html-based recipe description" />
+    <MESSAGE value="Add latest changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add latest changes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2575" y="229" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog" timestamp="1581409680963">
@@ -539,10 +536,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2610" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581367845446" />
-    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2" timestamp="1584307938779">
+    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2" timestamp="1588056316135">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584307938779" />
+    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588056316135" />
     <state x="2664" y="440" key="ComposerInitDialogKey" timestamp="1581256974618">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -563,10 +560,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2383" y="166" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581409887428" />
-    <state x="2472" y="257" key="Vcs.Push.Dialog.v2" timestamp="1584307948977">
+    <state x="2472" y="257" key="Vcs.Push.Dialog.v2" timestamp="1588056328213">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584307948977" />
+    <state x="2472" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588056328213" />
     <state x="2635" y="169" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1584455268561">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -583,9 +580,9 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2536" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584878152106" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585493232188">
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1589096320521">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585493232188" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589096320521" />
   </component>
 </project>

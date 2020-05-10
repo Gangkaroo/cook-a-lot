@@ -4,10 +4,22 @@
         <h1 v-if="recipeId" class="title">{{$t('edit_recipe')}}</h1>
         <div class="columns">
             <div class="column">
-                <base-form :fields="fields" :event-bus="eventBus"></base-form>
+                <base-form
+                    :fields="fields"
+                    :event-bus="eventBus"
+                    :submitHandler="this.submitRecipe.bind(this)"
+                ></base-form>
             </div>
             <div class="column">
             </div>
+        </div>
+        <div class="buttons">
+            <button class="button is-primary" @click="save()">
+                {{$t('save')}}
+            </button>
+            <button class="button is-light" @click="cancelEdit()">
+                {{$t('cancel')}}
+            </button>
         </div>
     </div>
 </template>
@@ -18,12 +30,6 @@
 
     export default {
         name: "EditRecipeView",
-        props: {
-            recipeId: {
-                type: Number,
-                required: true
-            }
-        },
         data: function() {
             return {
                 recipe: new Recipe(),
@@ -66,15 +72,46 @@
             }
         },
 
+        computed: {
+            recipeId() {
+                return this.$route.params.recipeId;
+            }
+        },
+
         methods: {
             addIngredient: function() {
                 if (this.recipe.isValidIngredient(this.newIngredient)) {
                     this.recipe.addIngredient(this.newIngredient);
                 }
             },
+
+            // Return to the recipes overview
+            cancelEdit: function() {
+                this.$router.push("/recipes")
+            },
+
+            parseInput: function() {
+
+            },
+
+            // search for an existing ingredient
             searchIngredient: function(searchTerm) {
                 console.log(searchTerm);
+            },
+
+            // Initiate the recipe submission
+            save() {
+                this.eventBus.$emit('submitForm');
+                this.recipe.store();
+            },
+
+            submitRecipe(recipeData) {
+
             }
+        },
+
+        mounted() {
+            console.log(this.recipeId);
         }
     }
 </script>

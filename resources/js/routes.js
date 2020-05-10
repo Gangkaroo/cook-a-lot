@@ -13,6 +13,14 @@ const routes = [
         component: require('./views/recipes/RecipeView').default
     },
     {
+        path: '/recipe/:recipeId',
+
+        meta: {
+            auth: true
+        },
+        component: require('./views/recipes/EditRecipeView').default
+    },
+    {
         path: '/lists',
         meta: {
             auth: true

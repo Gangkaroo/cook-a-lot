@@ -12161,6 +12161,27 @@ label.panel-block:hover {
   width: 100%;
 }
 
+.slide-down-enter-active,
+.slide-down-leave-active,
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: transform 250ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.slide-up-leave-to,
+.slide-down-enter {
+  transform: translate3d(0, -100%, 0);
+  position: absolute;
+  height: 100%;
+}
+
+.slide-up-enter,
+.slide-down-leave-to {
+  transform: translate3d(0, 100%, 0);
+  position: absolute;
+  height: 100%;
+}
+
 .slide-enter-active {
   transition: 150ms ease-out;
 }
@@ -13504,7 +13525,7 @@ label.panel-block:hover {
   }
 }
 
-.dropdown .dropdown-menu {
+.dropdown.dropdown-menu-animation .dropdown-menu {
   display: block;
 }
 
@@ -13591,7 +13612,7 @@ label.panel-block:hover {
 
 @media screen and (max-width: 1023px) {
   .dropdown.is-mobile-modal > .dropdown-menu {
-    position: fixed;
+    position: fixed !important;
     width: calc(100vw - 40px);
     max-width: 460px;
     max-height: calc(100vh - 120px);
@@ -13602,7 +13623,7 @@ label.panel-block:hover {
     transform: translate3d(-50%, -25%, 0);
     white-space: normal;
     overflow-y: auto;
-    z-index: 50;
+    z-index: 50 !important;
   }
 
   .dropdown.is-mobile-modal > .dropdown-menu > .dropdown-content > .dropdown-item,
@@ -13860,6 +13881,18 @@ label.panel-block:hover {
 .field.is-floating-label.has-numberinput-compact.has-numberinput-is-large .label,
 .field.is-floating-in-label.has-numberinput-compact.has-numberinput-is-large .label {
   margin-left: calc(1.5rem * 2.25);
+}
+
+.field.is-grouped-right.is-floating-in-label .label,
+.field.has-addons-right.is-floating-in-label .label {
+  position: relative;
+  left: calc(3.25em + 2em);
+}
+
+.field.is-grouped-right.is-floating-label .label,
+.field.has-addons-right.is-floating-label .label {
+  position: relative;
+  left: calc(3.25em + 2em);
 }
 
 .control .help.counter {
@@ -14697,6 +14730,185 @@ label.panel-block:hover {
   color: rgba(122, 122, 122, 0.7);
 }
 
+.b-skeleton {
+  width: 100%;
+}
+
+.b-skeleton > .b-skeleton-item {
+  background: linear-gradient(90deg, #dbdbdb 25%, rgba(219, 219, 219, 0.5) 50%, #dbdbdb 75%);
+  background-size: 400% 100%;
+  display: inline-block;
+  line-height: 1;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.b-skeleton > .b-skeleton-item::after {
+  content: "\A0";
+}
+
+.b-skeleton.is-animated > .b-skeleton-item {
+  -webkit-animation: skeleton-loading 1.5s infinite;
+          animation: skeleton-loading 1.5s infinite;
+}
+
+@-webkit-keyframes skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.b-sidebar .sidebar-content {
+  background-color: whitesmoke;
+  box-shadow: 5px 0px 13px 3px rgba(10, 10, 10, 0.1);
+  width: 260px;
+  z-index: 41;
+}
+
+.b-sidebar .sidebar-content.is-white {
+  background-color: white;
+}
+
+.b-sidebar .sidebar-content.is-black {
+  background-color: #0a0a0a;
+}
+
+.b-sidebar .sidebar-content.is-light {
+  background-color: whitesmoke;
+}
+
+.b-sidebar .sidebar-content.is-dark {
+  background-color: #363636;
+}
+
+.b-sidebar .sidebar-content.is-primary {
+  background-color: #ffdb4d;
+}
+
+.b-sidebar .sidebar-content.is-link {
+  background-color: #3273dc;
+}
+
+.b-sidebar .sidebar-content.is-info {
+  background-color: #209cee;
+}
+
+.b-sidebar .sidebar-content.is-success {
+  background-color: #23d160;
+}
+
+.b-sidebar .sidebar-content.is-warning {
+  background-color: #ffdb4d;
+}
+
+.b-sidebar .sidebar-content.is-danger {
+  background-color: #ff3860;
+}
+
+.b-sidebar .sidebar-content.is-fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.b-sidebar .sidebar-content.is-fixed.is-right {
+  left: auto;
+  right: 0;
+}
+
+.b-sidebar .sidebar-content.is-absolute {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.b-sidebar .sidebar-content.is-absolute.is-right {
+  left: auto;
+  right: 0;
+}
+
+.b-sidebar .sidebar-content.is-mini {
+  width: 80px;
+}
+
+.b-sidebar .sidebar-content.is-mini-expand:hover {
+  transition: width 150ms ease-out;
+}
+
+.b-sidebar .sidebar-content.is-mini-expand:hover:not(.is-fullwidth) {
+  width: 260px;
+}
+
+.b-sidebar .sidebar-content.is-static {
+  position: static;
+}
+
+.b-sidebar .sidebar-content.is-absolute,
+.b-sidebar .sidebar-content.is-static {
+  transition: width 150ms ease-out;
+}
+
+.b-sidebar .sidebar-content.is-fullwidth {
+  width: 100%;
+  max-width: 100%;
+}
+
+.b-sidebar .sidebar-content.is-fullheight {
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+}
+
+@media screen and (max-width: 1023px) {
+  .b-sidebar .sidebar-content.is-mini-mobile {
+    width: 80px;
+  }
+
+  .b-sidebar .sidebar-content.is-mini-expand:hover:not(.is-fullwidth-mobile) {
+    width: 260px;
+  }
+
+  .b-sidebar .sidebar-content.is-hidden-mobile {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .b-sidebar .sidebar-content.is-fullwidth-mobile {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.b-sidebar .sidebar-background {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: rgba(10, 10, 10, 0.86);
+  position: fixed;
+  z-index: 40;
+}
+
 .b-slider {
   margin: 1em 0;
   background: transparent;
@@ -14923,11 +15135,6 @@ Wikiki (https://github.com/Wikiki) licensed under
 MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
 */
 
-.b-steps .steps {
-  font-size: 1rem;
-  min-height: 2rem;
-}
-
 .b-steps .steps .step-items {
   display: flex;
   flex-wrap: wrap;
@@ -14941,6 +15148,10 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
 }
 
 .b-steps .steps .step-items .step-item .step-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   color: #4a4a4a;
 }
 
@@ -14951,13 +15162,14 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
 .b-steps .steps .step-items .step-item .step-marker {
   align-items: center;
   display: flex;
-  border-radius: 50%;
+  border-radius: 4px;
   font-weight: 700;
   justify-content: center;
   background: #b5b5b5;
   color: white;
   border: 0.2em solid #fff;
   z-index: 1;
+  overflow: hidden;
 }
 
 .b-steps .steps .step-items .step-item.is-white::before,
@@ -15246,6 +15458,8 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
 
 .b-steps .steps .step-items .step-item .step-details {
   text-align: center;
+  background: white;
+  z-index: 1;
 }
 
 .b-steps .steps .step-items .step-item:not(:first-child),
@@ -15258,12 +15472,28 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
   content: " ";
   display: block;
   position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: -50%;
 }
 
 .b-steps .steps .step-items .step-item:only-child::after {
   content: " ";
   display: block;
   position: absolute;
+  height: 0.2em;
+  bottom: 0;
+}
+
+.b-steps .steps .step-items .step-item:only-child::before,
+.b-steps .steps .step-items .step-item:only-child::after {
+  width: 25%;
+  left: 50%;
+}
+
+.b-steps .steps .step-items .step-item:only-child::before {
+  right: 50%;
+  left: auto;
 }
 
 .b-steps .steps .step-items .step-item::before,
@@ -15315,23 +15545,42 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
   overflow: hidden;
 }
 
+.b-steps .steps.is-rounded .step-item .step-marker {
+  border-radius: 290486px;
+}
+
+.b-steps .steps.is-animated .step-item:not(:first-child)::before,
+.b-steps .steps.is-animated .step-item:only-child::before {
+  transition: background 150ms ease-out;
+}
+
+.b-steps .steps.has-label-right .step-items .step-item .step-link,
+.b-steps .steps.has-label-left .step-items .step-item .step-link {
+  flex-direction: row;
+}
+
+.b-steps .steps.has-label-right .step-items .step-item .step-link > .step-details,
+.b-steps .steps.has-label-left .step-items .step-item .step-link > .step-details {
+  padding: 0.2em;
+}
+
+.b-steps .steps.has-label-left .step-items .step-item .step-link {
+  flex-direction: row-reverse;
+}
+
+.b-steps .steps {
+  font-size: 1rem;
+  min-height: 2rem;
+}
+
 .b-steps .steps .step-items .step-item .step-marker {
   height: 2rem;
   width: 2rem;
-  position: absolute;
-  left: calc(50% - 1rem);
 }
 
 .b-steps .steps .step-items .step-item .step-marker .icon *,
 .b-steps .steps .step-items .step-item .step-marker .icon *:before {
   font-size: 1rem;
-}
-
-.b-steps .steps .step-items .step-item .step-details {
-  margin-top: 2rem;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  padding-top: 0.2em;
 }
 
 .b-steps .steps .step-items .step-item .step-details .step-title {
@@ -15342,277 +15591,340 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
 .b-steps .steps .step-items .step-item:not(:first-child)::before,
 .b-steps .steps .step-items .step-item:only-child::before {
   height: 0.2em;
-  width: 100%;
-  bottom: 0;
-  left: -50%;
   top: 1rem;
 }
 
 .b-steps .steps .step-items .step-item:only-child::after {
-  height: 0.2em;
-  bottom: 0;
   top: 1rem;
-}
-
-.b-steps .steps .step-items .step-item:only-child::before,
-.b-steps .steps .step-items .step-item:only-child::after {
-  width: 25%;
-  left: 50%;
-}
-
-.b-steps .steps .step-items .step-item:only-child::before {
-  right: 50%;
-  left: auto;
 }
 
 @media screen and (max-width: 768px) {
-  .b-steps .steps .step-items .step-item:not(.is-active) {
-    display: none;
-  }
-
   .b-steps .steps .step-items .step-item::before,
   .b-steps .steps .step-items .step-item::after,
   .b-steps .steps .step-items .step-item:not(:first-child)::before {
-    content: " ";
-    display: block;
-    position: absolute;
-    height: 0.2em;
-    width: 25%;
-    bottom: 0;
-    left: 50%;
     top: 1rem;
-  }
-
-  .b-steps .steps .step-items .step-item::before,
-  .b-steps .steps .step-items .step-item:not(:first-child)::before {
-    right: 50%;
-    left: auto;
   }
 }
 
-.b-steps .steps.is-small {
+.b-steps.is-vertical > .steps.has-label-right .step-items .step-item:not(:first-child)::before,
+.b-steps.is-vertical > .steps.has-label-right .step-items .step-item:not(:first-child)::after,
+.b-steps.is-vertical > .steps.has-label-right .step-items .step-item:only-child::before,
+.b-steps.is-vertical > .steps.has-label-right .step-items .step-item:only-child::after {
+  left: calc(1rem - 0.1em);
+}
+
+.b-steps.is-vertical > .steps.has-label-left .step-items .step-item:not(:first-child)::before,
+.b-steps.is-vertical > .steps.has-label-left .step-items .step-item:not(:first-child)::after,
+.b-steps.is-vertical > .steps.has-label-left .step-items .step-item:only-child::before,
+.b-steps.is-vertical > .steps.has-label-left .step-items .step-item:only-child::after {
+  left: auto;
+  right: calc(1rem - 0.1em);
+}
+
+.b-steps.is-vertical.is-right > .steps.has-label-right .step-items .step-item:not(:first-child)::before,
+.b-steps.is-vertical.is-right > .steps.has-label-right .step-items .step-item:not(:first-child)::after,
+.b-steps.is-vertical.is-right > .steps.has-label-right .step-items .step-item:only-child::before,
+.b-steps.is-vertical.is-right > .steps.has-label-right .step-items .step-item:only-child::after {
+  left: calc(1rem - 0.1em);
+}
+
+.b-steps.is-vertical.is-right > .steps.has-label-left .step-items .step-item:not(:first-child)::before,
+.b-steps.is-vertical.is-right > .steps.has-label-left .step-items .step-item:not(:first-child)::after,
+.b-steps.is-vertical.is-right > .steps.has-label-left .step-items .step-item:only-child::before,
+.b-steps.is-vertical.is-right > .steps.has-label-left .step-items .step-item:only-child::after {
+  left: auto;
+  right: calc(1rem - 0.1em);
+}
+
+.b-steps.is-small .steps {
   font-size: 0.75rem;
   min-height: 1.5rem;
 }
 
-.b-steps .steps.is-small .step-items .step-item .step-marker {
+.b-steps.is-small .steps .step-items .step-item .step-marker {
   height: 1.5rem;
   width: 1.5rem;
-  position: absolute;
-  left: calc(50% - 0.75rem);
 }
 
-.b-steps .steps.is-small .step-items .step-item .step-marker .icon *,
-.b-steps .steps.is-small .step-items .step-item .step-marker .icon *:before {
+.b-steps.is-small .steps .step-items .step-item .step-marker .icon *,
+.b-steps.is-small .steps .step-items .step-item .step-marker .icon *:before {
   font-size: 0.75rem;
 }
 
-.b-steps .steps.is-small .step-items .step-item .step-details {
-  margin-top: 1.5rem;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  padding-top: 0.2em;
-}
-
-.b-steps .steps.is-small .step-items .step-item .step-details .step-title {
+.b-steps.is-small .steps .step-items .step-item .step-details .step-title {
   font-size: 0.9rem;
   font-weight: 600;
 }
 
-.b-steps .steps.is-small .step-items .step-item:not(:first-child)::before,
-.b-steps .steps.is-small .step-items .step-item:only-child::before {
+.b-steps.is-small .steps .step-items .step-item:not(:first-child)::before,
+.b-steps.is-small .steps .step-items .step-item:only-child::before {
   height: 0.2em;
-  width: 100%;
-  bottom: 0;
-  left: -50%;
   top: 0.75rem;
 }
 
-.b-steps .steps.is-small .step-items .step-item:only-child::after {
-  height: 0.2em;
-  bottom: 0;
+.b-steps.is-small .steps .step-items .step-item:only-child::after {
   top: 0.75rem;
-}
-
-.b-steps .steps.is-small .step-items .step-item:only-child::before,
-.b-steps .steps.is-small .step-items .step-item:only-child::after {
-  width: 25%;
-  left: 50%;
-}
-
-.b-steps .steps.is-small .step-items .step-item:only-child::before {
-  right: 50%;
-  left: auto;
 }
 
 @media screen and (max-width: 768px) {
-  .b-steps .steps.is-small .step-items .step-item:not(.is-active) {
-    display: none;
-  }
-
-  .b-steps .steps.is-small .step-items .step-item::before,
-  .b-steps .steps.is-small .step-items .step-item::after,
-  .b-steps .steps.is-small .step-items .step-item:not(:first-child)::before {
-    content: " ";
-    display: block;
-    position: absolute;
-    height: 0.2em;
-    width: 25%;
-    bottom: 0;
-    left: 50%;
+  .b-steps.is-small .steps .step-items .step-item::before,
+  .b-steps.is-small .steps .step-items .step-item::after,
+  .b-steps.is-small .steps .step-items .step-item:not(:first-child)::before {
     top: 0.75rem;
-  }
-
-  .b-steps .steps.is-small .step-items .step-item::before,
-  .b-steps .steps.is-small .step-items .step-item:not(:first-child)::before {
-    right: 50%;
-    left: auto;
   }
 }
 
-.b-steps .steps.is-medium {
+.b-steps.is-small.is-vertical > .steps.has-label-right .step-items .step-item:not(:first-child)::before,
+.b-steps.is-small.is-vertical > .steps.has-label-right .step-items .step-item:not(:first-child)::after,
+.b-steps.is-small.is-vertical > .steps.has-label-right .step-items .step-item:only-child::before,
+.b-steps.is-small.is-vertical > .steps.has-label-right .step-items .step-item:only-child::after {
+  left: calc(0.75rem - 0.1em);
+}
+
+.b-steps.is-small.is-vertical > .steps.has-label-left .step-items .step-item:not(:first-child)::before,
+.b-steps.is-small.is-vertical > .steps.has-label-left .step-items .step-item:not(:first-child)::after,
+.b-steps.is-small.is-vertical > .steps.has-label-left .step-items .step-item:only-child::before,
+.b-steps.is-small.is-vertical > .steps.has-label-left .step-items .step-item:only-child::after {
+  left: auto;
+  right: calc(0.75rem - 0.1em);
+}
+
+.b-steps.is-small.is-vertical.is-right > .steps.has-label-right .step-items .step-item:not(:first-child)::before,
+.b-steps.is-small.is-vertical.is-right > .steps.has-label-right .step-items .step-item:not(:first-child)::after,
+.b-steps.is-small.is-vertical.is-right > .steps.has-label-right .step-items .step-item:only-child::before,
+.b-steps.is-small.is-vertical.is-right > .steps.has-label-right .step-items .step-item:only-child::after {
+  left: calc(0.75rem - 0.1em);
+}
+
+.b-steps.is-small.is-vertical.is-right > .steps.has-label-left .step-items .step-item:not(:first-child)::before,
+.b-steps.is-small.is-vertical.is-right > .steps.has-label-left .step-items .step-item:not(:first-child)::after,
+.b-steps.is-small.is-vertical.is-right > .steps.has-label-left .step-items .step-item:only-child::before,
+.b-steps.is-small.is-vertical.is-right > .steps.has-label-left .step-items .step-item:only-child::after {
+  left: auto;
+  right: calc(0.75rem - 0.1em);
+}
+
+.b-steps.is-medium .steps {
   font-size: 1.25rem;
   min-height: 2.5rem;
 }
 
-.b-steps .steps.is-medium .step-items .step-item .step-marker {
+.b-steps.is-medium .steps .step-items .step-item .step-marker {
   height: 2.5rem;
   width: 2.5rem;
-  position: absolute;
-  left: calc(50% - 1.25rem);
 }
 
-.b-steps .steps.is-medium .step-items .step-item .step-marker .icon *,
-.b-steps .steps.is-medium .step-items .step-item .step-marker .icon *:before {
+.b-steps.is-medium .steps .step-items .step-item .step-marker .icon *,
+.b-steps.is-medium .steps .step-items .step-item .step-marker .icon *:before {
   font-size: 1.25rem;
 }
 
-.b-steps .steps.is-medium .step-items .step-item .step-details {
-  margin-top: 2.5rem;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  padding-top: 0.2em;
-}
-
-.b-steps .steps.is-medium .step-items .step-item .step-details .step-title {
+.b-steps.is-medium .steps .step-items .step-item .step-details .step-title {
   font-size: 1.5rem;
   font-weight: 600;
 }
 
-.b-steps .steps.is-medium .step-items .step-item:not(:first-child)::before,
-.b-steps .steps.is-medium .step-items .step-item:only-child::before {
+.b-steps.is-medium .steps .step-items .step-item:not(:first-child)::before,
+.b-steps.is-medium .steps .step-items .step-item:only-child::before {
   height: 0.2em;
-  width: 100%;
-  bottom: 0;
-  left: -50%;
   top: 1.25rem;
 }
 
-.b-steps .steps.is-medium .step-items .step-item:only-child::after {
-  height: 0.2em;
-  bottom: 0;
+.b-steps.is-medium .steps .step-items .step-item:only-child::after {
   top: 1.25rem;
-}
-
-.b-steps .steps.is-medium .step-items .step-item:only-child::before,
-.b-steps .steps.is-medium .step-items .step-item:only-child::after {
-  width: 25%;
-  left: 50%;
-}
-
-.b-steps .steps.is-medium .step-items .step-item:only-child::before {
-  right: 50%;
-  left: auto;
 }
 
 @media screen and (max-width: 768px) {
-  .b-steps .steps.is-medium .step-items .step-item:not(.is-active) {
-    display: none;
-  }
-
-  .b-steps .steps.is-medium .step-items .step-item::before,
-  .b-steps .steps.is-medium .step-items .step-item::after,
-  .b-steps .steps.is-medium .step-items .step-item:not(:first-child)::before {
-    content: " ";
-    display: block;
-    position: absolute;
-    height: 0.2em;
-    width: 25%;
-    bottom: 0;
-    left: 50%;
+  .b-steps.is-medium .steps .step-items .step-item::before,
+  .b-steps.is-medium .steps .step-items .step-item::after,
+  .b-steps.is-medium .steps .step-items .step-item:not(:first-child)::before {
     top: 1.25rem;
-  }
-
-  .b-steps .steps.is-medium .step-items .step-item::before,
-  .b-steps .steps.is-medium .step-items .step-item:not(:first-child)::before {
-    right: 50%;
-    left: auto;
   }
 }
 
-.b-steps .steps.is-large {
+.b-steps.is-medium.is-vertical > .steps.has-label-right .step-items .step-item:not(:first-child)::before,
+.b-steps.is-medium.is-vertical > .steps.has-label-right .step-items .step-item:not(:first-child)::after,
+.b-steps.is-medium.is-vertical > .steps.has-label-right .step-items .step-item:only-child::before,
+.b-steps.is-medium.is-vertical > .steps.has-label-right .step-items .step-item:only-child::after {
+  left: calc(1.25rem - 0.1em);
+}
+
+.b-steps.is-medium.is-vertical > .steps.has-label-left .step-items .step-item:not(:first-child)::before,
+.b-steps.is-medium.is-vertical > .steps.has-label-left .step-items .step-item:not(:first-child)::after,
+.b-steps.is-medium.is-vertical > .steps.has-label-left .step-items .step-item:only-child::before,
+.b-steps.is-medium.is-vertical > .steps.has-label-left .step-items .step-item:only-child::after {
+  left: auto;
+  right: calc(1.25rem - 0.1em);
+}
+
+.b-steps.is-medium.is-vertical.is-right > .steps.has-label-right .step-items .step-item:not(:first-child)::before,
+.b-steps.is-medium.is-vertical.is-right > .steps.has-label-right .step-items .step-item:not(:first-child)::after,
+.b-steps.is-medium.is-vertical.is-right > .steps.has-label-right .step-items .step-item:only-child::before,
+.b-steps.is-medium.is-vertical.is-right > .steps.has-label-right .step-items .step-item:only-child::after {
+  left: calc(1.25rem - 0.1em);
+}
+
+.b-steps.is-medium.is-vertical.is-right > .steps.has-label-left .step-items .step-item:not(:first-child)::before,
+.b-steps.is-medium.is-vertical.is-right > .steps.has-label-left .step-items .step-item:not(:first-child)::after,
+.b-steps.is-medium.is-vertical.is-right > .steps.has-label-left .step-items .step-item:only-child::before,
+.b-steps.is-medium.is-vertical.is-right > .steps.has-label-left .step-items .step-item:only-child::after {
+  left: auto;
+  right: calc(1.25rem - 0.1em);
+}
+
+.b-steps.is-large .steps {
   font-size: 1.5rem;
   min-height: 3rem;
 }
 
-.b-steps .steps.is-large .step-items .step-item .step-marker {
+.b-steps.is-large .steps .step-items .step-item .step-marker {
   height: 3rem;
   width: 3rem;
-  position: absolute;
-  left: calc(50% - 1.5rem);
 }
 
-.b-steps .steps.is-large .step-items .step-item .step-marker .icon *,
-.b-steps .steps.is-large .step-items .step-item .step-marker .icon *:before {
+.b-steps.is-large .steps .step-items .step-item .step-marker .icon *,
+.b-steps.is-large .steps .step-items .step-item .step-marker .icon *:before {
   font-size: 1.5rem;
 }
 
-.b-steps .steps.is-large .step-items .step-item .step-details {
-  margin-top: 3rem;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  padding-top: 0.2em;
-}
-
-.b-steps .steps.is-large .step-items .step-item .step-details .step-title {
+.b-steps.is-large .steps .step-items .step-item .step-details .step-title {
   font-size: 1.8rem;
   font-weight: 600;
 }
 
-.b-steps .steps.is-large .step-items .step-item:not(:first-child)::before,
-.b-steps .steps.is-large .step-items .step-item:only-child::before {
+.b-steps.is-large .steps .step-items .step-item:not(:first-child)::before,
+.b-steps.is-large .steps .step-items .step-item:only-child::before {
   height: 0.2em;
-  width: 100%;
-  bottom: 0;
-  left: -50%;
   top: 1.5rem;
 }
 
-.b-steps .steps.is-large .step-items .step-item:only-child::after {
-  height: 0.2em;
-  bottom: 0;
+.b-steps.is-large .steps .step-items .step-item:only-child::after {
   top: 1.5rem;
-}
-
-.b-steps .steps.is-large .step-items .step-item:only-child::before,
-.b-steps .steps.is-large .step-items .step-item:only-child::after {
-  width: 25%;
-  left: 50%;
-}
-
-.b-steps .steps.is-large .step-items .step-item:only-child::before {
-  right: 50%;
-  left: auto;
 }
 
 @media screen and (max-width: 768px) {
-  .b-steps .steps.is-large .step-items .step-item:not(.is-active) {
+  .b-steps.is-large .steps .step-items .step-item::before,
+  .b-steps.is-large .steps .step-items .step-item::after,
+  .b-steps.is-large .steps .step-items .step-item:not(:first-child)::before {
+    top: 1.5rem;
+  }
+}
+
+.b-steps.is-large.is-vertical > .steps.has-label-right .step-items .step-item:not(:first-child)::before,
+.b-steps.is-large.is-vertical > .steps.has-label-right .step-items .step-item:not(:first-child)::after,
+.b-steps.is-large.is-vertical > .steps.has-label-right .step-items .step-item:only-child::before,
+.b-steps.is-large.is-vertical > .steps.has-label-right .step-items .step-item:only-child::after {
+  left: calc(1.5rem - 0.1em);
+}
+
+.b-steps.is-large.is-vertical > .steps.has-label-left .step-items .step-item:not(:first-child)::before,
+.b-steps.is-large.is-vertical > .steps.has-label-left .step-items .step-item:not(:first-child)::after,
+.b-steps.is-large.is-vertical > .steps.has-label-left .step-items .step-item:only-child::before,
+.b-steps.is-large.is-vertical > .steps.has-label-left .step-items .step-item:only-child::after {
+  left: auto;
+  right: calc(1.5rem - 0.1em);
+}
+
+.b-steps.is-large.is-vertical.is-right > .steps.has-label-right .step-items .step-item:not(:first-child)::before,
+.b-steps.is-large.is-vertical.is-right > .steps.has-label-right .step-items .step-item:not(:first-child)::after,
+.b-steps.is-large.is-vertical.is-right > .steps.has-label-right .step-items .step-item:only-child::before,
+.b-steps.is-large.is-vertical.is-right > .steps.has-label-right .step-items .step-item:only-child::after {
+  left: calc(1.5rem - 0.1em);
+}
+
+.b-steps.is-large.is-vertical.is-right > .steps.has-label-left .step-items .step-item:not(:first-child)::before,
+.b-steps.is-large.is-vertical.is-right > .steps.has-label-left .step-items .step-item:not(:first-child)::after,
+.b-steps.is-large.is-vertical.is-right > .steps.has-label-left .step-items .step-item:only-child::before,
+.b-steps.is-large.is-vertical.is-right > .steps.has-label-left .step-items .step-item:only-child::after {
+  left: auto;
+  right: calc(1.5rem - 0.1em);
+}
+
+.b-steps.is-vertical {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.b-steps.is-vertical > .steps .step-items {
+  height: 100%;
+  flex-direction: column;
+  border-bottom-color: transparent;
+}
+
+.b-steps.is-vertical > .steps .step-items .step-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 0;
+}
+
+.b-steps.is-vertical > .steps .step-items .step-item::before,
+.b-steps.is-vertical > .steps .step-items .step-item::after {
+  background: linear-gradient(to top, #dbdbdb 50%, #ffdb4d 50%);
+  background-size: 100% 200%;
+  background-position: left bottom;
+}
+
+.b-steps.is-vertical > .steps .step-items .step-item:not(:first-child)::before,
+.b-steps.is-vertical > .steps .step-items .step-item:only-child::before {
+  height: 100%;
+  width: 0.2em;
+  top: -50%;
+  left: calc(50% - 0.1em);
+}
+
+.b-steps.is-vertical > .steps .step-items .step-item.is-active::before,
+.b-steps.is-vertical > .steps .step-items .step-item.is-active::after,
+.b-steps.is-vertical > .steps .step-items .step-item.is-previous::before,
+.b-steps.is-vertical > .steps .step-items .step-item.is-previous::after {
+  background-position: right top;
+}
+
+.b-steps.is-vertical > .steps .step-items .step-item:only-child::before {
+  top: 50%;
+}
+
+.b-steps.is-vertical > .steps .step-items .step-item:only-child::after {
+  width: 0.2em;
+  top: auto;
+  bottom: 50%;
+}
+
+.b-steps.is-vertical > .steps .step-items .step-item:only-child::before,
+.b-steps.is-vertical > .steps .step-items .step-item:only-child::after {
+  height: 25%;
+}
+
+.b-steps.is-vertical > .steps.has-label-right .step-items .step-item {
+  justify-content: flex-start;
+}
+
+.b-steps.is-vertical > .steps.has-label-left .step-items .step-item {
+  justify-content: flex-end;
+}
+
+.b-steps.is-vertical > .step-content {
+  flex-grow: 1;
+}
+
+.b-steps.is-vertical > .step-navigation {
+  flex-basis: 100%;
+}
+
+.b-steps.is-vertical.is-right {
+  flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 768px) {
+  .b-steps:not(.is-vertical) .steps .step-items .step-item:not(.is-active) {
     display: none;
   }
 
-  .b-steps .steps.is-large .step-items .step-item::before,
-  .b-steps .steps.is-large .step-items .step-item::after,
-  .b-steps .steps.is-large .step-items .step-item:not(:first-child)::before {
+  .b-steps:not(.is-vertical) .steps .step-items .step-item::before,
+  .b-steps:not(.is-vertical) .steps .step-items .step-item::after,
+  .b-steps:not(.is-vertical) .steps .step-items .step-item:not(:first-child)::before {
     content: " ";
     display: block;
     position: absolute;
@@ -15620,11 +15932,10 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
     width: 25%;
     bottom: 0;
     left: 50%;
-    top: 1.5rem;
   }
 
-  .b-steps .steps.is-large .step-items .step-item::before,
-  .b-steps .steps.is-large .step-items .step-item:not(:first-child)::before {
+  .b-steps:not(.is-vertical) .steps .step-items .step-item::before,
+  .b-steps:not(.is-vertical) .steps .step-items .step-item:not(:first-child)::before {
     right: 50%;
     left: auto;
   }
@@ -15676,7 +15987,7 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
 
 .switch input[type=checkbox] + .check.is-elastic:before {
   transform: scaleX(1.5);
-  border-radius: 100%;
+  border-radius: 4px;
 }
 
 .switch input[type=checkbox]:checked + .check {
@@ -15853,6 +16164,11 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
 }
 
 .switch.is-rounded input[type=checkbox] + .check:before {
+  border-radius: 290486px;
+}
+
+.switch.is-rounded input[type=checkbox].is-elastic:before {
+  transform: scaleX(1.5);
   border-radius: 290486px;
 }
 
@@ -16269,6 +16585,62 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
   }
 }
 
+.b-table .table-wrapper.is-card-list thead {
+  display: none;
+}
+
+.b-table .table-wrapper.is-card-list tfoot th {
+  border: 0;
+  display: inherit;
+}
+
+.b-table .table-wrapper.is-card-list tr {
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  max-width: 100%;
+  position: relative;
+  display: block;
+}
+
+.b-table .table-wrapper.is-card-list tr td {
+  border: 0;
+  display: inherit;
+}
+
+.b-table .table-wrapper.is-card-list tr td:last-child {
+  border-bottom: 0;
+}
+
+.b-table .table-wrapper.is-card-list tr:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.b-table .table-wrapper.is-card-list tr:not([class*=is-]) {
+  background: inherit;
+}
+
+.b-table .table-wrapper.is-card-list tr:not([class*=is-]):hover {
+  background-color: inherit;
+}
+
+.b-table .table-wrapper.is-card-list tr.detail {
+  margin-top: -1rem;
+}
+
+.b-table .table-wrapper.is-card-list tr:not(.detail):not(.is-empty):not(.table-footer) td {
+  display: flex;
+  width: auto;
+  justify-content: space-between;
+  text-align: right;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.b-table .table-wrapper.is-card-list tr:not(.detail):not(.is-empty):not(.table-footer) td:before {
+  content: attr(data-label);
+  font-weight: 600;
+  padding-right: 0.5em;
+  text-align: left;
+}
+
 .b-table.is-loading {
   position: relative;
   pointer-events: none;
@@ -16474,6 +16846,7 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
 }
 
 .taginput .taginput-container .autocomplete {
+  position: static;
   flex: 1;
 }
 

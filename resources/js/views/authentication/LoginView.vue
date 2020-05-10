@@ -87,15 +87,18 @@
                 });
                 this.hideLoginModal();
             },
+
             // Submit the form
             login: function() {
                 this.eventBus.$emit('submitForm');
             },
+
             // Show the error message
             loginError: function() {
                 this.hasError = true;
                 this.requesting = false;
             },
+
             // Log out the current user
             logout: function() {
                 this.$auth.logout({
@@ -103,6 +106,7 @@
                     success: this.logoutSuccess
                 });
             },
+
             logoutSuccess: function() {
                 this.$buefy.snackbar.open({
                     actionText: null,
@@ -111,10 +115,12 @@
                     type: 'is-success'
                 });
             },
+
             // Show the modal
             showLoginModal: function() {
                 this.modalIsActive = true;
             },
+
             // Use the auth function to submit the login data
             submitLogin: function(loginData) {
                 this.hasError = false;

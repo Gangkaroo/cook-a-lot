@@ -15,4 +15,8 @@ export default class Recipe {
             return false;
         }
     }
+
+    store() {
+
+    }
 }

@@ -13,8 +13,7 @@
             </router-link>
             <router-link to="/recipes" class="menu-item">
                 <span class="icon is-small">
-                    <i class="material-icons md-18">
-                        restaurant
+                    <i class="material-icons md-18">restaurant
                     </i>
                 </span>
                 <span class="icon-label">
