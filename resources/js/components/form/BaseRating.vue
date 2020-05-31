@@ -9,7 +9,7 @@
         methods: {
             success() {
                 this.$buefy.toast.open({
-                    message: 'Thanks for you Rate!',
+                    message: 'Thanks for rating!',
                     type: 'is-success'
                 })
             }

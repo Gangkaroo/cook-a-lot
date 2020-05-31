@@ -4,8 +4,9 @@
             :tabindex="this.index"
             :editor="editor"
             :config="editorConfig"
-            v-model="content">
-        </ckeditor>
+            v-model="content"
+            @blur="fieldBlurred()"
+        ></ckeditor>
     </div>
 </template>
 
@@ -45,6 +46,7 @@
             }
         },
         methods: {
+            // Update the model on blur
             fieldBlurred: function() {
                 // First set the error to false. If validation fails it will be set to true shortly after
                 this.hasError = false;
@@ -52,23 +54,29 @@
                 this.valueUpdated();
                 this.eventBus.$emit('fieldBlurred', this.name);
             },
+
             // Focus the first input
             focusInput() {
                 this.$refs[this.name].focus();
             },
+
             // An error has been recorded
             setError: function() {
                 this.hasError = true;
             },
+
             // Submit the form
             submitValue: function() {
                 this.eventBus.$emit('submitForm');
             },
+
             // Update the model of the form
             valueUpdated: function() {
-                this.eventBus.$emit('inputUpdate', {name: this.name, value: this.value});
+                console.log(this.content);
+                this.eventBus.$emit('inputUpdate', {name: this.name, value: this.content});
             }
         },
+
         mounted() {
             // Listen for server or validation errors
             this.eventBus.$on(this.name + 'Error', this.setError);

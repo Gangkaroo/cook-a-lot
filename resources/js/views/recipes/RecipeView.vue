@@ -35,8 +35,6 @@
             return {
                 eventBus: new Vue()
             }
-        },
-        methods: {
         }
     }
 </script>

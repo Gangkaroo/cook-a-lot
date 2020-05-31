@@ -10,7 +10,7 @@
             :loading="isSearching"
             v-model="content">
             <template slot="footer" v-if="footer.length">{{ footer }}</template>
-            <template slot="empty">{{$t('No results for')}} {{name}}</template>
+            <template slot="empty">{{$t('no_results_for')}} {{name}}</template>
         </b-autocomplete>
     </div>
 </template>

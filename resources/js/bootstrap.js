@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 import axios from 'axios';
 import Buefy from 'buefy';
 import CKEditor from '@ckeditor/ckeditor5-vue';
+import Moment from 'moment';
 import VueAxios from 'vue-axios';
 import VueI18n from 'vue-i18n';
 import Vuelidate from 'vuelidate';
@@ -29,6 +30,11 @@ Vue.use(require('@websanova/vue-auth'), {
     parseUserData: function(response) {
         return response;
     }
+});
+
+// Filters
+Vue.filter('datetime', function(dateString) {
+    return Moment(dateString).format('DD.MM.YYYY HH:mm');
 });
 
 window.axios = axios;

@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreatePreparationsTable extends Migration
+class CreateRecipeSourcesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreatePreparationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('preparations', function (Blueprint $table) {
-            $table->id('id');
+        Schema::create('recipe_sources', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('recipe_id')->constrained();
+            $table->enum('type', ['person', 'book', 'site']);
+            $table->text('name');
             $table->text('description');
-            $table->timestamp('completion_date');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreatePreparationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('preparations');
+        Schema::dropIfExists('recipe_sources');
     }
 }

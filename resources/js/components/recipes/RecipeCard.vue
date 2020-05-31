@@ -8,16 +8,14 @@
         <div class="card-content">
             <div class="media">
                 <div class="media-content">
-                    <p class="title is-5">Spaghetti Bolognese</p>
+                    <p class="title is-5">{{recipe.title}}</p>
                 </div>
             </div>
 
             <div class="content">
-                <p>
-                    Lecker schmecker!
-                </p>
+                <div class="description" v-html="recipe.description"></div>
                 <div class="content is-small">
-                    <time datetime="2020-1-1">11:09 PM - 1 Jan 2020</time>
+                    <time datetime="2020-1-1">{{ recipe.created_at | datetime }}</time>
                 </div>
             </div>
         </div>
@@ -27,8 +25,10 @@
 <script>
     export default {
         name: "RecipeCard",
-        data: function() {
-            return {};
+        props: {
+            recipe: {
+                type: Object
+            }
         }
     }
 </script>

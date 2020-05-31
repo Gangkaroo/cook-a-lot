@@ -14,7 +14,7 @@ class CreateIngredientsTable extends Migration
     public function up()
     {
         Schema::create('ingredients', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id('id');
             $table->string('label', 200)->comment('Label of the ingredient as will be displayed in the list of ingredients');
             $table->text('description')->comment('Longer description of the ingredient');
         });

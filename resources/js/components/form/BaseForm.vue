@@ -32,6 +32,13 @@
             submitHandler: {
                 type: Function
             },
+            submitMethod: {
+                type: String,
+                default: 'post',
+                validator: function (method) {
+                    return ['delete', 'post', 'put', 'patch'].indexOf(method) !== -1;
+                }
+            },
             url: {
                 type: String
             }
@@ -46,6 +53,7 @@
             firstFieldName: function() {
                 return this.fields[0].name;
             },
+
             // Build form data based on submitted fields
             formData: function() {
                 let fieldData = {};
@@ -75,6 +83,7 @@
                 });
                 return validation;
             },
+
             // Validate and submit the form
             submit: function() {
                 if (!this.validateForm()) {
@@ -87,7 +96,7 @@
                 }
 
                 // Use the default submit method
-                this.form.post(this.url)
+                this.form[this.submitMethod](this.url)
                     .then(function() {
                         this.eventBus.$emit('submitSuccess');
                     }.bind(this))
@@ -100,10 +109,12 @@
                         this.eventBus.$emit('submitError');
                     }.bind(this));
             },
+
             // Update the model in the form
             updateModel: function(field) {
                 this.form[field.name] = field.value;
             },
+
             // Check if all input fields are valid
             validateForm: function() {
                 if (this.$v.$invalid) {
@@ -117,8 +128,12 @@
 
                 return true;
             },
+
             // Validate a single input after blurring
             validateInput: function(name) {
+                if (typeof this.$v.form[name] === "undefined") {
+                    return; // No validation required
+                }
                 if (this.$v.form[name].$invalid) {
                     this.form.errors[name] = [];
                     const [validations, messages] = this.getValidation(name);
@@ -141,6 +156,7 @@
                 return true;
             }
         },
+
         // Focus first field in the form after mounting
         mounted() {
             this.form = new Form(this.formData);
@@ -148,6 +164,7 @@
             this.eventBus.$on('inputUpdate', this.updateModel);
             this.eventBus.$on('fieldBlurred', this.validateInput);
         },
+
         // Dynamically initialize the validations based on validation objects of the input
         validations() {
             let validations = {form: {}};

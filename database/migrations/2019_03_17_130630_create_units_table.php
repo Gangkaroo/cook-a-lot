@@ -14,7 +14,7 @@ class CreateUnitsTable extends Migration
     public function up()
     {
         Schema::create('units', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id('id');
             $table->string('label', 100)->comment('Name of the unit');
             $table->string('shorthand', 10)->comment('Short version of the unit label, for example l for liter');
         });

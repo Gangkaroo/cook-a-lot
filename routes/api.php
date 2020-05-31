@@ -21,3 +21,9 @@ Route::middleware('api')->prefix('auth')->group(function() {
     Route::get('refresh', 'AuthController@refresh');
     Route::post('register', 'AuthController@register');
 });
+
+// Everything related to recipes
+Route::middleware('api')->group(function() {
+    Route::get('recipe-list', 'RecipeController@getRecipes');
+    Route::post('recipes', 'RecipeController@store');
+});

@@ -14,9 +14,9 @@ class CreateRecipesTable extends Migration
     public function up()
     {
         Schema::create('recipes', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id');
-            $table->string('title', 200);
+            $table->id('id');
+            $table->foreignId('user_id')->constrained();
+            $table->string('title', 255);
             $table->text('description');
             $table->time('prep_time');
             $table->time('cook_time');

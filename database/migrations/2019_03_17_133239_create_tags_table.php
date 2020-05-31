@@ -13,11 +13,21 @@ class CreateTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tags', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('label', 45);
-            $table->string('path', 255)->comment('Stores a tag hierarchy as /-separated path of IDs');
+        Schema::create('tags', function (Blueprint $table)
+        {
+            $table->id('id');
+            $table->string('name', 100);
+            $table->bigInteger('parent_id')
+                ->unsigned()
+                ->nullable()
+                ->comment('Required to store a tag hierarchy');
             $table->timestamps();
+        });
+
+        Schema::table('tags', function (Blueprint $table) {
+            $table->foreign('parent_id')
+                ->references('id')
+                ->on('tags');
         });
     }
 

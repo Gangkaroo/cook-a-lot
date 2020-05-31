@@ -3,19 +3,36 @@
   <component name="ChangeListManager">
     <list default="true" id="e2fb2260-a307-4677-9693-ae13969d8a7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/RegisterFormRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/RegisterFormRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_17_124647_create_recipes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_17_124647_create_recipes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_17_130630_create_units_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_17_130630_create_units_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_17_130718_create_ingredients_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_17_130718_create_ingredients_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_17_130910_create_recipe_has_ingredients_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_17_130910_create_recipe_has_ingredients_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_17_131126_create_comments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_17_131126_create_comments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_17_133239_create_tags_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_17_133239_create_tags_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_17_133415_create_recipe_has_tags_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_17_133415_create_recipe_has_tags_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_17_133527_create_steps_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_17_133527_create_steps_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_17_134843_create_preparations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_17_134843_create_preparations_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/classes/Recipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/classes/Recipe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseAutocomplete.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseAutocomplete.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseEditor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseEditor.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseRating.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseRating.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/recipes/RecipeCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/recipes/RecipeCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/recipes/RecipeList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/recipes/RecipeList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/views/authentication/LoginView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/authentication/LoginView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/views/recipes/EditRecipeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/recipes/EditRecipeView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/views/recipes/RecipeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/recipes/RecipeView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/de.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,57 +44,6 @@
     <execution>
       <executable path="composer" />
     </execution>
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="cookalot: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="cookalot: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="ingredients: table" type="dbc44a63:MariaImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="cookalot: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="recipe_has_ingredients: table" type="dbc44a63:MariaImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="cookalot: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="units: table" type="dbc44a63:MariaImplModel$Table" />
-      </path>
-    </expand>
-    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -338,7 +304,11 @@
       <workItem from="1587029062297" duration="303000" />
       <workItem from="1587029419148" duration="688000" />
       <workItem from="1588055000067" duration="2452000" />
-      <workItem from="1589027613319" duration="7602000" />
+      <workItem from="1589027613319" duration="9102000" />
+      <workItem from="1589114065741" duration="4114000" />
+      <workItem from="1589260847677" duration="8381000" />
+      <workItem from="1590044488369" duration="2606000" />
+      <workItem from="1590851245964" duration="24433000" />
     </task>
     <task id="LOCAL-00001" summary="Added new form handling classes">
       <created>1556775731900</created>
@@ -473,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588056319341</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Refactor recipe editing, use routes instead of sub-components&#10;Extend recipe editing logic">
+      <created>1589097497846</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1589097497846</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,77 +489,94 @@
     <MESSAGE value="Update to new Laravel version&#10;Refactor input component to better format inputs without icon" />
     <MESSAGE value="Include previously unversioned files&#10;Added ckeditor to edit html-based recipe description" />
     <MESSAGE value="Add latest changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add latest changes" />
+    <MESSAGE value="Refactor recipe editing, use routes instead of sub-components&#10;Extend recipe editing logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor recipe editing, use routes instead of sub-components&#10;Extend recipe editing logic" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2575" y="229" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog" timestamp="1581409680963">
+    <state x="2472" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590916496473">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2575" y="229" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581409680963" />
-    <state x="2635" y="331" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581664207474">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2635" y="331" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581664207474" />
+    <state x="2472" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590916496473" />
     <state x="2560" y="260" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1587029342163">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="260" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585569132464" />
     <state x="2560" y="260" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587029342163" />
+    <state x="2633" y="211" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1589281573207">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2633" y="211" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589281573207" />
     <state x="2610" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584337809930">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2610" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584337809930" />
-    <state x="2610" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581367845446">
+    <state x="2610" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1590942286492">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2610" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581367845446" />
-    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2" timestamp="1588056316135">
+    <state x="2610" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590942286492" />
+    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2" timestamp="1589097495197">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588056316135" />
-    <state x="2664" y="440" key="ComposerInitDialogKey" timestamp="1581256974618">
+    <state x="2028" y="0" width="1150" height="867" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589097495197" />
+    <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1590920789326">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2664" y="440" key="ComposerInitDialogKey/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581256974618" />
-    <state x="2560" y="329" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1581884116543">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2560" y="329" key="DUMP_DIALOG_DIMENSION_KEY/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581884116543" />
+    <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590920789326" />
     <state x="2012" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1582476308412">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2012" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582476308412" />
-    <state x="2660" y="277" key="FileChooserDialogImpl" timestamp="1581922226912">
+    <state width="1293" height="282" key="GridCell.Tab.0.bottom" timestamp="1590921844962">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2660" y="277" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581922226912" />
-    <state x="2383" y="166" key="SettingsEditor" timestamp="1581409887428">
+    <state width="1293" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590921844962" />
+    <state width="1293" height="282" key="GridCell.Tab.0.center" timestamp="1590921844962">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2383" y="166" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581409887428" />
-    <state x="2472" y="257" key="Vcs.Push.Dialog.v2" timestamp="1588056328213">
+    <state width="1293" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590921844962" />
+    <state width="1293" height="282" key="GridCell.Tab.0.left" timestamp="1590921844962">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588056328213" />
+    <state width="1293" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590921844962" />
+    <state width="1293" height="282" key="GridCell.Tab.0.right" timestamp="1590921844962">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590921844962" />
+    <state x="2472" y="257" key="Vcs.Push.Dialog.v2" timestamp="1589097515929">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2472" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589097515929" />
+    <state x="2758" y="396" width="316" height="247" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1590920820677">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2758" y="396" width="316" height="247" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590920820677" />
+    <state x="2690" y="176" key="com.intellij.database.actions.ToolActions$ScriptingActionBase$MyDatabaseScriptDialog" timestamp="1590920775996">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2690" y="176" key="com.intellij.database.actions.ToolActions$ScriptingActionBase$MyDatabaseScriptDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590920775996" />
+    <state x="2486" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590921716248">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2486" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590921716248" />
+    <state x="2689" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590941175247">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2689" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590941175247" />
     <state x="2635" y="169" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1584455268561">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2635" y="169" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584455268561" />
-    <state x="2587" y="276" width="888" height="488" key="find.popup" timestamp="1584882197479">
+    <state x="2587" y="276" width="888" height="534" key="find.popup" timestamp="1590949088812">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2587" y="276" width="888" height="488" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584882197479" />
-    <state x="2602" y="324" key="git4idea.merge.GitPullDialog" timestamp="1581316248296">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2602" y="324" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581316248296" />
+    <state x="2587" y="276" width="888" height="534" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590949088812" />
     <state x="2536" y="240" key="run.anything.popup" timestamp="1584878152106">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2536" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584878152106" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1589096320521">
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1590949107194">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589096320521" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590949107194" />
   </component>
 </project>

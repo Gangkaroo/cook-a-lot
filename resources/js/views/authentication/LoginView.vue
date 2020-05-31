@@ -11,7 +11,10 @@
 
         <base-modal :is-active="modalIsActive" @close="hideLoginModal()" name="login-modal">
             <div slot="header">{{$t('login')}}</div>
-            <base-form :fields="fields" :event-bus="eventBus" :submitHandler="this.submitLogin.bind(this)">
+            <base-form
+                :fields="fields"
+                :event-bus="eventBus"
+                :submitHandler="this.submitLogin.bind(this)">
             </base-form>
             <div v-show="hasError" class="help is-danger">{{$t('login_error')}}</div>
             <div slot="footer">

@@ -14,12 +14,9 @@ class CreateRecipeHasTagsTable extends Migration
     public function up()
     {
         Schema::create('recipe_has_tags', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('tag_id')->unsigned();
-            $table->integer('recipe_id')->unsigned();
-
-            $table->foreign('tag_id')->references('id')->on('tags');
-            $table->foreign('recipe_id')->references('id')->on('recipes');
+            $table->id('id');
+            $table->foreignId('tag_id')->constrained();
+            $table->foreignId('recipe_id')->constrained();
         });
     }
 

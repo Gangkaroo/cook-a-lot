@@ -1,13 +1,13 @@
 <template>
     <div class="content">
-        <h1 v-if="!recipeId" class="title is-4">{{$t('new_recipe')}}</h1>
-        <h1 v-if="recipeId" class="title">{{$t('edit_recipe')}}</h1>
+        <h1 v-if="isNew" class="title is-4">{{$t('new_recipe')}}</h1>
+        <h1 v-if="!isNew" class="title">{{$t('edit_recipe')}}</h1>
         <div class="columns">
             <div class="column">
                 <base-form
                     :fields="fields"
                     :event-bus="eventBus"
-                    :submitHandler="this.submitRecipe.bind(this)"
+                    url="/recipes"
                 ></base-form>
             </div>
             <div class="column">
@@ -54,10 +54,10 @@
                         value: '',
                         type: 'editor'
                     },
-                    {
+                    /*{
                         title: this.$t('ingredient_list'),
                         type: 'content'
-                    },
+                    },*/
                     {
                         name: 'ingredients',
                         searchHandler: this.searchIngredient,
@@ -73,6 +73,9 @@
         },
 
         computed: {
+            isNew() {
+                return parseInt(this.recipeId) === 0;
+            },
             recipeId() {
                 return this.$route.params.recipeId;
             }
@@ -90,10 +93,6 @@
                 this.$router.push("/recipes")
             },
 
-            parseInput: function() {
-
-            },
-
             // search for an existing ingredient
             searchIngredient: function(searchTerm) {
                 console.log(searchTerm);
@@ -102,16 +101,7 @@
             // Initiate the recipe submission
             save() {
                 this.eventBus.$emit('submitForm');
-                this.recipe.store();
-            },
-
-            submitRecipe(recipeData) {
-
             }
-        },
-
-        mounted() {
-            console.log(this.recipeId);
         }
     }
 </script>

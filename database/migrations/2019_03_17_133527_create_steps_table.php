@@ -14,13 +14,11 @@ class CreateStepsTable extends Migration
     public function up()
     {
         Schema::create('steps', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('recipe_id')->unsigned();
+            $table->id('id');
+            $table->foreignId('recipe_id')->constrained();
             $table->text('description');
             $table->tinyInteger('position')->unsigned();
             $table->time('duration');
-
-            $table->foreign('recipe_id')->references('id')->on('recipes');
         });
     }
 

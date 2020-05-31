@@ -16,6 +16,14 @@ export default class Recipe {
         }
     }
 
+    // Parse the input and return reference to the current instance
+    parseInput(input) {
+        this.title = input.title || '';
+        this.description = input.description || '';
+
+        return this;
+    }
+
     store() {
 
     }
