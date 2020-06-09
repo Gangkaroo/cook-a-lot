@@ -26,8 +26,6 @@ export default class Form {
     }
 
     onSuccess(data) {
-        alert(data.message);
-
         this.reset();
     }
 

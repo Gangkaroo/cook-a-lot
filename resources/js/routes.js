@@ -18,7 +18,8 @@ const routes = [
         meta: {
             auth: true
         },
-        component: require('./views/recipes/EditRecipeView').default
+        component: require('./views/recipes/EditRecipeView').default,
+        props: true
     },
     {
         path: '/lists',

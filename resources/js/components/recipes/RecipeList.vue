@@ -24,7 +24,7 @@
         },
 
         mounted() {
-            axios.get('/recipe-list')
+            axios.get('/api/recipes')
                 .then(response => {
                     if (response.data.length) {
                         this.recipes = response.data;

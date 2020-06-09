@@ -6,6 +6,7 @@
             <base-input
                 v-if="isInput"
                 :name="field.name"
+                :value="field.value"
                 :placeholder="field.placeholder"
                 :type="field.type"
                 :icon-name="field.icon"
@@ -16,6 +17,7 @@
             <base-editor
                 v-if="isEditor"
                 :name="field.name"
+                :value="field.value"
                 :placeholder="field.placeholder"
                 :event-bus="eventBus"
                 :index="index">

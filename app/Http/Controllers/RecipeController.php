@@ -18,6 +18,20 @@ class RecipeController extends Controller
         $this->middleware('auth:api');
     }
 
+    /**
+     * Returns the details of a single recipe
+     * @param int $recipeId
+     * @return array The recipe details
+     */
+    public function getRecipe($recipeId)
+    {
+        return Recipe::find($recipeId);
+    }
+
+    /**
+     * Return all recipes in the database
+     * @return Recipe[]|\Illuminate\Database\Eloquent\Collection
+     */
     public function getRecipes()
     {
         return Recipe::all();

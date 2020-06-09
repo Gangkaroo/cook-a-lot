@@ -70,18 +70,27 @@
                 this.valueUpdated();
                 this.eventBus.$emit('fieldBlurred', this.name);
             },
+
             // Focus the first input
             focusInput() {
                 this.$refs[this.name].focus();
             },
+
             // An error has been recorded
             setError: function() {
                 this.hasError = true;
             },
+
             // Submit the form
             submitValue: function() {
                 this.eventBus.$emit('submitForm');
             },
+
+            // Update the input value
+            updateValue: function(newValue) {
+                this.value = newValue;
+            },
+
             // Update the model of the form
             valueUpdated: function() {
                 this.eventBus.$emit('inputUpdate', {name: this.name, value: this.value});
@@ -90,6 +99,8 @@
         mounted() {
             // Listen for server or validation errors
             this.eventBus.$on(this.name + 'Error', this.setError);
+            // Listen for parent model changes
+            this.eventBus.$on('update:' + this.name, this.updateValue);
 
             // Focus input if it is the first input
             if (this.index === 1) {

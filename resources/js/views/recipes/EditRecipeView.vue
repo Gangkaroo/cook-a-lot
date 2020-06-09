@@ -7,7 +7,7 @@
                 <base-form
                     :fields="fields"
                     :event-bus="eventBus"
-                    url="/recipes"
+                    url="/api/recipes"
                 ></base-form>
             </div>
             <div class="column">
@@ -30,9 +30,10 @@
 
     export default {
         name: "EditRecipeView",
+
         data: function() {
             return {
-                recipe: new Recipe(),
+                recipe: null,
                 fields: [
                     {
                         name: 'title',
@@ -74,10 +75,10 @@
 
         computed: {
             isNew() {
-                return parseInt(this.recipeId) === 0;
+                return this.recipeId === 0;
             },
             recipeId() {
-                return this.$route.params.recipeId;
+                return parseInt(this.$route.params.recipeId);
             }
         },
 
@@ -90,7 +91,20 @@
 
             // Return to the recipes overview
             cancelEdit: function() {
-                this.$router.push("/recipes")
+                this.$router.push("/recipes");
+            },
+
+            // Load the recipe details
+            loadRecipeDetails: function() {
+                axios.get('/api/recipe/' + this.recipeId)
+                    .then(response => {
+                        if (typeof response.data.id !== 'undefined' && response.data.id === this.recipeId) {
+                            this.recipe = new Recipe(response.data);
+                            this.fields.forEach(field => {
+                                this.eventBus.$emit('update:' + field.name, this.recipe[field.name]);
+                            });
+                        }
+                    });
             },
 
             // search for an existing ingredient
@@ -101,6 +115,37 @@
             // Initiate the recipe submission
             save() {
                 this.eventBus.$emit('submitForm');
+            },
+
+            // Show success message and navigate back
+            saveSuccessful() {
+                this.$buefy.snackbar.open({
+                    actionText: null,
+                    message: '<span class="snack-icon"><i class="material-icons success">check</i>'
+                        + this.$t('create_recipe_success') + '</span>',
+                    type: 'is-success'
+                });
+                this.$router.push("/recipes");
+            },
+
+            // Show success message and navigate back
+            updateSuccessful() {
+                this.$buefy.snackbar.open({
+                    actionText: null,
+                    message: '<span class="snack-icon"><i class="material-icons success">check</i>'
+                        + this.$t('update_recipe_success') + '</span>',
+                    type: 'is-success'
+                });
+                this.$router.push("/recipes");
+            }
+        },
+
+        mounted() {
+            if (this.recipeId > 0) {
+                this.loadRecipeDetails();
+                this.eventBus.$on('submitSuccess', this.updateSuccessful);
+            } else {
+                this.eventBus.$on('submitSuccess', this.saveSuccessful);
             }
         }
     }

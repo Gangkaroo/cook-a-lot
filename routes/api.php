@@ -23,7 +23,8 @@ Route::middleware('api')->prefix('auth')->group(function() {
 });
 
 // Everything related to recipes
-Route::middleware('api')->group(function() {
-    Route::get('recipe-list', 'RecipeController@getRecipes');
+Route::middleware('api')->prefix('api')->group(function() {
+    Route::get('recipes', 'RecipeController@getRecipes');
+    Route::get('recipe/{recipeId}', 'RecipeController@getRecipe');
     Route::post('recipes', 'RecipeController@store');
 });

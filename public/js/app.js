@@ -3264,20 +3264,18 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       required: true
     },
-    intialContent: {
-      type: String,
-      "default": ''
-    },
     placeholder: String,
     eventBus: Object
   },
   data: function data() {
     return {
-      content: this.initialContent,
       editor: _ckeditor_ckeditor5_build_inline__WEBPACK_IMPORTED_MODULE_0___default.a,
       editorConfig: {
         placeholder: this.placeholder
-      }
+      },
+      hasError: false,
+      touched: false,
+      value: ''
     };
   },
   computed: {
@@ -3306,12 +3304,16 @@ __webpack_require__.r(__webpack_exports__);
     submitValue: function submitValue() {
       this.eventBus.$emit('submitForm');
     },
+    // Update the input value
+    updateValue: function updateValue(newValue) {
+      this.value = newValue;
+    },
     // Update the model of the form
     valueUpdated: function valueUpdated() {
-      console.log(this.content);
+      console.log(this.value);
       this.eventBus.$emit('inputUpdate', {
         name: this.name,
-        value: this.content
+        value: this.value
       });
     }
   },
@@ -3319,7 +3321,9 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     // Listen for server or validation errors
-    this.eventBus.$on(this.name + 'Error', this.setError); // Focus input if it is the first input
+    this.eventBus.$on(this.name + 'Error', this.setError); // Listen for parent model changes
+
+    this.eventBus.$on('update:' + this.name, this.updateValue); // Focus input if it is the first input
 
     if (this.index === 1) {
       this.$nextTick(function () {
@@ -3604,6 +3608,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -3775,6 +3781,10 @@ __webpack_require__.r(__webpack_exports__);
     submitValue: function submitValue() {
       this.eventBus.$emit('submitForm');
     },
+    // Update the input value
+    updateValue: function updateValue(newValue) {
+      this.value = newValue;
+    },
     // Update the model of the form
     valueUpdated: function valueUpdated() {
       this.eventBus.$emit('inputUpdate', {
@@ -3787,7 +3797,9 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     // Listen for server or validation errors
-    this.eventBus.$on(this.name + 'Error', this.setError); // Focus input if it is the first input
+    this.eventBus.$on(this.name + 'Error', this.setError); // Listen for parent model changes
+
+    this.eventBus.$on('update:' + this.name, this.updateValue); // Focus input if it is the first input
 
     if (this.index === 1) {
       this.$nextTick(function () {
@@ -3832,12 +3844,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RecipeCard",
   props: {
     recipe: {
-      type: Object
+      type: Object,
+      required: true
     }
+  },
+  data: function data() {
+    return {
+      linkURL: '/recipe/' + this.recipe.id
+    };
   }
 });
 
@@ -3877,7 +3897,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    axios.get('/recipe-list').then(function (response) {
+    axios.get('/api/recipes').then(function (response) {
       if (response.data.length) {
         _this.recipes = response.data;
       }
@@ -4429,7 +4449,7 @@ __webpack_require__.r(__webpack_exports__);
   name: "EditRecipeView",
   data: function data() {
     return {
-      recipe: new _classes_Recipe__WEBPACK_IMPORTED_MODULE_1__["default"](),
+      recipe: null,
       fields: [{
         name: 'title',
         value: '',
@@ -4467,10 +4487,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     isNew: function isNew() {
-      return parseInt(this.recipeId) === 0;
+      return this.recipeId === 0;
     },
     recipeId: function recipeId() {
-      return this.$route.params.recipeId;
+      return parseInt(this.$route.params.recipeId);
     }
   },
   methods: {
@@ -4483,6 +4503,20 @@ __webpack_require__.r(__webpack_exports__);
     cancelEdit: function cancelEdit() {
       this.$router.push("/recipes");
     },
+    // Load the recipe details
+    loadRecipeDetails: function loadRecipeDetails() {
+      var _this = this;
+
+      axios.get('/api/recipe/' + this.recipeId).then(function (response) {
+        if (typeof response.data.id !== 'undefined' && response.data.id === _this.recipeId) {
+          _this.recipe = new _classes_Recipe__WEBPACK_IMPORTED_MODULE_1__["default"](response.data);
+
+          _this.fields.forEach(function (field) {
+            _this.eventBus.$emit('update:' + field.name, _this.recipe[field.name]);
+          });
+        }
+      });
+    },
     // search for an existing ingredient
     searchIngredient: function searchIngredient(searchTerm) {
       console.log(searchTerm);
@@ -4490,6 +4524,32 @@ __webpack_require__.r(__webpack_exports__);
     // Initiate the recipe submission
     save: function save() {
       this.eventBus.$emit('submitForm');
+    },
+    // Show success message and navigate back
+    saveSuccessful: function saveSuccessful() {
+      this.$buefy.snackbar.open({
+        actionText: null,
+        message: '<span class="snack-icon"><i class="material-icons success">check</i>' + this.$t('create_recipe_success') + '</span>',
+        type: 'is-success'
+      });
+      this.$router.push("/recipes");
+    },
+    // Show success message and navigate back
+    updateSuccessful: function updateSuccessful() {
+      this.$buefy.snackbar.open({
+        actionText: null,
+        message: '<span class="snack-icon"><i class="material-icons success">check</i>' + this.$t('update_recipe_success') + '</span>',
+        type: 'is-success'
+      });
+      this.$router.push("/recipes");
+    }
+  },
+  mounted: function mounted() {
+    if (this.recipeId > 0) {
+      this.loadRecipeDetails();
+      this.eventBus.$on('submitSuccess', this.updateSuccessful);
+    } else {
+      this.eventBus.$on('submitSuccess', this.saveSuccessful);
     }
   }
 });
@@ -20028,7 +20088,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.recipe-card {\n    margin: 5px 10px 5px 0;\n    width: 400px;\n}\n", ""]);
+exports.push([module.i, "\n.recipe-card {\n    cursor: pointer;\n    margin: 5px 10px 5px 0;\n    width: 400px;\n}\n.recipe-card:hover {\n    box-shadow: 5px 5px 15px 0 rgba(0,0,0,0.5);\n    transition: box-shadow 0.3s;\n}\n", ""]);
 
 // exports
 
@@ -45107,7 +45167,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof="fun
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /*!
- * vue-i18n v8.18.1 
+ * vue-i18n v8.18.2 
  * (c) 2020 kazuya kawaguchi
  * Released under the MIT License.
  */
@@ -47233,7 +47293,7 @@ Object.defineProperty(VueI18n, 'availabilities', {
 });
 
 VueI18n.install = install;
-VueI18n.version = '8.18.1';
+VueI18n.version = '8.18.2';
 
 /* harmony default export */ __webpack_exports__["default"] = (VueI18n);
 
@@ -47450,11 +47510,11 @@ var render = function() {
           }
         },
         model: {
-          value: _vm.content,
+          value: _vm.value,
           callback: function($$v) {
-            _vm.content = $$v
+            _vm.value = $$v
           },
-          expression: "content"
+          expression: "value"
         }
       })
     ],
@@ -47543,6 +47603,7 @@ var render = function() {
             ? _c("base-input", {
                 attrs: {
                   name: _vm.field.name,
+                  value: _vm.field.value,
                   placeholder: _vm.field.placeholder,
                   type: _vm.field.type,
                   "icon-name": _vm.field.icon,
@@ -47556,6 +47617,7 @@ var render = function() {
             ? _c("base-editor", {
                 attrs: {
                   name: _vm.field.name,
+                  value: _vm.field.value,
                   placeholder: _vm.field.placeholder,
                   "event-bus": _vm.eventBus,
                   index: _vm.index
@@ -47808,50 +47870,49 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card recipe-card" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "card-content" }, [
-      _c("div", { staticClass: "media" }, [
-        _c("div", { staticClass: "media-content" }, [
-          _c("p", { staticClass: "title is-5" }, [
-            _vm._v(_vm._s(_vm.recipe.title))
+  return _c(
+    "router-link",
+    { attrs: { to: { path: _vm.linkURL, params: { recipe: _vm.recipe } } } },
+    [
+      _c("div", { staticClass: "card recipe-card" }, [
+        _c("div", { staticClass: "card-image" }, [
+          _c("figure", { staticClass: "image is-3by1" }, [
+            _c("img", {
+              attrs: {
+                src: "https://bulma.io/images/placeholders/1280x960.png",
+                alt: "Placeholder image"
+              }
+            })
           ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "content" }, [
-        _c("div", {
-          staticClass: "description",
-          domProps: { innerHTML: _vm._s(_vm.recipe.description) }
-        }),
+        ]),
         _vm._v(" "),
-        _c("div", { staticClass: "content is-small" }, [
-          _c("time", { attrs: { datetime: "2020-1-1" } }, [
-            _vm._v(_vm._s(_vm._f("datetime")(_vm.recipe.created_at)))
+        _c("div", { staticClass: "card-content" }, [
+          _c("div", { staticClass: "media" }, [
+            _c("div", { staticClass: "media-content" }, [
+              _c("p", { staticClass: "title is-5" }, [
+                _vm._v(_vm._s(_vm.recipe.title))
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "content" }, [
+            _c("div", {
+              staticClass: "description",
+              domProps: { innerHTML: _vm._s(_vm.recipe.description) }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "content is-small" }, [
+              _c("time", { attrs: { datetime: "2020-1-1" } }, [
+                _vm._v(_vm._s(_vm._f("datetime")(_vm.recipe.created_at)))
+              ])
+            ])
           ])
         ])
       ])
-    ])
-  ])
+    ]
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-image" }, [
-      _c("figure", { staticClass: "image is-3by1" }, [
-        _c("img", {
-          attrs: {
-            src: "https://bulma.io/images/placeholders/1280x960.png",
-            alt: "Placeholder image"
-          }
-        })
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -48395,7 +48456,7 @@ var render = function() {
             attrs: {
               fields: _vm.fields,
               "event-bus": _vm.eventBus,
-              url: "/recipes"
+              url: "/api/recipes"
             }
           })
         ],
@@ -65929,7 +65990,6 @@ var Form = /*#__PURE__*/function () {
   }, {
     key: "onSuccess",
     value: function onSuccess(data) {
-      alert(data.message);
       this.reset();
     }
   }, {
@@ -66838,7 +66898,8 @@ var routes = [{
   meta: {
     auth: true
   },
-  component: __webpack_require__(/*! ./views/recipes/EditRecipeView */ "./resources/js/views/recipes/EditRecipeView.vue")["default"]
+  component: __webpack_require__(/*! ./views/recipes/EditRecipeView */ "./resources/js/views/recipes/EditRecipeView.vue")["default"],
+  props: true
 }, {
   path: '/lists',
   meta: {
@@ -67452,10 +67513,10 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************!*\
   !*** ./resources/lang/de.json ***!
   \********************************/
-/*! exports provided: add_ingredient, by, cancel, dashboard, default_input_error, description, edit_recipe, email, email_format_error, email_required, email_placeholder, groups, hi, ingredient_list, login, login_error, login_success, logout, logout_success, menus, new_recipe, no_results_for, notebook, pantry, password, password_format_error, password_not_matching, password_placeholder, password_repeat, password_repeat_required, password_required, recipe_search, recipes, registration_error, save, shopping_lists, sign_up, site_title, title, title_required, username, username_format_error, username_placeholder, username_required, username_too_short, default */
+/*! exports provided: add_ingredient, by, cancel, create_recipe_success, dashboard, default_input_error, description, edit_recipe, email, email_format_error, email_required, email_placeholder, groups, hi, ingredient_list, login, login_error, login_success, logout, logout_success, menus, new_recipe, no_results_for, notebook, pantry, password, password_format_error, password_not_matching, password_placeholder, password_repeat, password_repeat_required, password_required, recipe_search, recipes, registration_error, save, shopping_lists, sign_up, site_title, title, title_required, update_recipe_success, username, username_format_error, username_placeholder, username_required, username_too_short, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"add_ingredient\":\"Zutat hinzufügen\",\"by\":\"von\",\"cancel\":\"Abbrechen\",\"dashboard\":\"Übersicht\",\"default_input_error\":\"Unvollständige Eingabe\",\"description\":\"Beschreibung\",\"edit_recipe\":\"Rezept bearbeiten\",\"email\":\"E-Mail\",\"email_format_error\":\"Bitte geben Sie eine korrekte E-Mail Adresse ein\",\"email_required\":\"Bitte geben Sie eine gültige E-Mail Adresse ein\",\"email_placeholder\":\"Ihre E-Mail Adresse\",\"groups\":\"Gruppen\",\"hi\":\"Hallo\",\"ingredient_list\":\"Zutatenliste\",\"login\":\"Anmelden\",\"login_error\":\"Anmelden fehlgeschlagen, bitte versuchen Sie es erneut\",\"login_success\":\"Anmeldung erfolgreich!\",\"logout\":\"Abmelden\",\"logout_success\":\"Abmeldung erfolgreich!\",\"menus\":\"Menüs\",\"new_recipe\":\"Neues Rezept\",\"no_results_for\":\"Keine Ergebnisse für\",\"notebook\":\"Notizbuch\",\"pantry\":\"Vorratskammer\",\"password\":\"Passwort\",\"password_format_error\":\"Ihr Passwort ist zu kurz (mindestens 8 Zeichen)\",\"password_not_matching\":\"Die Passwörter sind verschieden\",\"password_placeholder\":\"Ihr Passwort\",\"password_repeat\":\"Passwort wiederholen\",\"password_repeat_required\":\"Bitte wiederholen Sie Ihr Passwort\",\"password_required\":\"Bitte geben Sie ein Passwort ein\",\"recipe_search\":\"Rezeptsuche\",\"recipes\":\"Rezepte\",\"registration_error\":\"Beim Speichern der Benutzerdaten ist ein Fehler aufgetreten\",\"save\":\"Speichern\",\"shopping_lists\":\"Einkaufslisten\",\"sign_up\":\"Registrieren\",\"site_title\":\"Für begeistertes kochen\",\"title\":\"Titel\",\"title_required\":\"Bitte geben Sie einen Titel ein\",\"username\":\"Benutzername\",\"username_format_error\":\"Beim Benutzernamen sind nur Buchstaben und Zahlen erlaubt\",\"username_placeholder\":\"Ihr Benutzername\",\"username_required\":\"Bitte geben Sie einen Benutzernamen an\",\"username_too_short\":\"Ihr Benutzername ist zu kurz (Mindestens 3 Zeichen)\"}");
+module.exports = JSON.parse("{\"add_ingredient\":\"Zutat hinzufügen\",\"by\":\"von\",\"cancel\":\"Abbrechen\",\"create_recipe_success\":\"Das Rezept wurde gespeichert\",\"dashboard\":\"Übersicht\",\"default_input_error\":\"Unvollständige Eingabe\",\"description\":\"Beschreibung\",\"edit_recipe\":\"Rezept bearbeiten\",\"email\":\"E-Mail\",\"email_format_error\":\"Bitte geben Sie eine korrekte E-Mail Adresse ein\",\"email_required\":\"Bitte geben Sie eine gültige E-Mail Adresse ein\",\"email_placeholder\":\"Ihre E-Mail Adresse\",\"groups\":\"Gruppen\",\"hi\":\"Hallo\",\"ingredient_list\":\"Zutatenliste\",\"login\":\"Anmelden\",\"login_error\":\"Anmelden fehlgeschlagen, bitte versuchen Sie es erneut\",\"login_success\":\"Anmeldung erfolgreich!\",\"logout\":\"Abmelden\",\"logout_success\":\"Abmeldung erfolgreich!\",\"menus\":\"Menüs\",\"new_recipe\":\"Neues Rezept\",\"no_results_for\":\"Keine Ergebnisse für\",\"notebook\":\"Notizbuch\",\"pantry\":\"Vorratskammer\",\"password\":\"Passwort\",\"password_format_error\":\"Ihr Passwort ist zu kurz (mindestens 8 Zeichen)\",\"password_not_matching\":\"Die Passwörter sind verschieden\",\"password_placeholder\":\"Ihr Passwort\",\"password_repeat\":\"Passwort wiederholen\",\"password_repeat_required\":\"Bitte wiederholen Sie Ihr Passwort\",\"password_required\":\"Bitte geben Sie ein Passwort ein\",\"recipe_search\":\"Rezeptsuche\",\"recipes\":\"Rezepte\",\"registration_error\":\"Beim Speichern der Benutzerdaten ist ein Fehler aufgetreten\",\"save\":\"Speichern\",\"shopping_lists\":\"Einkaufslisten\",\"sign_up\":\"Registrieren\",\"site_title\":\"Für begeistertes kochen\",\"title\":\"Titel\",\"title_required\":\"Bitte geben Sie einen Titel ein\",\"update_recipe_success\":\"Das Rezept wurde aktualisiert\",\"username\":\"Benutzername\",\"username_format_error\":\"Beim Benutzernamen sind nur Buchstaben und Zahlen erlaubt\",\"username_placeholder\":\"Ihr Benutzername\",\"username_required\":\"Bitte geben Sie einen Benutzernamen an\",\"username_too_short\":\"Ihr Benutzername ist zu kurz (Mindestens 3 Zeichen)\"}");
 
 /***/ }),
 
@@ -67463,10 +67524,10 @@ module.exports = JSON.parse("{\"add_ingredient\":\"Zutat hinzufügen\",\"by\":\"
 /*!********************************!*\
   !*** ./resources/lang/en.json ***!
   \********************************/
-/*! exports provided: add_ingredient, by, cancel, dashboard, default_input_error, description, edit_recipe, email, email_format_error, email_required, email_placeholder, groups, hi, ingredient_list, login, login_error, login_success, logout, logout_success, menus, new_recipe, no_results_for, notebook, pantry, password, password_format_error, password_not_matching, password_placeholder, password_repeat, password_repeat_required, password_required, recipe_search, recipes, registration_error, save, shopping_lists, sign_up, site_title, title, title_required, username, username_format_error, username_placeholder, username_required, username_too_short, default */
+/*! exports provided: add_ingredient, by, cancel, create_recipe_success, dashboard, default_input_error, description, edit_recipe, email, email_format_error, email_required, email_placeholder, groups, hi, ingredient_list, login, login_error, login_success, logout, logout_success, menus, new_recipe, no_results_for, notebook, pantry, password, password_format_error, password_not_matching, password_placeholder, password_repeat, password_repeat_required, password_required, recipe_search, recipes, registration_error, save, shopping_lists, sign_up, site_title, title, title_required, update_recipe_success, username, username_format_error, username_placeholder, username_required, username_too_short, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"add_ingredient\":\"Zutat hinzufügen\",\"by\":\"by\",\"cancel\":\"cancel\",\"dashboard\":\"Dashboard\",\"default_input_error\":\"Incomplete input\",\"description\":\"Description\",\"edit_recipe\":\"Edit recipe\",\"email\":\"E-mail\",\"email_format_error\":\"Please enter a correct e-mail address\",\"email_required\":\"Please enter a valid e-mail address\",\"email_placeholder\":\"Your e-mail\",\"groups\":\"Groups\",\"hi\":\"Hi\",\"ingredient_list\":\"List of ingredients\",\"login\":\"Log in\",\"login_error\":\"Log in failed, please try again\",\"login_success\":\"Login successful!\",\"logout\":\"Log out\",\"logout_success\":\"Log out successful!\",\"menus\":\"Menus\",\"new_recipe\":\"New recipe\",\"no_results_for\":\"No results for\",\"notebook\":\"Notebook\",\"pantry\":\"Pantry\",\"password\":\"Password\",\"password_format_error\":\"Your password is too short (at least 8 characters)\",\"password_not_matching\":\"Passwords are not matching\",\"password_placeholder\":\"Your password\",\"password_repeat\":\"Repeat password\",\"password_repeat_required\":\"Please repeat your password\",\"password_required\":\"Please enter a password\",\"recipe_search\":\"Recipe search\",\"recipes\":\"Recipes\",\"registration_error\":\"An error occurred while registering your account\",\"save\":\"Save\",\"shopping_lists\":\"Shopping lists\",\"sign_up\":\"Sign up\",\"site_title\":\"For the avid cook\",\"title\":\"Title\",\"title_required\":\"Please enter a title for the recipe\",\"username\":\"Username\",\"username_format_error\":\"Only alphabetical and numerical characters are allowed\",\"username_placeholder\":\"Your username\",\"username_required\":\"Please enter a username\",\"username_too_short\":\"Your username is too short (at least 3 characters)\"}");
+module.exports = JSON.parse("{\"add_ingredient\":\"Zutat hinzufügen\",\"by\":\"by\",\"cancel\":\"cancel\",\"create_recipe_success\":\"The recipe was saved\",\"dashboard\":\"Dashboard\",\"default_input_error\":\"Incomplete input\",\"description\":\"Description\",\"edit_recipe\":\"Edit recipe\",\"email\":\"E-mail\",\"email_format_error\":\"Please enter a correct e-mail address\",\"email_required\":\"Please enter a valid e-mail address\",\"email_placeholder\":\"Your e-mail\",\"groups\":\"Groups\",\"hi\":\"Hi\",\"ingredient_list\":\"List of ingredients\",\"login\":\"Log in\",\"login_error\":\"Log in failed, please try again\",\"login_success\":\"Login successful!\",\"logout\":\"Log out\",\"logout_success\":\"Log out successful!\",\"menus\":\"Menus\",\"new_recipe\":\"New recipe\",\"no_results_for\":\"No results for\",\"notebook\":\"Notebook\",\"pantry\":\"Pantry\",\"password\":\"Password\",\"password_format_error\":\"Your password is too short (at least 8 characters)\",\"password_not_matching\":\"Passwords are not matching\",\"password_placeholder\":\"Your password\",\"password_repeat\":\"Repeat password\",\"password_repeat_required\":\"Please repeat your password\",\"password_required\":\"Please enter a password\",\"recipe_search\":\"Recipe search\",\"recipes\":\"Recipes\",\"registration_error\":\"An error occurred while registering your account\",\"save\":\"Save\",\"shopping_lists\":\"Shopping lists\",\"sign_up\":\"Sign up\",\"site_title\":\"For the avid cook\",\"title\":\"Title\",\"title_required\":\"Please enter a title for the recipe\",\"update_recipe_success\":\"The recipe was updated\",\"username\":\"Username\",\"username_format_error\":\"Only alphabetical and numerical characters are allowed\",\"username_placeholder\":\"Your username\",\"username_required\":\"Please enter a username\",\"username_too_short\":\"Your username is too short (at least 3 characters)\"}");
 
 /***/ }),
 

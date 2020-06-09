@@ -4,7 +4,7 @@
             :tabindex="this.index"
             :editor="editor"
             :config="editorConfig"
-            v-model="content"
+            v-model="value"
             @blur="fieldBlurred()"
         ></ckeditor>
     </div>
@@ -24,20 +24,18 @@
                 type: String,
                 required: true
             },
-            intialContent: {
-                type: String,
-                default: ''
-            },
             placeholder: String,
             eventBus: Object
         },
         data: function() {
             return {
-                content: this.initialContent,
                 editor: InlineEditor,
                 editorConfig: {
                     placeholder: this.placeholder
-                }
+                },
+                hasError: false,
+                touched: false,
+                value: ''
             }
         },
         computed: {
@@ -70,16 +68,23 @@
                 this.eventBus.$emit('submitForm');
             },
 
+            // Update the input value
+            updateValue: function(newValue) {
+                this.value = newValue;
+            },
+
             // Update the model of the form
             valueUpdated: function() {
-                console.log(this.content);
-                this.eventBus.$emit('inputUpdate', {name: this.name, value: this.content});
+                console.log(this.value);
+                this.eventBus.$emit('inputUpdate', {name: this.name, value: this.value});
             }
         },
 
         mounted() {
             // Listen for server or validation errors
             this.eventBus.$on(this.name + 'Error', this.setError);
+            // Listen for parent model changes
+            this.eventBus.$on('update:' + this.name, this.updateValue);
 
             // Focus input if it is the first input
             if (this.index === 1) {
