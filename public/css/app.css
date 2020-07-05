@@ -18665,11 +18665,11 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
 }
 
 .flag-icon-cz {
-  background-image: url(/images/vendor/flag-icon-css/flags/4x3/cz.svg?c1ef59925bf16ee880cd366d5ceeeab6);
+  background-image: url(/images/vendor/flag-icon-css/flags/4x3/cz.svg?2339f3df385beb6667b8fd621e6a53dd);
 }
 
 .flag-icon-cz.flag-icon-squared {
-  background-image: url(/images/vendor/flag-icon-css/flags/1x1/cz.svg?490443104ecbfc24e2580b16a4d811b7);
+  background-image: url(/images/vendor/flag-icon-css/flags/1x1/cz.svg?80879b0e86919c6859d875da48efd0e0);
 }
 
 .flag-icon-de {
@@ -19105,11 +19105,11 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
 }
 
 .flag-icon-je {
-  background-image: url(/images/vendor/flag-icon-css/flags/4x3/je.svg?62999e4b073e5c686d0bf2e9e60f3206);
+  background-image: url(/images/vendor/flag-icon-css/flags/4x3/je.svg?e0932aed817435f70cf058dd3261ae1c);
 }
 
 .flag-icon-je.flag-icon-squared {
-  background-image: url(/images/vendor/flag-icon-css/flags/1x1/je.svg?e170f442844c82e4837c021430cc7f68);
+  background-image: url(/images/vendor/flag-icon-css/flags/1x1/je.svg?ab89781e75ca3440dcb86aa8dbd620f3);
 }
 
 .flag-icon-jm {
@@ -19401,11 +19401,11 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
 }
 
 .flag-icon-mo {
-  background-image: url(/images/vendor/flag-icon-css/flags/4x3/mo.svg?e1178856d7fef5a8dcd53af9f9836ab7);
+  background-image: url(/images/vendor/flag-icon-css/flags/4x3/mo.svg?b6d4d1f6c34ca7e148035b1aea886080);
 }
 
 .flag-icon-mo.flag-icon-squared {
-  background-image: url(/images/vendor/flag-icon-css/flags/1x1/mo.svg?de26729cbe5d3e54824a22abcfea0e7a);
+  background-image: url(/images/vendor/flag-icon-css/flags/1x1/mo.svg?67acac75dc2e1cb667560972d6996ea6);
 }
 
 .flag-icon-mp {
@@ -19793,11 +19793,11 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
 }
 
 .flag-icon-se {
-  background-image: url(/images/vendor/flag-icon-css/flags/4x3/se.svg?ee9cde492630fda60f7075c5fe8f3ea6);
+  background-image: url(/images/vendor/flag-icon-css/flags/4x3/se.svg?fd663a70a1a92a395078c36bc5d122ad);
 }
 
 .flag-icon-se.flag-icon-squared {
-  background-image: url(/images/vendor/flag-icon-css/flags/1x1/se.svg?b039bdb8e50c968b6c50c8110676061f);
+  background-image: url(/images/vendor/flag-icon-css/flags/1x1/se.svg?92c66d8396d5604a9b8fc05153e9163e);
 }
 
 .flag-icon-sg {
@@ -20222,6 +20222,14 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
 
 .flag-icon-es-ca.flag-icon-squared {
   background-image: url(/images/vendor/flag-icon-css/flags/1x1/es-ca.svg?a35e6a4a92e9aa04f11de348ac82f284);
+}
+
+.flag-icon-es-ga {
+  background-image: url(/images/vendor/flag-icon-css/flags/4x3/es-ga.svg?2618e21f1cd5dcbd95d7b119f7b4e33a);
+}
+
+.flag-icon-es-ga.flag-icon-squared {
+  background-image: url(/images/vendor/flag-icon-css/flags/1x1/es-ga.svg?151714df0fea994ff25db833a9e9fea1);
 }
 
 .flag-icon-eu {

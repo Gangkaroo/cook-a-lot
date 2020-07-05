@@ -13,13 +13,13 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "ava": "^3.8.2",
+        "ava": "^3.9.0",
         "axios": "^0.18.1",
         "cross-env": "^5.2.1",
         "laravel-mix": "^5.0.4",
         "popper.js": "^1.16.1",
         "resolve-url-loader": "^2.3.2",
-        "sass": "^1.26.8",
+        "sass": "^1.26.9",
         "sass-loader": "^7.3.1",
         "vue": "^2.6.11"
     },
@@ -31,15 +31,15 @@
         "bootstrap": "^4.5.0",
         "buefy": "^0.8.20",
         "bulma": "^0.7.5",
-        "flag-icon-css": "^3.4.6",
+        "flag-icon-css": "^3.5.0",
         "jquery": "^3.5.1",
         "js-yaml": "^3.14.0",
         "lodash": "^4.17.15",
         "material-icons": "^0.3.1",
-        "moment": "^2.26.0",
+        "moment": "^2.27.0",
         "vue-axios": "^2.1.5",
         "vue-i18n": "^8.18.2",
-        "vue-router": "^3.3.2",
+        "vue-router": "^3.3.4",
         "vue-template-compiler": "^2.6.11",
         "vuelidate": "^0.7.5"
     }

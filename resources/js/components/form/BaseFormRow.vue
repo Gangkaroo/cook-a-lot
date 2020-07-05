@@ -1,5 +1,5 @@
 <template>
-    <div class="field" :class="{'has-addons': hasAddOnButton}">
+    <div class="field" v-show="isVisible" :class="{'has-addons': hasAddOnButton}">
         <label v-if="field.label" class="label" :for="field.name">{{field.label}}</label>
         <div class="control has-icons-right" :class="{'has-icons-left': hasIcon, 'is-expanded': hasAddOnButton}">
             <!-- Input field -->
@@ -104,11 +104,17 @@
             },
 
             isInput: function() {
-                return this.field.type === 'input' || this.field.type === 'password';
+                return this.field.type === 'input'
+                    || this.field.type === 'password'
+                    || this.field.type === 'hidden';
             },
 
             isSelect: function() {
                 return this.field.type === 'select';
+            },
+
+            isVisible: function() {
+                return this.field.type !== 'hidden';
             }
         },
 

@@ -1,6 +1,7 @@
 
 export default class Recipe {
     constructor(data = {}) {
+        this.recipeId = data.id || 0;
         this.title = data.title || '';
         this.description = data.description || '';
         this.ingredients = data.ingredients || [];

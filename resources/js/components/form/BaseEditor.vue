@@ -71,11 +71,11 @@
             // Update the input value
             updateValue: function(newValue) {
                 this.value = newValue;
+                this.valueUpdated();
             },
 
             // Update the model of the form
             valueUpdated: function() {
-                console.log(this.value);
                 this.eventBus.$emit('inputUpdate', {name: this.name, value: this.value});
             }
         },

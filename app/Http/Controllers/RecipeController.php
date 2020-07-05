@@ -19,6 +19,16 @@ class RecipeController extends Controller
     }
 
     /**
+     * Delete the given recipe
+     * @param int $recipId
+     */
+    public function deleteRecipe($recipeId)
+    {
+        $recipe = Recipe::find($recipeId);
+        $recipe->delete();
+    }
+
+    /**
      * Returns the details of a single recipe
      * @param int $recipeId
      * @return array The recipe details
@@ -43,7 +53,16 @@ class RecipeController extends Controller
      */
     public function store(Request $request)
     {
-        $recipe = new Recipe($this->validateRecipe($request));
+        // Find the given recipe
+        if ($request->input('recipeId') > 0) {
+            $recipe = Recipe::find($request->input('recipeId'));
+            $recipe->fill($this->validateRecipe($request));
+        } else {
+            // Create a new recipe
+            $recipe = new Recipe($this->validateRecipe($request));
+        }
+
+        // Set remaining fields
         $recipe->description = $request->input('description') ?? '';
         $recipe->prep_time = $request->input("prep_time") ?? '0:00';
         $recipe->cook_time = $request->input("cook_time") ?? '0:00';
@@ -55,9 +74,8 @@ class RecipeController extends Controller
 
     public function update(Request $request)
     {
-        $recipe = Recipe::find(request("id"));
+        $recipe = Recipe::find(request("recipeId"));
         $this->validateRecipe($request);
-
 
         $recipe->title = request("title");
         $recipe->description = request("description");

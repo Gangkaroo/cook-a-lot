@@ -13,13 +13,22 @@
             <div class="column">
             </div>
         </div>
-        <div class="buttons">
-            <button class="button is-primary" @click="save()">
-                {{$t('save')}}
-            </button>
-            <button class="button is-light" @click="cancelEdit()">
-                {{$t('cancel')}}
-            </button>
+        <div class="level">
+            <div class="level-left">
+                <div class="buttons">
+                    <button class="button is-primary" @click="save()">
+                        {{$t('save')}}
+                    </button>
+                    <button class="button is-light" @click="cancelEdit()">
+                        {{$t('back')}}
+                    </button>
+                </div>
+            </div>
+            <div v-if="recipeId" class="level-right">
+                <button class="button is-danger" @click="confirmDelete()">
+                    {{$t('delete')}}
+                </button>
+            </div>
         </div>
     </div>
 </template>
@@ -35,6 +44,11 @@
             return {
                 recipe: null,
                 fields: [
+                    {
+                        name: 'recipeId',
+                        value: 0,
+                        type: 'hidden'
+                    },
                     {
                         name: 'title',
                         value: '',
@@ -92,6 +106,32 @@
             // Return to the recipes overview
             cancelEdit: function() {
                 this.$router.push("/recipes");
+            },
+
+            // Show the delete dialog
+            confirmDelete: function() {
+                this.$buefy.dialog.confirm({
+                    title: this.$t('delete_recipe'),
+                    message: this.$t('delete_recipe_message'),
+                    confirmText: this.$t('delete'),
+                    type: 'is-danger',
+                    hasIcon: true,
+                    onConfirm: this.deleteRecipe
+                })
+            },
+
+            // Delete the current recipe
+            deleteRecipe: function() {
+                axios.delete('/api/recipe/' + this.recipeId)
+                    .then(response => {
+                        this.$buefy.snackbar.open({
+                            actionText: null,
+                            message: '<span class="snack-icon"><i class="material-icons success">check</i>'
+                                + this.$t('recipe_deleted') + '</span>',
+                            type: 'is-success'
+                        });
+                        this.$router.push("/recipes");
+                    });
             },
 
             // Load the recipe details

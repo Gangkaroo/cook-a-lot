@@ -58,8 +58,14 @@
             isCorrect: function() {
                 return !this.hasError && this.touched;
             },
+
+            // Return the correct input type
             inputType: function() {
-                return this.type === 'password' ? 'password': 'text';
+                if (this.type === 'password' || this.type === 'hidden') {
+                    return this.type;
+                } else {
+                    return 'text';
+                }
             }
         },
         methods: {
@@ -89,6 +95,8 @@
             // Update the input value
             updateValue: function(newValue) {
                 this.value = newValue;
+                // Notify the form of an update
+                this.valueUpdated();
             },
 
             // Update the model of the form

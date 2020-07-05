@@ -3307,10 +3307,10 @@ __webpack_require__.r(__webpack_exports__);
     // Update the input value
     updateValue: function updateValue(newValue) {
       this.value = newValue;
+      this.valueUpdated();
     },
     // Update the model of the form
     valueUpdated: function valueUpdated() {
-      console.log(this.value);
       this.eventBus.$emit('inputUpdate', {
         name: this.name,
         value: this.value
@@ -3474,6 +3474,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     },
     // Update the model in the form
     updateModel: function updateModel(field) {
+      console.log(field);
       this.form[field.name] = field.value;
     },
     // Check if all input fields are valid
@@ -3659,10 +3660,13 @@ __webpack_require__.r(__webpack_exports__);
       return this.field.type === 'editor';
     },
     isInput: function isInput() {
-      return this.field.type === 'input' || this.field.type === 'password';
+      return this.field.type === 'input' || this.field.type === 'password' || this.field.type === 'hidden';
     },
     isSelect: function isSelect() {
       return this.field.type === 'select';
+    },
+    isVisible: function isVisible() {
+      return this.field.type !== 'hidden';
     }
   },
   methods: {
@@ -3757,8 +3761,13 @@ __webpack_require__.r(__webpack_exports__);
     isCorrect: function isCorrect() {
       return !this.hasError && this.touched;
     },
+    // Return the correct input type
     inputType: function inputType() {
-      return this.type === 'password' ? 'password' : 'text';
+      if (this.type === 'password' || this.type === 'hidden') {
+        return this.type;
+      } else {
+        return 'text';
+      }
     }
   },
   methods: {
@@ -3783,7 +3792,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     // Update the input value
     updateValue: function updateValue(newValue) {
-      this.value = newValue;
+      this.value = newValue; // Notify the form of an update
+
+      this.valueUpdated();
     },
     // Update the model of the form
     valueUpdated: function valueUpdated() {
@@ -4443,6 +4454,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -4451,6 +4471,10 @@ __webpack_require__.r(__webpack_exports__);
     return {
       recipe: null,
       fields: [{
+        name: 'recipeId',
+        value: 0,
+        type: 'hidden'
+      }, {
         name: 'title',
         value: '',
         placeholder: this.$t('title'),
@@ -4503,16 +4527,41 @@ __webpack_require__.r(__webpack_exports__);
     cancelEdit: function cancelEdit() {
       this.$router.push("/recipes");
     },
-    // Load the recipe details
-    loadRecipeDetails: function loadRecipeDetails() {
+    // Show the delete dialog
+    confirmDelete: function confirmDelete() {
+      this.$buefy.dialog.confirm({
+        title: this.$t('delete_recipe'),
+        message: this.$t('delete_recipe_message'),
+        confirmText: this.$t('delete'),
+        type: 'is-danger',
+        hasIcon: true,
+        onConfirm: this.deleteRecipe
+      });
+    },
+    // Delete the current recipe
+    deleteRecipe: function deleteRecipe() {
       var _this = this;
 
-      axios.get('/api/recipe/' + this.recipeId).then(function (response) {
-        if (typeof response.data.id !== 'undefined' && response.data.id === _this.recipeId) {
-          _this.recipe = new _classes_Recipe__WEBPACK_IMPORTED_MODULE_1__["default"](response.data);
+      axios["delete"]('/api/recipe/' + this.recipeId).then(function (response) {
+        _this.$buefy.snackbar.open({
+          actionText: null,
+          message: '<span class="snack-icon"><i class="material-icons success">check</i>' + _this.$t('recipe_deleted') + '</span>',
+          type: 'is-success'
+        });
 
-          _this.fields.forEach(function (field) {
-            _this.eventBus.$emit('update:' + field.name, _this.recipe[field.name]);
+        _this.$router.push("/recipes");
+      });
+    },
+    // Load the recipe details
+    loadRecipeDetails: function loadRecipeDetails() {
+      var _this2 = this;
+
+      axios.get('/api/recipe/' + this.recipeId).then(function (response) {
+        if (typeof response.data.id !== 'undefined' && response.data.id === _this2.recipeId) {
+          _this2.recipe = new _classes_Recipe__WEBPACK_IMPORTED_MODULE_1__["default"](response.data);
+
+          _this2.fields.forEach(function (field) {
+            _this2.eventBus.$emit('update:' + field.name, _this2.recipe[field.name]);
           });
         }
       });
@@ -20576,6 +20625,8 @@ var map = {
 	"./tg.js": "./node_modules/moment/locale/tg.js",
 	"./th": "./node_modules/moment/locale/th.js",
 	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tk": "./node_modules/moment/locale/tk.js",
+	"./tk.js": "./node_modules/moment/locale/tk.js",
 	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
 	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
 	"./tlh": "./node_modules/moment/locale/tlh.js",
@@ -23349,6 +23400,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
             h: ['eine Stunde', 'einer Stunde'],
             d: ['ein Tag', 'einem Tag'],
             dd: [number + ' Tage', number + ' Tagen'],
+            w: ['eine Woche', 'einer Woche'],
             M: ['ein Monat', 'einem Monat'],
             MM: [number + ' Monate', number + ' Monaten'],
             y: ['ein Jahr', 'einem Jahr'],
@@ -23398,6 +23450,8 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
             hh: '%d Stunden',
             d: processRelativeTime,
             dd: processRelativeTime,
+            w: processRelativeTime,
+            ww: '%d Wochen',
             M: processRelativeTime,
             MM: processRelativeTime,
             y: processRelativeTime,
@@ -23442,6 +23496,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
             h: ['eine Stunde', 'einer Stunde'],
             d: ['ein Tag', 'einem Tag'],
             dd: [number + ' Tage', number + ' Tagen'],
+            w: ['eine Woche', 'einer Woche'],
             M: ['ein Monat', 'einem Monat'],
             MM: [number + ' Monate', number + ' Monaten'],
             y: ['ein Jahr', 'einem Jahr'],
@@ -23491,6 +23546,8 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
             hh: '%d Stunden',
             d: processRelativeTime,
             dd: processRelativeTime,
+            w: processRelativeTime,
+            ww: '%d Wochen',
             M: processRelativeTime,
             MM: processRelativeTime,
             y: processRelativeTime,
@@ -23537,6 +23594,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
             h: ['eine Stunde', 'einer Stunde'],
             d: ['ein Tag', 'einem Tag'],
             dd: [number + ' Tage', number + ' Tagen'],
+            w: ['eine Woche', 'einer Woche'],
             M: ['ein Monat', 'einem Monat'],
             MM: [number + ' Monate', number + ' Monaten'],
             y: ['ein Jahr', 'einem Jahr'],
@@ -23586,6 +23644,8 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
             hh: '%d Stunden',
             d: processRelativeTime,
             dd: processRelativeTime,
+            w: processRelativeTime,
+            ww: '%d Wochen',
             M: processRelativeTime,
             MM: processRelativeTime,
             y: processRelativeTime,
@@ -25344,7 +25404,8 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
             case 's':
                 return isFuture ? 'muutaman sekunnin' : 'muutama sekunti';
             case 'ss':
-                return isFuture ? 'sekunnin' : 'sekuntia';
+                result = isFuture ? 'sekunnin' : 'sekuntia';
+                break;
             case 'm':
                 return isFuture ? 'minuutin' : 'minuutti';
             case 'mm':
@@ -25799,6 +25860,24 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
     //! moment.js locale configuration
 
+    var monthsStrictRegex = /^(janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)/i,
+        monthsShortStrictRegex = /(janv\.?|févr\.?|mars|avr\.?|mai|juin|juil\.?|août|sept\.?|oct\.?|nov\.?|déc\.?)/i,
+        monthsRegex = /(janv\.?|févr\.?|mars|avr\.?|mai|juin|juil\.?|août|sept\.?|oct\.?|nov\.?|déc\.?|janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)/i,
+        monthsParse = [
+            /^janv/i,
+            /^févr/i,
+            /^mars/i,
+            /^avr/i,
+            /^mai/i,
+            /^juin/i,
+            /^juil/i,
+            /^août/i,
+            /^sept/i,
+            /^oct/i,
+            /^nov/i,
+            /^déc/i,
+        ];
+
     var fr = moment.defineLocale('fr', {
         months: 'janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre'.split(
             '_'
@@ -25806,7 +25885,13 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
         monthsShort: 'janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.'.split(
             '_'
         ),
-        monthsParseExact: true,
+        monthsRegex: monthsRegex,
+        monthsShortRegex: monthsRegex,
+        monthsStrictRegex: monthsStrictRegex,
+        monthsShortStrictRegex: monthsShortStrictRegex,
+        monthsParse: monthsParse,
+        longMonthsParse: monthsParse,
+        shortMonthsParse: monthsParse,
         weekdays: 'dimanche_lundi_mardi_mercredi_jeudi_vendredi_samedi'.split('_'),
         weekdaysShort: 'dim._lun._mar._mer._jeu._ven._sam.'.split('_'),
         weekdaysMin: 'di_lu_ma_me_je_ve_sa'.split('_'),
@@ -26662,7 +26747,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
         },
         relativeTime: {
             future: '%s મા',
-            past: '%s પેહલા',
+            past: '%s પહેલા',
             s: 'અમુક પળો',
             ss: '%d સેકંડ',
             m: 'એક મિનિટ',
@@ -27837,9 +27922,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
             sameElse: 'L',
         },
         relativeTime: {
-            future: function (s) {
-                return (/^[0-9].+$/.test(s) ? 'tra' : 'in') + ' ' + s;
-            },
+            future: 'tra %s',
             past: '%s fa',
             s: 'alcuni secondi',
             ss: '%d secondi',
@@ -33189,7 +33272,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
         weekdaysMin: 'J2_J3_J4_J5_Al_Ij_J1'.split('_'),
         weekdaysParseExact: true,
         longDateFormat: {
-            LT: 'HH:mm',
+            LT: 'hh:mm A',
             LTS: 'HH:mm:ss',
             L: 'DD.MM.YYYY',
             LL: 'D MMMM YYYY',
@@ -33783,6 +33866,117 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
     });
 
     return th;
+
+})));
+
+
+/***/ }),
+
+/***/ "./node_modules/moment/locale/tk.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/tk.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+//! moment.js locale configuration
+//! locale : Turkmen [trk]
+//! author : Atamyrat Abdyrahmanov : https://github.com/atamyratabdy
+
+;(function (global, factory) {
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
+}(this, (function (moment) { 'use strict';
+
+    //! moment.js locale configuration
+
+    var suffixes = {
+        1: "'inji",
+        5: "'inji",
+        8: "'inji",
+        70: "'inji",
+        80: "'inji",
+        2: "'nji",
+        7: "'nji",
+        20: "'nji",
+        50: "'nji",
+        3: "'ünji",
+        4: "'ünji",
+        100: "'ünji",
+        6: "'njy",
+        9: "'unjy",
+        10: "'unjy",
+        30: "'unjy",
+        60: "'ynjy",
+        90: "'ynjy",
+    };
+
+    var tk = moment.defineLocale('tk', {
+        months: 'Ýanwar_Fewral_Mart_Aprel_Maý_Iýun_Iýul_Awgust_Sentýabr_Oktýabr_Noýabr_Dekabr'.split(
+            '_'
+        ),
+        monthsShort: 'Ýan_Few_Mar_Apr_Maý_Iýn_Iýl_Awg_Sen_Okt_Noý_Dek'.split('_'),
+        weekdays: 'Ýekşenbe_Duşenbe_Sişenbe_Çarşenbe_Penşenbe_Anna_Şenbe'.split(
+            '_'
+        ),
+        weekdaysShort: 'Ýek_Duş_Siş_Çar_Pen_Ann_Şen'.split('_'),
+        weekdaysMin: 'Ýk_Dş_Sş_Çr_Pn_An_Şn'.split('_'),
+        longDateFormat: {
+            LT: 'HH:mm',
+            LTS: 'HH:mm:ss',
+            L: 'DD.MM.YYYY',
+            LL: 'D MMMM YYYY',
+            LLL: 'D MMMM YYYY HH:mm',
+            LLLL: 'dddd, D MMMM YYYY HH:mm',
+        },
+        calendar: {
+            sameDay: '[bugün sagat] LT',
+            nextDay: '[ertir sagat] LT',
+            nextWeek: '[indiki] dddd [sagat] LT',
+            lastDay: '[düýn] LT',
+            lastWeek: '[geçen] dddd [sagat] LT',
+            sameElse: 'L',
+        },
+        relativeTime: {
+            future: '%s soň',
+            past: '%s öň',
+            s: 'birnäçe sekunt',
+            m: 'bir minut',
+            mm: '%d minut',
+            h: 'bir sagat',
+            hh: '%d sagat',
+            d: 'bir gün',
+            dd: '%d gün',
+            M: 'bir aý',
+            MM: '%d aý',
+            y: 'bir ýyl',
+            yy: '%d ýyl',
+        },
+        ordinal: function (number, period) {
+            switch (period) {
+                case 'd':
+                case 'D':
+                case 'Do':
+                case 'DD':
+                    return number;
+                default:
+                    if (number === 0) {
+                        // special case for zero
+                        return number + "'unjy";
+                    }
+                    var a = number % 10,
+                        b = (number % 100) - a,
+                        c = number >= 100 ? 100 : null;
+                    return number + (suffixes[a] || suffixes[b] || suffixes[c]);
+            }
+        },
+        week: {
+            dow: 1, // Monday is the first day of the week.
+            doy: 7, // The week that contains Jan 7th is the first week of the year.
+        },
+    });
+
+    return tk;
 
 })));
 
@@ -34972,7 +35166,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
         months: 'tháng 1_tháng 2_tháng 3_tháng 4_tháng 5_tháng 6_tháng 7_tháng 8_tháng 9_tháng 10_tháng 11_tháng 12'.split(
             '_'
         ),
-        monthsShort: 'Th01_Th02_Th03_Th04_Th05_Th06_Th07_Th08_Th09_Th10_Th11_Th12'.split(
+        monthsShort: 'Thg 01_Thg 02_Thg 03_Thg 04_Thg 05_Thg 06_Thg 07_Thg 08_Thg 09_Thg 10_Thg 11_Thg 12'.split(
             '_'
         ),
         monthsParseExact: true,
@@ -35716,7 +35910,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var require;//! moment.js
-//! version : 2.26.0
+//! version : 2.27.0
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
 //! momentjs.com
@@ -41334,7 +41528,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
     //! moment.js
 
-    hooks.version = '2.26.0';
+    hooks.version = '2.27.0';
 
     setHookCallback(createLocal);
 
@@ -47579,7 +47773,18 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "field", class: { "has-addons": _vm.hasAddOnButton } },
+    {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.isVisible,
+          expression: "isVisible"
+        }
+      ],
+      staticClass: "field",
+      class: { "has-addons": _vm.hasAddOnButton }
+    },
     [
       _vm.field.label
         ? _c(
@@ -48466,32 +48671,71 @@ var render = function() {
       _c("div", { staticClass: "column" })
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "buttons" }, [
-      _c(
-        "button",
-        {
-          staticClass: "button is-primary",
-          on: {
-            click: function($event) {
-              return _vm.save()
-            }
-          }
-        },
-        [_vm._v("\n            " + _vm._s(_vm.$t("save")) + "\n        ")]
-      ),
+    _c("div", { staticClass: "level" }, [
+      _c("div", { staticClass: "level-left" }, [
+        _c("div", { staticClass: "buttons" }, [
+          _c(
+            "button",
+            {
+              staticClass: "button is-primary",
+              on: {
+                click: function($event) {
+                  return _vm.save()
+                }
+              }
+            },
+            [
+              _vm._v(
+                "\n                    " +
+                  _vm._s(_vm.$t("save")) +
+                  "\n                "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "button is-light",
+              on: {
+                click: function($event) {
+                  return _vm.cancelEdit()
+                }
+              }
+            },
+            [
+              _vm._v(
+                "\n                    " +
+                  _vm._s(_vm.$t("back")) +
+                  "\n                "
+              )
+            ]
+          )
+        ])
+      ]),
       _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "button is-light",
-          on: {
-            click: function($event) {
-              return _vm.cancelEdit()
-            }
-          }
-        },
-        [_vm._v("\n            " + _vm._s(_vm.$t("cancel")) + "\n        ")]
-      )
+      _vm.recipeId
+        ? _c("div", { staticClass: "level-right" }, [
+            _c(
+              "button",
+              {
+                staticClass: "button is-danger",
+                on: {
+                  click: function($event) {
+                    return _vm.confirmDelete()
+                  }
+                }
+              },
+              [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.$t("delete")) +
+                    "\n            "
+                )
+              ]
+            )
+          ])
+        : _vm._e()
     ])
   ])
 }
@@ -48695,7 +48939,7 @@ function normalizeComponent (
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /*!
-  * vue-router v3.3.2
+  * vue-router v3.3.4
   * (c) 2020 Evan You
   * @license MIT
   */
@@ -50721,7 +50965,9 @@ function createNavigationRedirectedError (from, to) {
     from,
     to,
     NavigationFailureType.redirected,
-    ("Redirected from \"" + (from.fullPath) + "\" to \"" + (stringifyRoute(to)) + "\" via a navigation guard.")
+    ("Redirected when going from \"" + (from.fullPath) + "\" to \"" + (stringifyRoute(
+      to
+    )) + "\" via a navigation guard.")
   )
 }
 
@@ -50841,9 +51087,17 @@ History.prototype.transitionTo = function transitionTo (
       }
       if (err && !this$1.ready) {
         this$1.ready = true;
-        this$1.readyErrorCbs.forEach(function (cb) {
-          cb(err);
-        });
+        // Initial redirection should still trigger the onReady onSuccess
+        // https://github.com/vuejs/vue-router/issues/3225
+        if (!isRouterError(err, NavigationFailureType.redirected)) {
+          this$1.readyErrorCbs.forEach(function (cb) {
+            cb(err);
+          });
+        } else {
+          this$1.readyCbs.forEach(function (cb) {
+            cb(route);
+          });
+        }
       }
     }
   );
@@ -50869,10 +51123,13 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
     }
     onAbort && onAbort(err);
   };
+  var lastRouteIndex = route.matched.length - 1;
+  var lastCurrentIndex = current.matched.length - 1;
   if (
     isSameRoute(route, current) &&
     // in the case the route map has been dynamically appended to
-    route.matched.length === current.matched.length
+    lastRouteIndex === lastCurrentIndex &&
+    route.matched[lastRouteIndex] === current.matched[lastCurrentIndex]
   ) {
     this.ensureURL();
     return abort(createNavigationDuplicatedError(current, route))
@@ -51690,7 +51947,7 @@ function createHref (base, fullPath, mode) {
 }
 
 VueRouter.install = install;
-VueRouter.version = '3.3.2';
+VueRouter.version = '3.3.4';
 
 if (inBrowser && window.Vue) {
   window.Vue.use(VueRouter);
@@ -66074,6 +66331,7 @@ var Recipe = /*#__PURE__*/function () {
 
     _classCallCheck(this, Recipe);
 
+    this.recipeId = data.id || 0;
     this.title = data.title || '';
     this.description = data.description || '';
     this.ingredients = data.ingredients || [];
@@ -67513,10 +67771,10 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************!*\
   !*** ./resources/lang/de.json ***!
   \********************************/
-/*! exports provided: add_ingredient, by, cancel, create_recipe_success, dashboard, default_input_error, description, edit_recipe, email, email_format_error, email_required, email_placeholder, groups, hi, ingredient_list, login, login_error, login_success, logout, logout_success, menus, new_recipe, no_results_for, notebook, pantry, password, password_format_error, password_not_matching, password_placeholder, password_repeat, password_repeat_required, password_required, recipe_search, recipes, registration_error, save, shopping_lists, sign_up, site_title, title, title_required, update_recipe_success, username, username_format_error, username_placeholder, username_required, username_too_short, default */
+/*! exports provided: add_ingredient, back, by, cancel, create_recipe_success, dashboard, default_input_error, delete, delete_recipe, delete_recipe_message, description, edit_recipe, email, email_format_error, email_required, email_placeholder, groups, hi, ingredient_list, login, login_error, login_success, logout, logout_success, menus, new_recipe, no_results_for, notebook, pantry, password, password_format_error, password_not_matching, password_placeholder, password_repeat, password_repeat_required, password_required, recipe_deleted, recipe_search, recipes, registration_error, save, shopping_lists, sign_up, site_title, title, title_required, update_recipe_success, username, username_format_error, username_placeholder, username_required, username_too_short, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"add_ingredient\":\"Zutat hinzufügen\",\"by\":\"von\",\"cancel\":\"Abbrechen\",\"create_recipe_success\":\"Das Rezept wurde gespeichert\",\"dashboard\":\"Übersicht\",\"default_input_error\":\"Unvollständige Eingabe\",\"description\":\"Beschreibung\",\"edit_recipe\":\"Rezept bearbeiten\",\"email\":\"E-Mail\",\"email_format_error\":\"Bitte geben Sie eine korrekte E-Mail Adresse ein\",\"email_required\":\"Bitte geben Sie eine gültige E-Mail Adresse ein\",\"email_placeholder\":\"Ihre E-Mail Adresse\",\"groups\":\"Gruppen\",\"hi\":\"Hallo\",\"ingredient_list\":\"Zutatenliste\",\"login\":\"Anmelden\",\"login_error\":\"Anmelden fehlgeschlagen, bitte versuchen Sie es erneut\",\"login_success\":\"Anmeldung erfolgreich!\",\"logout\":\"Abmelden\",\"logout_success\":\"Abmeldung erfolgreich!\",\"menus\":\"Menüs\",\"new_recipe\":\"Neues Rezept\",\"no_results_for\":\"Keine Ergebnisse für\",\"notebook\":\"Notizbuch\",\"pantry\":\"Vorratskammer\",\"password\":\"Passwort\",\"password_format_error\":\"Ihr Passwort ist zu kurz (mindestens 8 Zeichen)\",\"password_not_matching\":\"Die Passwörter sind verschieden\",\"password_placeholder\":\"Ihr Passwort\",\"password_repeat\":\"Passwort wiederholen\",\"password_repeat_required\":\"Bitte wiederholen Sie Ihr Passwort\",\"password_required\":\"Bitte geben Sie ein Passwort ein\",\"recipe_search\":\"Rezeptsuche\",\"recipes\":\"Rezepte\",\"registration_error\":\"Beim Speichern der Benutzerdaten ist ein Fehler aufgetreten\",\"save\":\"Speichern\",\"shopping_lists\":\"Einkaufslisten\",\"sign_up\":\"Registrieren\",\"site_title\":\"Für begeistertes kochen\",\"title\":\"Titel\",\"title_required\":\"Bitte geben Sie einen Titel ein\",\"update_recipe_success\":\"Das Rezept wurde aktualisiert\",\"username\":\"Benutzername\",\"username_format_error\":\"Beim Benutzernamen sind nur Buchstaben und Zahlen erlaubt\",\"username_placeholder\":\"Ihr Benutzername\",\"username_required\":\"Bitte geben Sie einen Benutzernamen an\",\"username_too_short\":\"Ihr Benutzername ist zu kurz (Mindestens 3 Zeichen)\"}");
+module.exports = JSON.parse("{\"add_ingredient\":\"Zutat hinzufügen\",\"back\":\"Zurück\",\"by\":\"von\",\"cancel\":\"Abbrechen\",\"create_recipe_success\":\"Das Rezept wurde gespeichert\",\"dashboard\":\"Übersicht\",\"default_input_error\":\"Unvollständige Eingabe\",\"delete\":\"Löschen\",\"delete_recipe\":\"Rezept löschen\",\"delete_recipe_message\":\"Sind Sie sicher, dass Sie das Rezept löschen wollen?\",\"description\":\"Beschreibung\",\"edit_recipe\":\"Rezept bearbeiten\",\"email\":\"E-Mail\",\"email_format_error\":\"Bitte geben Sie eine korrekte E-Mail Adresse ein\",\"email_required\":\"Bitte geben Sie eine gültige E-Mail Adresse ein\",\"email_placeholder\":\"Ihre E-Mail Adresse\",\"groups\":\"Gruppen\",\"hi\":\"Hallo\",\"ingredient_list\":\"Zutatenliste\",\"login\":\"Anmelden\",\"login_error\":\"Anmelden fehlgeschlagen, bitte versuchen Sie es erneut\",\"login_success\":\"Anmeldung erfolgreich!\",\"logout\":\"Abmelden\",\"logout_success\":\"Abmeldung erfolgreich!\",\"menus\":\"Menüs\",\"new_recipe\":\"Neues Rezept\",\"no_results_for\":\"Keine Ergebnisse für\",\"notebook\":\"Notizbuch\",\"pantry\":\"Vorratskammer\",\"password\":\"Passwort\",\"password_format_error\":\"Ihr Passwort ist zu kurz (mindestens 8 Zeichen)\",\"password_not_matching\":\"Die Passwörter sind verschieden\",\"password_placeholder\":\"Ihr Passwort\",\"password_repeat\":\"Passwort wiederholen\",\"password_repeat_required\":\"Bitte wiederholen Sie Ihr Passwort\",\"password_required\":\"Bitte geben Sie ein Passwort ein\",\"recipe_deleted\":\"Rezept wurde gelöscht\",\"recipe_search\":\"Rezeptsuche\",\"recipes\":\"Rezepte\",\"registration_error\":\"Beim Speichern der Benutzerdaten ist ein Fehler aufgetreten\",\"save\":\"Speichern\",\"shopping_lists\":\"Einkaufslisten\",\"sign_up\":\"Registrieren\",\"site_title\":\"Für begeistertes kochen\",\"title\":\"Titel\",\"title_required\":\"Bitte geben Sie einen Titel ein\",\"update_recipe_success\":\"Das Rezept wurde aktualisiert\",\"username\":\"Benutzername\",\"username_format_error\":\"Beim Benutzernamen sind nur Buchstaben und Zahlen erlaubt\",\"username_placeholder\":\"Ihr Benutzername\",\"username_required\":\"Bitte geben Sie einen Benutzernamen an\",\"username_too_short\":\"Ihr Benutzername ist zu kurz (Mindestens 3 Zeichen)\"}");
 
 /***/ }),
 
@@ -67524,10 +67782,10 @@ module.exports = JSON.parse("{\"add_ingredient\":\"Zutat hinzufügen\",\"by\":\"
 /*!********************************!*\
   !*** ./resources/lang/en.json ***!
   \********************************/
-/*! exports provided: add_ingredient, by, cancel, create_recipe_success, dashboard, default_input_error, description, edit_recipe, email, email_format_error, email_required, email_placeholder, groups, hi, ingredient_list, login, login_error, login_success, logout, logout_success, menus, new_recipe, no_results_for, notebook, pantry, password, password_format_error, password_not_matching, password_placeholder, password_repeat, password_repeat_required, password_required, recipe_search, recipes, registration_error, save, shopping_lists, sign_up, site_title, title, title_required, update_recipe_success, username, username_format_error, username_placeholder, username_required, username_too_short, default */
+/*! exports provided: add_ingredient, back, by, cancel, create_recipe_success, dashboard, default_input_error, delete, delete_recipe, delete_recipe_message, description, edit_recipe, email, email_format_error, email_required, email_placeholder, groups, hi, ingredient_list, login, login_error, login_success, logout, logout_success, menus, new_recipe, no_results_for, notebook, pantry, password, password_format_error, password_not_matching, password_placeholder, password_repeat, password_repeat_required, password_required, recipe_deleted, recipe_search, recipes, registration_error, save, shopping_lists, sign_up, site_title, title, title_required, update_recipe_success, username, username_format_error, username_placeholder, username_required, username_too_short, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"add_ingredient\":\"Zutat hinzufügen\",\"by\":\"by\",\"cancel\":\"cancel\",\"create_recipe_success\":\"The recipe was saved\",\"dashboard\":\"Dashboard\",\"default_input_error\":\"Incomplete input\",\"description\":\"Description\",\"edit_recipe\":\"Edit recipe\",\"email\":\"E-mail\",\"email_format_error\":\"Please enter a correct e-mail address\",\"email_required\":\"Please enter a valid e-mail address\",\"email_placeholder\":\"Your e-mail\",\"groups\":\"Groups\",\"hi\":\"Hi\",\"ingredient_list\":\"List of ingredients\",\"login\":\"Log in\",\"login_error\":\"Log in failed, please try again\",\"login_success\":\"Login successful!\",\"logout\":\"Log out\",\"logout_success\":\"Log out successful!\",\"menus\":\"Menus\",\"new_recipe\":\"New recipe\",\"no_results_for\":\"No results for\",\"notebook\":\"Notebook\",\"pantry\":\"Pantry\",\"password\":\"Password\",\"password_format_error\":\"Your password is too short (at least 8 characters)\",\"password_not_matching\":\"Passwords are not matching\",\"password_placeholder\":\"Your password\",\"password_repeat\":\"Repeat password\",\"password_repeat_required\":\"Please repeat your password\",\"password_required\":\"Please enter a password\",\"recipe_search\":\"Recipe search\",\"recipes\":\"Recipes\",\"registration_error\":\"An error occurred while registering your account\",\"save\":\"Save\",\"shopping_lists\":\"Shopping lists\",\"sign_up\":\"Sign up\",\"site_title\":\"For the avid cook\",\"title\":\"Title\",\"title_required\":\"Please enter a title for the recipe\",\"update_recipe_success\":\"The recipe was updated\",\"username\":\"Username\",\"username_format_error\":\"Only alphabetical and numerical characters are allowed\",\"username_placeholder\":\"Your username\",\"username_required\":\"Please enter a username\",\"username_too_short\":\"Your username is too short (at least 3 characters)\"}");
+module.exports = JSON.parse("{\"add_ingredient\":\"Zutat hinzufügen\",\"back\":\"back\",\"by\":\"by\",\"cancel\":\"cancel\",\"create_recipe_success\":\"The recipe was saved\",\"dashboard\":\"Dashboard\",\"default_input_error\":\"Incomplete input\",\"delete\":\"delete\",\"delete_recipe\":\"Delete recipe\",\"delete_recipe_message\":\"Are you sure you want to delete the recipe?\",\"description\":\"Description\",\"edit_recipe\":\"Edit recipe\",\"email\":\"E-mail\",\"email_format_error\":\"Please enter a correct e-mail address\",\"email_required\":\"Please enter a valid e-mail address\",\"email_placeholder\":\"Your e-mail\",\"groups\":\"Groups\",\"hi\":\"Hi\",\"ingredient_list\":\"List of ingredients\",\"login\":\"Log in\",\"login_error\":\"Log in failed, please try again\",\"login_success\":\"Login successful!\",\"logout\":\"Log out\",\"logout_success\":\"Log out successful!\",\"menus\":\"Menus\",\"new_recipe\":\"New recipe\",\"no_results_for\":\"No results for\",\"notebook\":\"Notebook\",\"pantry\":\"Pantry\",\"password\":\"Password\",\"password_format_error\":\"Your password is too short (at least 8 characters)\",\"password_not_matching\":\"Passwords are not matching\",\"password_placeholder\":\"Your password\",\"password_repeat\":\"Repeat password\",\"password_repeat_required\":\"Please repeat your password\",\"password_required\":\"Please enter a password\",\"recipe_deleted\":\"Recipe deleted\",\"recipe_search\":\"Recipe search\",\"recipes\":\"Recipes\",\"registration_error\":\"An error occurred while registering your account\",\"save\":\"Save\",\"shopping_lists\":\"Shopping lists\",\"sign_up\":\"Sign up\",\"site_title\":\"For the avid cook\",\"title\":\"Title\",\"title_required\":\"Please enter a title for the recipe\",\"update_recipe_success\":\"The recipe was updated\",\"username\":\"Username\",\"username_format_error\":\"Only alphabetical and numerical characters are allowed\",\"username_placeholder\":\"Your username\",\"username_required\":\"Please enter a username\",\"username_too_short\":\"Your username is too short (at least 3 characters)\"}");
 
 /***/ }),
 

@@ -112,6 +112,7 @@
 
             // Update the model in the form
             updateModel: function(field) {
+                console.log(field);
                 this.form[field.name] = field.value;
             },
 
