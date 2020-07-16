@@ -34,7 +34,7 @@
         "flag-icon-css": "^3.5.0",
         "jquery": "^3.5.1",
         "js-yaml": "^3.14.0",
-        "lodash": "^4.17.15",
+        "lodash": "^4.17.19",
         "material-icons": "^0.3.1",
         "moment": "^2.27.0",
         "vue-axios": "^2.1.5",
