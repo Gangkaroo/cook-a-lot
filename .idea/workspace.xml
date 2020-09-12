@@ -2,29 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2fb2260-a307-4677-9693-ae13969d8a7b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/SPA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SPA.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RecipeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RecipeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/cz.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/cz.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/je.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/je.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/mo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/mo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/se.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/1x1/se.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/cz.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/cz.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/je.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/je.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/mo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/mo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/se.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/vendor/flag-icon-css/flags/4x3/se.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.woff2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/classes/Recipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/classes/Recipe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseEditor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseEditor.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseAutocomplete.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseAutocomplete.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseFormRow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseFormRow.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseInput.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseInput.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/views/recipes/EditRecipeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/recipes/EditRecipeView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/de.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,6 +143,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
       <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
     </include_path>
   </component>
   <component name="ProjectId" id="1RBg1KZl79WmiyideIA8qRZCuSy" />
@@ -170,6 +164,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="sshConsole" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -202,6 +197,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SshConsoleOptionsProvider">
     <option name="myEncoding" value="windows-1252" />
     <option name="myConnectionType" value="SSH_CONFIG" />
@@ -318,7 +314,21 @@
       <workItem from="1591554664982" duration="599000" />
       <workItem from="1591680179955" duration="11204000" />
       <workItem from="1593667243745" duration="1170000" />
-      <workItem from="1593842841823" duration="7694000" />
+      <workItem from="1593842841823" duration="9389000" />
+      <workItem from="1594962328778" duration="766000" />
+      <workItem from="1595060436895" duration="41000" />
+      <workItem from="1595060524386" duration="599000" />
+      <workItem from="1595921091580" duration="33000" />
+      <workItem from="1595921162307" duration="5110000" />
+      <workItem from="1596223959126" duration="126000" />
+      <workItem from="1596224146295" duration="771000" />
+      <workItem from="1597494197291" duration="1259000" />
+      <workItem from="1598944486224" duration="98000" />
+      <workItem from="1598944597690" duration="59000" />
+      <workItem from="1598944687485" duration="1749000" />
+      <workItem from="1599372186788" duration="2002000" />
+      <workItem from="1599891443810" duration="67000" />
+      <workItem from="1599891524344" duration="1235000" />
     </task>
     <task id="LOCAL-00001" summary="Added new form handling classes">
       <created>1556775731900</created>
@@ -474,11 +484,18 @@
       <option name="project" value="LOCAL" />
       <updated>1591728888641</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="First version of udpating and deletion logic">
+      <created>1593942867540</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1593942867540</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -516,18 +533,18 @@
     <MESSAGE value="Refactor recipe editing, use routes instead of sub-components&#10;Extend recipe editing logic" />
     <MESSAGE value="Add several models for different tables&#10;Updated and refactored migrations&#10;Added logic to store and display basic recipes" />
     <MESSAGE value="Load existing recipes and improve saving new recipes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Load existing recipes and improve saving new recipes" />
+    <MESSAGE value="First version of udpating and deletion logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="First version of udpating and deletion logic" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590916496473">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2472" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590916496473" />
-    <state x="2560" y="260" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1587029342163">
+    <state x="2560" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1596224053773">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="260" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585569132464" />
-    <state x="2560" y="260" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587029342163" />
+    <state x="2560" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1596224053773" />
     <state x="2633" y="211" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1589281573207">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -536,10 +553,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2610" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590942286492" />
-    <state x="2028" y="0" width="1359" height="1013" key="CommitChangelistDialog2" timestamp="1591728885807">
+    <state x="2028" y="0" width="1359" height="1013" key="CommitChangelistDialog2" timestamp="1593942864663">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2028" y="0" width="1359" height="1013" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591728885807" />
+    <state x="2028" y="0" width="1359" height="1013" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593942864663" />
     <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1590920789326">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -564,10 +581,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2381" y="164" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593843266866" />
-    <state x="2472" y="257" key="Vcs.Push.Dialog.v2" timestamp="1590949518990">
+    <state x="2472" y="257" key="Vcs.Push.Dialog.v2" timestamp="1593943783599">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590949518990" />
+    <state x="2472" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593943783599" />
     <state x="2758" y="396" width="316" height="247" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1590920820677">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -588,9 +605,9 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2587" y="276" width="888" height="534" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591726525890" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1593938113652">
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1595940473639">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593938113652" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1595940473639" />
   </component>
 </project>

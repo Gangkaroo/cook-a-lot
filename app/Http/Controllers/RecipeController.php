@@ -48,6 +48,16 @@ class RecipeController extends Controller
     }
 
     /**
+     * Search for an existing ingredient
+     * @param Request $request
+     * @return string[]
+     */
+    public function searchIngredients(Request $request)
+    {
+        return ["test"];
+    }
+
+    /**
      * Create a recipe
      * @param Request $request
      */

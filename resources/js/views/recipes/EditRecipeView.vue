@@ -150,6 +150,7 @@
             // search for an existing ingredient
             searchIngredient: function(searchTerm) {
                 console.log(searchTerm);
+                return axios.get('/api/ingredients/search/' + searchTerm);
             },
 
             // Initiate the recipe submission

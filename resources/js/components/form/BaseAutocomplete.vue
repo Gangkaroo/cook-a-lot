@@ -6,7 +6,7 @@
             :data="data"
             :placeholder="placeholder"
             :icon="iconName"
-            :typing="searchData"
+            @typing="searchData"
             :loading="isSearching"
             v-model="content">
             <template slot="footer" v-if="footer.length">{{ footer }}</template>
@@ -70,7 +70,7 @@
             },
             // Search data using the provided search handler
             searchData: function(searchTerm) {
-                if (!this.isSearching) {
+                if (this.isSearching) {
                     return;
                 }
 
@@ -80,6 +80,7 @@
                 }
 
                 this.isSearching = true;
+                console.log('searching', this.searchHandler);
                 this.searchHandler(searchTerm)
                     .then(({ data }) => {
                         this.data = data.isArray() ? data : [];
