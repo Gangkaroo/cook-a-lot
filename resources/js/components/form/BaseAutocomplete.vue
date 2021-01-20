@@ -8,9 +8,11 @@
             :icon="iconName"
             @typing="searchData"
             :loading="isSearching"
+            field="label"
+            :keep-first="true"
             v-model="content">
-            <template slot="footer" v-if="footer.length">{{ footer }}</template>
-            <template slot="empty">{{$t('no_results_for')}} {{name}}</template>
+            <template #footer v-if="footer.length">{{ footer }}</template>
+            <template #empty>{{$t('no_results_found')}}</template>
         </b-autocomplete>
     </div>
 </template>
@@ -80,10 +82,10 @@
                 }
 
                 this.isSearching = true;
-                console.log('searching', this.searchHandler);
                 this.searchHandler(searchTerm)
                     .then(({ data }) => {
-                        this.data = data.isArray() ? data : [];
+                        // The label property is then shown in dropdown
+                        this.data = Array.isArray(data) ? data : [];
                     })
                     .catch((error) => {
                         this.data = [];

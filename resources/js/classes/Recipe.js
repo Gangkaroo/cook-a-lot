@@ -1,3 +1,4 @@
+import Ingredient from "./Ingredient";
 
 export default class Recipe {
     constructor(data = {}) {
@@ -15,6 +16,11 @@ export default class Recipe {
         } else {
             return false;
         }
+    }
+
+    isValidIngredient(input) {
+        console.log(input);
+        return true;
     }
 
     // Parse the input and return reference to the current instance

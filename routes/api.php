@@ -26,7 +26,7 @@ Route::middleware('api')->prefix('auth')->group(function() {
 Route::middleware('api')->prefix('api')->group(function() {
     Route::get('recipes', 'RecipeController@getRecipes');
     Route::get('recipe/{recipeId}', 'RecipeController@getRecipe');
-    Route::get('ingredients/search/{ingredientName}', 'RecipeController@searchIngredients');
+    Route::get('ingredients/search/{ingredientName}', 'IngredientController@searchIngredients');
     Route::delete('recipe/{recipeId}', 'RecipeController@deleteRecipe');
     Route::post('recipes', 'RecipeController@store');
 });
