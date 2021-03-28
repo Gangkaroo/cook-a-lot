@@ -3,11 +3,9 @@
         <div class="list-head">
             <recipe-search></recipe-search>
             <div class="buttons">
-                <router-link to="/recipe/0" tag="button" class="button is-light">
+                <router-link to="/recipe/0" class="button is-light">
                     <span class="icon is-small">
-                        <i class="material-icons md-18">
-                            restaurant
-                        </i>
+                        <span class="mdi md-18 mdi-silverware-fork-knife"></span>
                     </span>
                     <span class="icon-label">
                         {{$t('new_recipe')}}

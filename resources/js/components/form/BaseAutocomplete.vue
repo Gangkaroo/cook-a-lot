@@ -6,11 +6,15 @@
             :data="data"
             :placeholder="placeholder"
             :icon="iconName"
+            icon-clickable
+            @icon-click="iconHandler"
             @typing="searchData"
-            :loading="isSearching"
+            @blur="fieldBlurred"
+            @select="setSelected"
             field="label"
+            :loading="isSearching"
             :keep-first="true"
-            v-model="content">
+            v-model="value">
             <template #footer v-if="footer.length">{{ footer }}</template>
             <template #empty>{{$t('no_results_found')}}</template>
         </b-autocomplete>
@@ -31,6 +35,10 @@
                 required: true
             },
             iconName: String,
+            iconHandler: {
+                type: Function,
+                default: () => {}
+            },
             intialContent: {
                 type: String,
                 default: ''
@@ -48,9 +56,11 @@
         },
         data: function() {
             return {
-                content: this.initialContent,
                 data: [],
-                isSearching: false
+                isSearching: false,
+                searchTerm: '',
+                selected: null,
+                value: ''
             }
         },
         computed: {
@@ -58,7 +68,21 @@
                 return !this.hasError && this.touched;
             }
         },
+
+        watch: {
+            // Watch the value for changes
+            value: function(newVal, oldVal) {
+                // If something has been selected, only replace the search term with the selected value
+                if (this.selected) {
+                    this.value = oldVal.replace(this.searchTerm, newVal);
+                    this.selected = null;
+                }
+                this.valueUpdated();
+            }
+        },
+
         methods: {
+            // Emit the blurred event
             fieldBlurred: function() {
                 // First set the error to false. If validation fails it will be set to true shortly after
                 this.hasError = false;
@@ -82,7 +106,10 @@
                 }
 
                 this.isSearching = true;
-                this.searchHandler(searchTerm)
+                let words = searchTerm.split(' ');
+                // Search using the last word
+                this.searchTerm = words.pop();
+                this.searchHandler(this.searchTerm)
                     .then(({ data }) => {
                         // The label property is then shown in dropdown
                         this.data = Array.isArray(data) ? data : [];
@@ -98,6 +125,10 @@
             // An error has been recorded
             setError: function() {
                 this.hasError = true;
+            },
+            // Set the selected option
+            setSelected(option) {
+                this.selected = option;
             },
             // Update the model of the form
             valueUpdated: function() {

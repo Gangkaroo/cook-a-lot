@@ -18,9 +18,9 @@ export default class Recipe {
         }
     }
 
+    // Need to improve this over time
     isValidIngredient(input) {
-        console.log(input);
-        return true;
+        return input.length > 1;
     }
 
     // Parse the input and return reference to the current instance

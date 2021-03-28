@@ -35,7 +35,7 @@
                         placeholder: this.$t('username_placeholder'),
                         value: '',
                         type: 'input',
-                        icon: 'person',
+                        icon: 'account',
                         validation: {
                             required,
                             alphaNum,

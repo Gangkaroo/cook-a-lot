@@ -13,14 +13,10 @@
             @keyup.enter="submitValue"
             @blur="fieldBlurred">
         <span v-if="hasIcon" class="icon is-small is-left">
-            <i class="material-icons md-18">
-                {{iconName}}
-            </i>
+            <span class="mdi md-18" :class="iconClass"></span>
         </span>
         <span v-if="isCorrect" class="icon is-small is-right">
-            <i class="material-icons md-18">
-                done
-            </i>
+            <span class="mdi md-18 mdi-check"></span>
         </span>
     </span>
 </template>
@@ -54,6 +50,9 @@
         computed: {
             hasIcon: function() {
                 return typeof this.iconName !== 'undefined' && this.iconName.length;
+            },
+            iconClass: function() {
+                return 'mdi-' + this.iconName;
             },
             isCorrect: function() {
                 return !this.hasError && this.touched;

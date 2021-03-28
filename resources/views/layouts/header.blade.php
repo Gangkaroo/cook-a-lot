@@ -21,9 +21,7 @@
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
             <span class="icon button is-light">
-                <i class="material-icons md-dark">
-                    translate
-                </i>
+                <span class="mdi md-dark mdi-translate"></span>
             </span>
 
             <language-select></language-select>

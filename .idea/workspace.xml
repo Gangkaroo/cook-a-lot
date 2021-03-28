@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2fb2260-a307-4677-9693-ae13969d8a7b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/'required" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SPA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SPA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="e2fb2260-a307-4677-9693-ae13969d8a7b" name="Default Changelist" comment="Updated dependencies and implemented ingredient search">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RecipeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RecipeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
@@ -16,13 +11,24 @@
       <change beforePath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.woff" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.woff2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/classes/Ingredient.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/classes/Ingredient.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/classes/Recipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/classes/Recipe.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseAutocomplete.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseAutocomplete.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseEditor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseEditor.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseFormRow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseFormRow.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/form/BaseInput.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/form/BaseInput.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/recipes/RecipeSearch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/recipes/RecipeSearch.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/helpers/CookMath.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/helpers/CookMath.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/authentication/LoginView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/authentication/LoginView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/authentication/RegistrationView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/authentication/RegistrationView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/views/recipes/EditRecipeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/recipes/EditRecipeView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/de.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/recipes/RecipeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/recipes/RecipeView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/fonts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,12 +181,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.google.cloudcode.ide_session_index" value="20210120_0001" />
+    <property name="com.google.cloudcode.ide_session_index" value="20210222_0001" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../BookMonkey" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="sshConsole" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2018.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -382,7 +389,19 @@
       <workItem from="1610974624125" duration="607000" />
       <workItem from="1611043373709" duration="128000" />
       <workItem from="1611043520390" duration="663000" />
-      <workItem from="1611137818176" duration="630000" />
+      <workItem from="1611137818176" duration="1389000" />
+      <workItem from="1611397195952" duration="1361000" />
+      <workItem from="1611561252455" duration="983000" />
+      <workItem from="1611927956951" duration="357000" />
+      <workItem from="1611929155911" duration="8840000" />
+      <workItem from="1612168287537" duration="1352000" />
+      <workItem from="1612358179814" duration="1188000" />
+      <workItem from="1613214089194" duration="13382000" />
+      <workItem from="1613388606030" duration="3098000" />
+      <workItem from="1613986560283" duration="17000" />
+      <workItem from="1613986595791" duration="48000" />
+      <workItem from="1616926231723" duration="127000" />
+      <workItem from="1616926431229" duration="15381000" />
     </task>
     <task id="LOCAL-00001" summary="Added new form handling classes">
       <created>1556775731900</created>
@@ -559,7 +578,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609913117996</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Updated dependencies and implemented ingredient search">
+      <created>1611168927608</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1611168927608</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -604,6 +630,7 @@
     <MESSAGE value="First version of udpating and deletion logic" />
     <MESSAGE value="First steps towards ingredient search" />
     <MESSAGE value="Updated dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated dependencies" />
+    <MESSAGE value="Updated dependencies and implemented ingredient search" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated dependencies and implemented ingredient search" />
   </component>
 </project>

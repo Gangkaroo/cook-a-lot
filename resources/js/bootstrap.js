@@ -1,6 +1,7 @@
 
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import Vuex from 'vuex';
 import axios from 'axios';
 import Buefy from 'buefy';
 import CKEditor from '@ckeditor/ckeditor5-vue';
@@ -16,6 +17,7 @@ import '@mdi/font/css/materialdesignicons.css'
 
 window.Vue = Vue;
 Vue.use(VueRouter);
+Vue.use(Vuex);
 Vue.use(VueAxios, axios);
 Vue.use(Vuelidate);
 Vue.use(Buefy);
@@ -43,8 +45,6 @@ window.i18n = new VueI18n({
     fallbackLocale: 'de',
     messages: {de, en}
 });
-
-window._ = require('material-icons');
 
 window.axios.defaults.headers.common = {
     'X-Requested-With': 'XMLHttpRequest'

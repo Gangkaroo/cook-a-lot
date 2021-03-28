@@ -29,7 +29,6 @@
                 :placeholder="field.placeholder"
                 :event-bus="eventBus"
                 :index="index"
-                :icon-name="field.icon"
                 :search-handler="field.searchHandler">
             </base-autocomplete>
             <!-- Title or content at the top or in between form elements-->
@@ -38,13 +37,19 @@
                 :title="field.title"
                 :content="field.content">
             </base-content>
+            <!-- Custom component: add a non-typical custom form component in-between -->
+            <base-custom-component
+                :component="field.component"
+                :properties="field.properties"
+                :event-bus="eventBus"
+            ></base-custom-component>
 <!--            <select-field v-if="isSelect" name="{{field.name}}"></select-field>-->
 <!--            <checkable-field v-if="isCheckable" name="{{field.name}}"></checkable-field>-->
             <span class="help is-danger" v-if="hasError"
                   v-text="errorMessage"></span>
         </div>
         <div v-if="hasAddOnButton" class="control">
-            <button class="button is-primary" @click="field.addOnButtonHandler">
+            <button type="button" class="button is-primary" @click="field.addOnButtonHandler">
                 <b-icon :icon="field.addOnButton"></b-icon>
             </button>
         </div>
@@ -53,12 +58,19 @@
 
 <script>
     import BaseAutocomplete from "./BaseAutocomplete";
+    import BaseCustomComponent from "./BaseCustomComponent";
     import BaseEditor from "./BaseEditor";
     import BaseInput from "./BaseInput";
     import BaseContent from "./BaseContent";
     export default {
         name: "InputRow.vue",
-        components: {BaseAutocomplete, BaseContent, BaseEditor, BaseInput},
+        components: {
+            BaseAutocomplete,
+            BaseContent,
+            BaseCustomComponent,
+            BaseEditor,
+            BaseInput
+        },
         props: {
             eventBus: Object,
             field: {

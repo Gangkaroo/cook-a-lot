@@ -5,7 +5,7 @@
             :event-bus="eventBus"
             name="recipe_search"
             :placeholder="$t('recipe_search')"
-            iconName="search">
+            iconName="magnify">
         </base-input>
     </div>
 </template>

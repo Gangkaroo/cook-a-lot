@@ -2,71 +2,58 @@
     <aside class="menu">
         <div class="menu-list">
             <router-link to="/" class="menu-item" exact>
-                <span class="icon is-small">
-                    <i class="material-icons md-18">
-                        dashboard
-                    </i>
+                <span class="icon is-medium">
+                    <span class="mdi mdi-view-dashboard"></span>
                 </span>
-                <span class="icon-label">
+                <span>
                     @{{$t('dashboard')}}
                 </span>
             </router-link>
             <router-link to="/recipes" class="menu-item">
-                <span class="icon is-small">
-                    <i class="material-icons md-18">restaurant
-                    </i>
+                <span class="icon is-medium">
+                    <span class="mdi mdi-silverware-fork-knife"></span>
                 </span>
-                <span class="icon-label">
+                <span>
                     @{{$t('recipes')}}
                 </span>
             </router-link>
             <router-link to="/lists" class="menu-item">
-                <span class="icon is-small">
-                    <i class="material-icons md-18">
-                        shopping_basket
-                    </i>
+                <span class="icon is-medium">
+                    <span class="mdi mdi-cart"></span>
                 </span>
-                <span class="icon-label">
+                <span>
                     @{{$t('shopping_lists')}}
                 </span>
             </router-link>
             <router-link to="/pantry" class="menu-item">
-                <span class="icon is-small">
-                    <i class="material-icons md-18">
-                        all_inbox
-                    </i>
+                <span class="icon is-medium">
+                    <span class="mdi mdi-inbox-multiple"></span>
                 </span>
-                <span class="icon-label">
+                <span>
                     @{{$t('pantry')}}
                 </span>
             </router-link>
             <router-link to="/menus" class="menu-item">
-                <span class="icon is-small">
-                    <i class="material-icons md-18">
-                        room_service
-                    </i>
+                <span class="icon is-medium">
+                    <span class="mdi mdi-room-service"></span>
                 </span>
-                <span class="icon-label">
+                <span>
                     @{{$t('menus')}}
                 </span>
             </router-link>
             <router-link to="/notebook" class="menu-item">
-                <span class="icon is-small">
-                    <i class="material-icons md-18">
-                        book
-                    </i>
+                <span class="icon is-medium">
+                    <span class="mdi mdi-book-open"></span>
                 </span>
-                <span class="icon-label">
+                <span>
                     @{{$t('notebook')}}
                 </span>
             </router-link>
             <router-link to="/groups" class="menu-item">
-                <span class="icon is-small">
-                    <i class="material-icons md-18">
-                        group
-                    </i>
+                <span class="icon is-medium">
+                    <span class="mdi mdi-account-group"></span>
                 </span>
-                <span class="icon-label">
+                <span>
                     @{{$t('groups')}}
                 </span>
             </router-link>

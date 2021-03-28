@@ -63,11 +63,6 @@
                 this.hasError = true;
             },
 
-            // Submit the form
-            submitValue: function() {
-                this.eventBus.$emit('submitForm');
-            },
-
             // Update the input value
             updateValue: function(newValue) {
                 this.value = newValue;

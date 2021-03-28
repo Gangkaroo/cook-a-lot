@@ -46,7 +46,7 @@
                         placeholder: this.$t('username_placeholder'),
                         value: '',
                         type: 'input',
-                        icon: 'person',
+                        icon: 'account',
                         validation: {
                             required,
                             email
@@ -84,7 +84,7 @@
                 this.requesting = false;
                 this.$buefy.snackbar.open({
                     actionText: null,
-                    message: '<span class="snack-icon"><i class="material-icons success">check</i>'
+                    message: '<span class="snack-icon"><span class="mdi mdi-check success"></span>'
                         + this.$t('login_success') + '</span>',
                     type: 'is-success'
                 });
@@ -113,7 +113,7 @@
             logoutSuccess: function() {
                 this.$buefy.snackbar.open({
                     actionText: null,
-                    message: '<span class="snack-icon"><i class="material-icons success">check</i>'
+                    message: '<span class="snack-icon"><span class="mdi mdi-check success"></span>'
                         + this.$t('logout_success') + '</span>',
                     type: 'is-success'
                 });

@@ -39,9 +39,9 @@
 
     export default {
         name: "EditRecipeView",
-
         data: function() {
             return {
+                ingredientName: '',
                 recipe: null,
                 fields: [
                     {
@@ -69,18 +69,19 @@
                         value: '',
                         type: 'editor'
                     },
-                    /*{
-                        title: this.$t('ingredient_list'),
-                        type: 'content'
-                    },*/
                     {
-                        name: 'ingredients',
+                        name: 'ingredient',
                         searchHandler: this.searchIngredient,
                         placeholder: this.$t('add_ingredient'),
                         value: '',
                         addOnButton: 'plus',
                         addOnButtonHandler: this.addIngredient,
                         type: 'autocomplete'
+                    },
+                    {
+                        type: 'custom-component',
+                        component: 'IngredientList',
+                        properties: {}
                     }
                 ],
                 eventBus: new Vue()
@@ -98,8 +99,10 @@
 
         methods: {
             addIngredient: function() {
-                if (this.recipe.isValidIngredient(this.newIngredient)) {
-                    this.recipe.addIngredient(this.newIngredient);
+                console.log(this.ingredientName);
+                if (this.recipe.isValidIngredient(this.ingredientName)) {
+                    this.recipe.addIngredient(this.ingredientName);
+                    this.eventBus.$emit('addIngredient', this.ingredientName);
                 }
             },
 
@@ -126,7 +129,7 @@
                     .then(response => {
                         this.$buefy.snackbar.open({
                             actionText: null,
-                            message: '<span class="snack-icon"><i class="material-icons success">check</i>'
+                            message: '<span class="snack-icon"><span class="mdi mdi-check success"></span>'
                                 + this.$t('recipe_deleted') + '</span>',
                             type: 'is-success'
                         });
@@ -157,11 +160,18 @@
                 this.eventBus.$emit('submitForm');
             },
 
+            // Update the current content of the ingredients field
+            updateIngredientName: function(field) {
+                if (field.name === 'ingredient') {
+                    this.ingredientName = field.value;
+                }
+            },
+
             // Show success message and navigate back
             saveSuccessful() {
                 this.$buefy.snackbar.open({
                     actionText: null,
-                    message: '<span class="snack-icon"><i class="material-icons success">check</i>'
+                    message: '<span class="snack-icon"><span class="mdi mdi-check success"></span>'
                         + this.$t('create_recipe_success') + '</span>',
                     type: 'is-success'
                 });
@@ -172,7 +182,7 @@
             updateSuccessful() {
                 this.$buefy.snackbar.open({
                     actionText: null,
-                    message: '<span class="snack-icon"><i class="material-icons success">check</i>'
+                    message: '<span class="snack-icon"><span class="mdi mdi-check success"></span>'
                         + this.$t('update_recipe_success') + '</span>',
                     type: 'is-success'
                 });
@@ -187,6 +197,7 @@
             } else {
                 this.eventBus.$on('submitSuccess', this.saveSuccessful);
             }
+            this.eventBus.$on('inputUpdate', this.updateIngredientName);
         }
     }
 </script>

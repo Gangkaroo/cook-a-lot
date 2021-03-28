@@ -8,64 +8,148 @@
 
 /* Rules for sizing the icon. */
 
-.material-icons.md-18 {
+.mdi.md-18 {
   font-size: 18px;
 }
 
-.material-icons.md-24 {
+.mdi.md-24 {
   font-size: 24px;
 }
 
-.material-icons.md-36 {
+.mdi.md-36 {
   font-size: 36px;
 }
 
-.material-icons.md-48 {
+.mdi.md-48 {
   font-size: 48px;
 }
 
 /* Rules for using icons as black on a light background. */
 
-.material-icons.md-dark {
+.mdi.md-dark {
   color: rgba(0, 0, 0, 0.54);
 }
 
-.material-icons.md-dark.md-inactive {
+.mdi.md-dark.md-inactive {
   color: rgba(0, 0, 0, 0.26);
 }
 
 /* Rules for using icons as white on a dark background. */
 
-.material-icons.md-light {
+.mdi.md-light {
   color: white;
 }
 
-.material-icons.md-light.md-inactive {
+.mdi.md-light.md-inactive {
   color: rgba(255, 255, 255, 0.3);
 }
 
-/*! bulma.io v0.9.1 | MIT License | github.com/jgthms/bulma */
+/*! bulma.io v0.9.2 | MIT License | github.com/jgthms/bulma */
 
 /* Bulma Utilities */
 
-@-webkit-keyframes spinAround {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(359deg);
-  }
+.pagination-previous,
+.pagination-next,
+.pagination-link,
+.pagination-ellipsis,
+.file-cta,
+.file-name,
+.select select,
+.taginput .taginput-container.is-focusable,
+.textarea,
+.input,
+.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: none;
+  display: inline-flex;
+  font-size: 1rem;
+  height: 2.5em;
+  justify-content: flex-start;
+  line-height: 1.5;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: calc(0.75em - 1px);
+  padding-right: calc(0.75em - 1px);
+  padding-top: calc(0.5em - 1px);
+  position: relative;
+  vertical-align: top;
 }
 
-@keyframes spinAround {
-  from {
-    transform: rotate(0deg);
-  }
+.pagination-previous:focus,
+.pagination-next:focus,
+.pagination-link:focus,
+.pagination-ellipsis:focus,
+.file-cta:focus,
+.file-name:focus,
+.select select:focus,
+.taginput .taginput-container.is-focusable:focus,
+.textarea:focus,
+.input:focus,
+.button:focus,
+.is-focused.pagination-previous,
+.is-focused.pagination-next,
+.is-focused.pagination-link,
+.is-focused.pagination-ellipsis,
+.is-focused.file-cta,
+.is-focused.file-name,
+.select select.is-focused,
+.taginput .is-focused.taginput-container.is-focusable,
+.is-focused.textarea,
+.is-focused.input,
+.is-focused.button,
+.pagination-previous:active,
+.pagination-next:active,
+.pagination-link:active,
+.pagination-ellipsis:active,
+.file-cta:active,
+.file-name:active,
+.select select:active,
+.taginput .taginput-container.is-focusable:active,
+.textarea:active,
+.input:active,
+.button:active,
+.is-active.pagination-previous,
+.is-active.pagination-next,
+.is-active.pagination-link,
+.is-active.pagination-ellipsis,
+.is-active.file-cta,
+.is-active.file-name,
+.select select.is-active,
+.taginput .is-active.taginput-container.is-focusable,
+.is-active.textarea,
+.is-active.input,
+.is-active.button {
+  outline: none;
+}
 
-  to {
-    transform: rotate(359deg);
-  }
+[disabled].pagination-previous,
+[disabled].pagination-next,
+[disabled].pagination-link,
+[disabled].pagination-ellipsis,
+[disabled].file-cta,
+[disabled].file-name,
+.select select[disabled],
+.taginput [disabled].taginput-container.is-focusable,
+[disabled].textarea,
+[disabled].input,
+[disabled].button,
+fieldset[disabled] .pagination-previous,
+fieldset[disabled] .pagination-next,
+fieldset[disabled] .pagination-link,
+fieldset[disabled] .pagination-ellipsis,
+fieldset[disabled] .file-cta,
+fieldset[disabled] .file-name,
+fieldset[disabled] .select select,
+.select fieldset[disabled] select,
+fieldset[disabled] .taginput .taginput-container.is-focusable,
+.taginput fieldset[disabled] .taginput-container.is-focusable,
+fieldset[disabled] .textarea,
+fieldset[disabled] .input,
+fieldset[disabled] .button {
+  cursor: not-allowed;
 }
 
 .switch,
@@ -81,9 +165,7 @@
 .pagination-ellipsis,
 .breadcrumb,
 .file,
-.button,
-.modal-close,
-.delete {
+.button {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -130,6 +212,11 @@
 
 .modal-close,
 .delete {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   -moz-appearance: none;
   -webkit-appearance: none;
   background-color: rgba(10, 10, 10, 0.2);
@@ -280,110 +367,6 @@
   position: absolute;
   right: 0;
   top: 0;
-}
-
-.pagination-previous,
-.pagination-next,
-.pagination-link,
-.pagination-ellipsis,
-.file-cta,
-.file-name,
-.select select,
-.taginput .taginput-container.is-focusable,
-.textarea,
-.input,
-.button {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  align-items: center;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  box-shadow: none;
-  display: inline-flex;
-  font-size: 1rem;
-  height: 2.5em;
-  justify-content: flex-start;
-  line-height: 1.5;
-  padding-bottom: calc(0.5em - 1px);
-  padding-left: calc(0.75em - 1px);
-  padding-right: calc(0.75em - 1px);
-  padding-top: calc(0.5em - 1px);
-  position: relative;
-  vertical-align: top;
-}
-
-.pagination-previous:focus,
-.pagination-next:focus,
-.pagination-link:focus,
-.pagination-ellipsis:focus,
-.file-cta:focus,
-.file-name:focus,
-.select select:focus,
-.taginput .taginput-container.is-focusable:focus,
-.textarea:focus,
-.input:focus,
-.button:focus,
-.is-focused.pagination-previous,
-.is-focused.pagination-next,
-.is-focused.pagination-link,
-.is-focused.pagination-ellipsis,
-.is-focused.file-cta,
-.is-focused.file-name,
-.select select.is-focused,
-.taginput .is-focused.taginput-container.is-focusable,
-.is-focused.textarea,
-.is-focused.input,
-.is-focused.button,
-.pagination-previous:active,
-.pagination-next:active,
-.pagination-link:active,
-.pagination-ellipsis:active,
-.file-cta:active,
-.file-name:active,
-.select select:active,
-.taginput .taginput-container.is-focusable:active,
-.textarea:active,
-.input:active,
-.button:active,
-.is-active.pagination-previous,
-.is-active.pagination-next,
-.is-active.pagination-link,
-.is-active.pagination-ellipsis,
-.is-active.file-cta,
-.is-active.file-name,
-.select select.is-active,
-.taginput .is-active.taginput-container.is-focusable,
-.is-active.textarea,
-.is-active.input,
-.is-active.button {
-  outline: none;
-}
-
-[disabled].pagination-previous,
-[disabled].pagination-next,
-[disabled].pagination-link,
-[disabled].pagination-ellipsis,
-[disabled].file-cta,
-[disabled].file-name,
-.select select[disabled],
-.taginput [disabled].taginput-container.is-focusable,
-[disabled].textarea,
-[disabled].input,
-[disabled].button,
-fieldset[disabled] .pagination-previous,
-fieldset[disabled] .pagination-next,
-fieldset[disabled] .pagination-link,
-fieldset[disabled] .pagination-ellipsis,
-fieldset[disabled] .file-cta,
-fieldset[disabled] .file-name,
-fieldset[disabled] .select select,
-.select fieldset[disabled] select,
-fieldset[disabled] .taginput .taginput-container.is-focusable,
-.taginput fieldset[disabled] .taginput-container.is-focusable,
-fieldset[disabled] .textarea,
-fieldset[disabled] .input,
-fieldset[disabled] .button {
-  cursor: not-allowed;
 }
 
 /* Bulma Base */
@@ -610,6 +593,26 @@ table th {
   color: #363636;
 }
 
+@-webkit-keyframes spinAround {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
 /* Bulma Elements */
 
 .box {
@@ -721,6 +724,19 @@ fieldset[disabled] .button.is-text {
   background-color: transparent;
   border-color: transparent;
   box-shadow: none;
+}
+
+.button.is-ghost {
+  background: none;
+  border-color: transparent;
+  color: #3273dc;
+  text-decoration: none;
+}
+
+.button.is-ghost:hover,
+.button.is-ghost.is-hovered {
+  color: #3273dc;
+  text-decoration: underline;
 }
 
 .button.is-white {
@@ -2068,8 +2084,11 @@ fieldset[disabled] .button.is-danger.is-inverted.is-outlined {
 }
 
 .button.is-small {
-  border-radius: 2px;
   font-size: 0.75rem;
+}
+
+.button.is-small:not(.is-rounded) {
+  border-radius: 2px;
 }
 
 .button.is-normal {
@@ -2147,8 +2166,11 @@ fieldset[disabled] .button {
 }
 
 .buttons.are-small .button:not(.is-normal):not(.is-medium):not(.is-large) {
-  border-radius: 2px;
   font-size: 0.75rem;
+}
+
+.buttons.are-small .button:not(.is-normal):not(.is-medium):not(.is-large):not(.is-rounded) {
+  border-radius: 2px;
 }
 
 .buttons.are-medium .button:not(.is-small):not(.is-normal):not(.is-large) {
@@ -2489,6 +2511,32 @@ fieldset[disabled] .button {
 .icon.is-large {
   height: 3rem;
   width: 3rem;
+}
+
+.icon-text {
+  align-items: flex-start;
+  color: inherit;
+  display: inline-flex;
+  flex-wrap: wrap;
+  line-height: 1.5rem;
+  vertical-align: top;
+}
+
+.icon-text .icon {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.icon-text .icon:not(:last-child) {
+  margin-right: 0.25em;
+}
+
+.icon-text .icon:not(:first-child) {
+  margin-left: 0.25em;
+}
+
+div.icon-text {
+  display: flex;
 }
 
 .image {
@@ -5342,8 +5390,21 @@ fieldset[disabled] .select select:hover {
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
   color: #4a4a4a;
   max-width: 100%;
-  overflow: hidden;
   position: relative;
+}
+
+.card-footer:first-child,
+.card-content:first-child,
+.card-header:first-child {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.card-footer:last-child,
+.card-content:last-child,
+.card-header:last-child {
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
 }
 
 .card-header {
@@ -5377,6 +5438,16 @@ fieldset[disabled] .select select:hover {
 .card-image {
   display: block;
   position: relative;
+}
+
+.card-image:first-child img {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.card-image:last-child img {
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
 }
 
 .card-content {
@@ -7376,6 +7447,10 @@ a.navbar-item.is-active,
   flex-wrap: wrap;
 }
 
+.pagination-list li {
+  list-style: none;
+}
+
 @media screen and (max-width: 768px) {
   .pagination {
     flex-wrap: wrap;
@@ -7861,6 +7936,7 @@ label.panel-block:hover {
 
 .columns.is-mobile > .column.is-narrow {
   flex: none;
+  width: unset;
 }
 
 .columns.is-mobile > .column.is-full {
@@ -8069,6 +8145,7 @@ label.panel-block:hover {
 @media screen and (max-width: 768px) {
   .column.is-narrow-mobile {
     flex: none;
+    width: unset;
   }
 
   .column.is-full-mobile {
@@ -8279,6 +8356,7 @@ label.panel-block:hover {
   .column.is-narrow,
   .column.is-narrow-tablet {
     flex: none;
+    width: unset;
   }
 
   .column.is-full,
@@ -8533,6 +8611,7 @@ label.panel-block:hover {
 @media screen and (max-width: 1023px) {
   .column.is-narrow-touch {
     flex: none;
+    width: unset;
   }
 
   .column.is-full-touch {
@@ -8742,6 +8821,7 @@ label.panel-block:hover {
 @media screen and (min-width: 1024px) {
   .column.is-narrow-desktop {
     flex: none;
+    width: unset;
   }
 
   .column.is-full-desktop {
@@ -8951,6 +9031,7 @@ label.panel-block:hover {
 @media screen and (min-width: 1216px) {
   .column.is-narrow-widescreen {
     flex: none;
+    width: unset;
   }
 
   .column.is-full-widescreen {
@@ -9160,6 +9241,7 @@ label.panel-block:hover {
 @media screen and (min-width: 1408px) {
   .column.is-narrow-fullhd {
     flex: none;
+    width: unset;
   }
 
   .column.is-full-fullhd {
@@ -9433,7 +9515,7 @@ label.panel-block:hover {
   margin-right: calc(-1 * var(--columnGap));
 }
 
-.columns.is-variable .column {
+.columns.is-variable > .column {
   padding-left: var(--columnGap);
   padding-right: var(--columnGap);
 }
@@ -10667,6 +10749,7 @@ a.has-text-danger-dark:focus {
 
 .is-clickable {
   cursor: pointer !important;
+  pointer-events: all !important;
 }
 
 .is-clipped {
@@ -21605,10 +21688,6 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
   align-items: center;
 }
 
-.menu-item .icon-label {
-  padding-left: 10px;
-}
-
 .navbar-item label {
   cursor: pointer;
 }
@@ -21631,7 +21710,7 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
   align-items: center;
 }
 
-.material-icons.success {
+.mdi.success {
   color: #48c774;
   margin-right: 10px;
 }
