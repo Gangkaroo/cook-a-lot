@@ -4,7 +4,7 @@ import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import axios from 'axios';
 import Buefy from 'buefy';
-import CKEditor from '@ckeditor/ckeditor5-vue';
+import CKEditor from '@ckeditor/ckeditor5-vue2';
 import Moment from 'moment';
 import VueAxios from 'vue-axios';
 import VueI18n from 'vue-i18n';
@@ -14,6 +14,11 @@ import en from '../lang/en.json'
 import router from "./routes";
 // Icons
 import '@mdi/font/css/materialdesignicons.css'
+// Vue Auth
+import auth                  from '@websanova/vue-auth/dist/v2/vue-auth.common.js';
+import driverAuthBearer      from '@websanova/vue-auth/dist/drivers/auth/bearer.js';
+import driverHttpAxios       from '@websanova/vue-auth/dist/drivers/http/axios.1.x.js';
+import driverRouterVueRouter from '@websanova/vue-auth/dist/drivers/router/vue-router.2.x.js';
 
 window.Vue = Vue;
 Vue.use(VueRouter);
@@ -25,10 +30,20 @@ Vue.use(CKEditor);
 
 window.router = Vue.router = router;
 
-Vue.use(require('@websanova/vue-auth'), {
-    auth: require('@websanova/vue-auth/drivers/auth/bearer.js'),
-    http: require('@websanova/vue-auth/drivers/http/axios.1.x.js'),
-    router: require('@websanova/vue-auth/drivers/router/vue-router.2.x.js'),
+Vue.use(auth, {
+    plugins: {
+        http: Vue.axios, // Axios
+        router: Vue.router,
+    },
+    drivers: {
+        auth: driverAuthBearer,
+        http: driverHttpAxios, // Axios
+        router: driverRouterVueRouter
+    },
+    options: {
+        rolesKey: 'type',
+        notFoundRedirect: {name: 'user-account'}
+    },
     parseUserData: function(response) {
         return response;
     }

@@ -3,14 +3,14 @@ import VueRouter from 'vue-router';
 const routes = [
     {
         path: '/',
-        component: require('./views/Home').default
+        component: require('./views/Home.vue').default
     },
     {
         path: '/recipes',
         meta: {
             auth: true
         },
-        component: require('./views/recipes/RecipeView').default
+        component: require('./views/recipes/RecipeView.vue').default
     },
     {
         path: '/recipe/:recipeId',
@@ -18,7 +18,7 @@ const routes = [
         meta: {
             auth: true
         },
-        component: require('./views/recipes/EditRecipeView').default,
+        component: require('./views/recipes/EditRecipeView.vue').default,
         props: true
     },
     {
@@ -26,35 +26,35 @@ const routes = [
         meta: {
             auth: true
         },
-        component: require('./views/About').default
+        component: require('./views/About.vue').default
     },
     {
         path: '/pantry',
         meta: {
             auth: true
         },
-        component: require('./views/About').default
+        component: require('./views/About.vue').default
     },
     {
         path: '/menus',
         meta: {
             auth: true
         },
-        component: require('./views/About').default
+        component: require('./views/About.vue').default
     },
     {
         path: '/notebook',
         meta: {
             auth: true
         },
-        component: require('./views/About').default
+        component: require('./views/About.vue').default
     },
     {
         path: '/groups',
         meta: {
             auth: true
         },
-        component: require('./views/About').default
+        component: require('./views/About.vue').default
     }
 ];
 
