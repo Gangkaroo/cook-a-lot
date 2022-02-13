@@ -42,11 +42,11 @@ Vue.use(auth, {
     },
     options: {
         rolesKey: 'type',
-        notFoundRedirect: {name: 'user-account'}
+        notFoundRedirect: {name: 'user-account'},
+        parseUserData: function(response) {
+            return response || {};
+        }
     },
-    parseUserData: function(response) {
-        return response;
-    }
 });
 
 // Filters

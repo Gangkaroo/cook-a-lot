@@ -2,13 +2,13 @@
     <div class="navbar-dropdown is-right" id="language-select">
         <a class="navbar-item" @click="setLanguage('de')" v-bind:class="{ 'is-hidden': isDE }">
             <label>
-                <span class="flag-icon flag-icon-de"></span>
+                <span class="fi fi-de"></span>
                 deutsch
             </label>
         </a>
         <a class="navbar-item" @click="setLanguage('en')" v-bind:class="{ 'is-hidden': isEN }">
             <label>
-                <span class="flag-icon flag-icon-us"></span>
+                <span class="fi fi-us"></span>
                 english
             </label>
         </a>

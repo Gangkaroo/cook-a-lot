@@ -34,7 +34,7 @@
             // Update the user data
             updateData: function() {
                 let user = this.$auth.user();
-                if (typeof user.email !== 'undefined') {
+                if (user !== null && typeof user.email !== 'undefined') {
                     this.email = user.email;
                     this.username = user.name;
                 } else {

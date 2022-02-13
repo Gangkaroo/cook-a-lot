@@ -4673,9 +4673,12 @@ __webpack_require__.r(__webpack_exports__);
     },
     // Log out the current user
     logout: function logout() {
+      var _this = this;
+
       this.$auth.logout({
-        makeRequest: true,
-        success: this.logoutSuccess
+        makeRequest: true
+      }).then(function () {
+        _this.logoutSuccess();
       });
     },
     logoutSuccess: function logoutSuccess() {
@@ -4691,6 +4694,8 @@ __webpack_require__.r(__webpack_exports__);
     },
     // Use the auth function to submit the login data
     submitLogin: function submitLogin(loginData) {
+      var _this2 = this;
+
       this.hasError = false;
       this.requesting = true;
       this.$auth.login({
@@ -4698,10 +4703,12 @@ __webpack_require__.r(__webpack_exports__);
           email: loginData.email,
           password: loginData.password
         },
-        success: this.loginSuccess.bind(this),
-        error: this.loginError.bind(this),
-        rememberMe: true,
+        staySignedIn: true,
         fetchUser: true
+      }).then(function () {
+        _this2.loginSuccess();
+      }, function () {
+        _this2.loginError();
       });
     }
   }
@@ -4904,7 +4911,7 @@ __webpack_require__.r(__webpack_exports__);
     updateData: function updateData() {
       var user = this.$auth.user();
 
-      if (typeof user.email !== 'undefined') {
+      if (user !== null && typeof user.email !== 'undefined') {
         this.email = user.email;
         this.username = user.name;
       } else {
@@ -5301,10 +5308,10 @@ vue__WEBPACK_IMPORTED_MODULE_12__["default"].use((_websanova_vue_auth_dist_v2_vu
     rolesKey: 'type',
     notFoundRedirect: {
       name: 'user-account'
+    },
+    parseUserData: function parseUserData(response) {
+      return response || {};
     }
-  },
-  parseUserData: function parseUserData(response) {
-    return response;
   }
 }); // Filters
 
