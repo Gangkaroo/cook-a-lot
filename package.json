@@ -23,7 +23,7 @@
         "vue-loader": "^15.9.8"
     },
     "dependencies": {
-        "@ckeditor/ckeditor5-build-inline": "^32.0.0",
+        "@ckeditor/ckeditor5-build-inline": "^36.0.1",
         "@ckeditor/ckeditor5-vue2": "^1.0.5",
         "@mdi/font": "^6.5.95",
         "@websanova/vue-auth": "^4.1.11",
